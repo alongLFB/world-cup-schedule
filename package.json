@@ -2,5 +2,24 @@
   "dependencies": {
     "jsdom": "^29.1.1",
     "node-fetch": "^3.3.2"
-  }
+  },
+  "name": "world-cup-schedule",
+  "version": "1.0.0",
+  "description": "[![Language](https://img.shields.io/badge/Language-English-blue)](#english-documentation)\r [![Language](https://img.shields.io/badge/语言-中文-red)](#中文说明)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alongLFB/world-cup-schedule.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alongLFB/world-cup-schedule/issues"
+  },
+  "homepage": "https://github.com/alongLFB/world-cup-schedule#readme"
 }

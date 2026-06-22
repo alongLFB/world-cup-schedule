@@ -1086,7 +1086,7 @@
         "isOwnGoal": false
       },
       {
-        "player": "H. Varela",
+        "player": "Varela",
         "times": [
           "61'"
         ],
@@ -1297,8 +1297,18 @@
     "time": "12:00 p.m. UTC−5",
     "home": "Argentina",
     "away": "Austria",
-    "score": "Match 43",
-    "homeGoals": [],
+    "score": "2–0",
+    "homeGoals": [
+      {
+        "player": "Messi",
+        "times": [
+          "38'",
+          "90+5'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": []
   },
   {
