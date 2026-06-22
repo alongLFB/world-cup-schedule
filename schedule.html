@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 FIFA World Cup Schedule (UAE Time)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ff87;
+            --primary-dark: #00cc6a;
+            --bg-dark: #0a0f1c;
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --accent: #ff0055;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #050811 0%, #0a0f1c 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--primary), #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .timezone-badge {
+            display: inline-block;
+            background: rgba(0, 255, 135, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 15px;
+            border: 1px solid rgba(0, 255, 135, 0.2);
+        }
+
+        .stage-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .match-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .match-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 135, 0.5);
+        }
+
+        .match-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), #00d4ff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .match-card:hover::before {
+            opacity: 1;
+        }
+
+        .match-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .match-time {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .team {
+            font-size: 1.2rem;
+            font-weight: 600;
+            width: 40%;
+        }
+
+        .team-right {
+            text-align: right;
+        }
+
+        .vs {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .stadium {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stadium svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .schedule-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>2026 World Cup Schedule</h1>
+        <p class="subtitle">Complete Official Match Schedule</p>
+        <div class="timezone-badge">📍 All Times in UAE Time (GST / UTC+4)</div>
+    </header>
+
+    <h2 class="stage-title">All Matches</h2>
+    <div class="schedule-grid" id="schedule-grid">
+        
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 11 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 1</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Mexico</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">South Africa</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 12 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 2</span>
+            </div>
+            <div class="match-time">06:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">South Korea</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Czech Republic</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 18 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 3</span>
+            </div>
+            <div class="match-time">20:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Czech Republic</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">South Africa</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 19 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 4</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Mexico</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">South Korea</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 25 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 5</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Czech Republic</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Mexico</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 25 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 6</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">South Africa</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">South Korea</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 12 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 7</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Canada</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Bosnia and Herzegovina</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 13 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 8</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Qatar</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Switzerland</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 18 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 9</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Switzerland</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Bosnia and Herzegovina</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 19 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 10</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Canada</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Qatar</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 24 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 11</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Switzerland</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Canada</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 24 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 12</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Bosnia and Herzegovina</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Qatar</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 14 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 13</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Brazil</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Morocco</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 14 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 14</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Haiti</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Scotland</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 20 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 15</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Scotland</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Morocco</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 20 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 16</span>
+            </div>
+            <div class="match-time">04:30 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Brazil</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Haiti</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 25 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 17</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Scotland</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Brazil</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 25 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 18</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Morocco</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Haiti</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 13 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 19</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">United States</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Paraguay</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 14 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 20</span>
+            </div>
+            <div class="match-time">08:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Australia</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Turkey</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 19 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 21</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">United States</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Australia</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 20 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 22</span>
+            </div>
+            <div class="match-time">07:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Turkey</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Paraguay</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 26 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 23</span>
+            </div>
+            <div class="match-time">06:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Turkey</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">United States</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 26 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 24</span>
+            </div>
+            <div class="match-time">06:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Paraguay</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Australia</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 14 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 25</span>
+            </div>
+            <div class="match-time">21:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Germany</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Curaçao</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 15 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 26</span>
+            </div>
+            <div class="match-time">03:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Ivory Coast</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Ecuador</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 21 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 27</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Germany</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Ivory Coast</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 21 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 28</span>
+            </div>
+            <div class="match-time">04:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Ecuador</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Curaçao</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 26 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 29</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Curaçao</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Ivory Coast</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 26 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 30</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Ecuador</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Germany</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 15 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 31</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Netherlands</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Japan</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 15 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 32</span>
+            </div>
+            <div class="match-time">06:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Sweden</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Tunisia</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 20 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 33</span>
+            </div>
+            <div class="match-time">21:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Netherlands</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Sweden</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 21 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 34</span>
+            </div>
+            <div class="match-time">08:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Tunisia</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Japan</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 26 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 35</span>
+            </div>
+            <div class="match-time">03:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Japan</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Sweden</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 26 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 36</span>
+            </div>
+            <div class="match-time">03:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Tunisia</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Netherlands</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 15 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 37</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Belgium</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Egypt</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 16 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 38</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Iran</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">New Zealand</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 21 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 39</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Belgium</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Iran</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 22 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 40</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">New Zealand</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Egypt</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 27 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 41</span>
+            </div>
+            <div class="match-time">07:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Egypt</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Iran</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 27 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 42</span>
+            </div>
+            <div class="match-time">07:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">New Zealand</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Belgium</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 15 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 43</span>
+            </div>
+            <div class="match-time">20:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Spain</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Cape Verde</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 16 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 44</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Saudi Arabia</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Uruguay</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 21 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 45</span>
+            </div>
+            <div class="match-time">20:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Spain</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Saudi Arabia</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 22 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 46</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Uruguay</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Cape Verde</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 27 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 47</span>
+            </div>
+            <div class="match-time">04:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Cape Verde</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Saudi Arabia</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jun 27 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 48</span>
+            </div>
+            <div class="match-time">04:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Uruguay</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Spain</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 16 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 49</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">France</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Senegal</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 17 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 50</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Iraq</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Norway</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 23 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 51</span>
+            </div>
+            <div class="match-time">01:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">France</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Iraq</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 23 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 52</span>
+            </div>
+            <div class="match-time">04:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Norway</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Senegal</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 26 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 53</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Norway</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">France</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jun 26 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 54</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Senegal</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Iraq</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 17 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 55</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Argentina</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Algeria</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 17 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 56</span>
+            </div>
+            <div class="match-time">08:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Austria</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Jordan</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 22 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 57</span>
+            </div>
+            <div class="match-time">21:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Argentina</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Austria</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 23 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 58</span>
+            </div>
+            <div class="match-time">07:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Jordan</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Algeria</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 28 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 59</span>
+            </div>
+            <div class="match-time">06:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Algeria</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Austria</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 28 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 60</span>
+            </div>
+            <div class="match-time">06:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Jordan</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Argentina</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 17 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 61</span>
+            </div>
+            <div class="match-time">21:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Portugal</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">DR Congo</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 18 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 62</span>
+            </div>
+            <div class="match-time">06:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Uzbekistan</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Colombia</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 23 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 63</span>
+            </div>
+            <div class="match-time">21:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Portugal</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Uzbekistan</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 24 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 64</span>
+            </div>
+            <div class="match-time">06:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Colombia</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">DR Congo</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 28 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 65</span>
+            </div>
+            <div class="match-time">03:30 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Colombia</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Portugal</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 28 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 66</span>
+            </div>
+            <div class="match-time">03:30 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">DR Congo</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Uzbekistan</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 18 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 67</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">England</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Croatia</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jun 18 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 68</span>
+            </div>
+            <div class="match-time">03:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Ghana</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Panama</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 24 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 69</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">England</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Ghana</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jun 24 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 70</span>
+            </div>
+            <div class="match-time">03:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Panama</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Croatia</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 28 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 71</span>
+            </div>
+            <div class="match-time">01:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Panama</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">England</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 28 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 72</span>
+            </div>
+            <div class="match-time">01:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Croatia</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Ghana</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jun 28 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 73</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Runner-up Group A</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Runner-up Group B</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jun 29 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 74</span>
+            </div>
+            <div class="match-time">21:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group C</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Runner-up Group F</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 30 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 75</span>
+            </div>
+            <div class="match-time">00:30 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Germany</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">3rd Group A/B/C/D/F</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 30 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 76</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group F</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Runner-up Group C</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jun 30 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 77</span>
+            </div>
+            <div class="match-time">21:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Runner-up Group E</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Runner-up Group I</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jul 1 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 78</span>
+            </div>
+            <div class="match-time">01:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group I</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">3rd Group C/D/F/G/H</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jul 1 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 79</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Mexico</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">3rd Group C/E/F/H/I</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jul 1 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 80</span>
+            </div>
+            <div class="match-time">20:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group L</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">3rd Group E/H/I/J/K</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jul 2 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 81</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group G</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">3rd Group A/E/H/I/J</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jul 2 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 82</span>
+            </div>
+            <div class="match-time">04:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">United States</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">3rd Group B/E/F/I/J</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Thu, Jul 2 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 83</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group H</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Runner-up Group J</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jul 3 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 84</span>
+            </div>
+            <div class="match-time">03:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Runner-up Group K</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Runner-up Group L</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jul 3 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 85</span>
+            </div>
+            <div class="match-time">07:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group B</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">3rd Group E/F/G/I/J</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jul 3 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 86</span>
+            </div>
+            <div class="match-time">22:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Runner-up Group D</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Runner-up Group G</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jul 4 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 87</span>
+            </div>
+            <div class="match-time">02:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group J</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Runner-up Group H</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jul 4 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 88</span>
+            </div>
+            <div class="match-time">05:30 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Group K</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">3rd Group D/E/I/J/L</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sat, Jul 4 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 89</span>
+            </div>
+            <div class="match-time">21:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 73</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 75</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jul 5 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 90</span>
+            </div>
+            <div class="match-time">01:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 74</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 77</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jul 6 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 91</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 76</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 78</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jul 6 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 92</span>
+            </div>
+            <div class="match-time">04:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 79</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 80</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Mon, Jul 6 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 93</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 83</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 84</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jul 7 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 94</span>
+            </div>
+            <div class="match-time">04:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 81</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 82</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jul 7 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 95</span>
+            </div>
+            <div class="match-time">20:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 86</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 88</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jul 8 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 96</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 85</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 87</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jul 10 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 97</span>
+            </div>
+            <div class="match-time">00:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 89</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 90</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Fri, Jul 10 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 98</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 93</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 94</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jul 12 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 99</span>
+            </div>
+            <div class="match-time">01:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 91</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 92</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jul 12 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 100</span>
+            </div>
+            <div class="match-time">05:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 95</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 96</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Tue, Jul 14 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 101</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 97</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 98</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Wed, Jul 15 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 102</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 99</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 100</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jul 19 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 103</span>
+            </div>
+            <div class="match-time">01:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Loser Match 101</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Loser Match 102</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+        <div class="match-card">
+            <div class="match-date">
+                <span>Sun, Jul 19 (UAE)</span>
+                <span style="color: #00ff87; font-size: 0.8rem">Match 104</span>
+            </div>
+            <div class="match-time">23:00 <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+            <div class="match-teams">
+                <div class="team">Winner Match 101</div>
+                <div class="vs">VS</div>
+                <div class="team team-right">Winner Match 102</div>
+            </div>
+            <div class="stadium">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                FIFA World Cup 2026
+            </div>
+        </div>
+    
+    </div>
+
+</div>
+
+</body>
+</html>
