@@ -1,20 +1,36 @@
 const fs = require('fs');
+let code = fs.readFileSync('build_html.js', 'utf8');
+
+const cssMatch = code.match(/<style>([\s\S]*?)<\/style>/);
+const cssContent = cssMatch[1];
+
+const jsMatch = code.match(/<script>\s*const rawMatches = \$\{JSON\.stringify\(matches\)\};\s*([\s\S]*?)<\/script>/);
+const jsContent = jsMatch[1];
+
+const newBuildHtml = `const fs = require('fs');
 
 const matches = JSON.parse(fs.readFileSync('matches.json', 'utf8'));
 
 // Generate version timestamp YYYYMMDDHHMMSS
 const now = new Date();
 const pad = n => n.toString().padStart(2, '0');
-const version = `${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+const version = \`\${now.getFullYear()}\${pad(now.getMonth()+1)}\${pad(now.getDate())}\${pad(now.getHours())}\${pad(now.getMinutes())}\${pad(now.getSeconds())}\`;
 
-const html = `<!DOCTYPE html>
+const cssContent = \`${cssContent.replace(/`/g, '\\`')}\`;
+
+const jsContent = \`${jsContent.replace(/`/g, '\\`').replace(/\$\{/g, '\\${')}\`;
+
+fs.writeFileSync('style.css', cssContent);
+fs.writeFileSync('app.js', jsContent);
+
+const html = \`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 FIFA World Cup Schedule (UAE Time)</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=${version}">
+    <link rel="stylesheet" href="style.css?v=\${version}">
 </head>
 <body>
 
@@ -47,11 +63,10 @@ const html = `<!DOCTYPE html>
 </div>
 
 <script>
-    const rawMatches = ${JSON.stringify(matches)};
+    const rawMatches = \${JSON.stringify(matches)};
 </script>
-<script src="app.js?v=${version}"></script>
-</body>
-</html>`;
+<script src="app.js?v=\${version}"></script>
+</body></html>\`;
 
-fs.writeFileSync('schedule.html', html);
-console.log(`Done generating schedule.html with cache-busting version v=${version}`);
+fs.writeFileSync('build_html.js', newBuildHtml);
+console.log('Successfully refactored build_html.js');
