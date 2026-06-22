@@ -37,7 +37,7 @@
             margin: 0 auto;
         }
 
-        /* Timeline Sidebar */
+        /* Sidebar & Layout styles same as before */
         .sidebar {
             width: var(--timeline-w);
             padding: 40px 20px;
@@ -47,156 +47,33 @@
             overflow-y: auto;
             border-right: 1px solid rgba(255,255,255,0.1);
         }
-
         .sidebar::-webkit-scrollbar { width: 6px; }
         .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+        .sidebar h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .timeline-links { display: flex; flex-direction: column; gap: 10px; border-left: 2px solid rgba(255,255,255,0.1); padding-left: 15px; }
+        .timeline-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; position: relative; }
+        .timeline-links a::before { content: ''; position: absolute; left: -21px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); transition: background 0.2s; }
+        .timeline-links a:hover, .timeline-links a.active { color: #fff; font-weight: 600; }
+        .timeline-links a:hover::before, .timeline-links a.active::before { background: var(--primary); }
 
-        .sidebar h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .main-content { flex: 1; padding: 40px; position: relative; }
+        header { margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; background: linear-gradient(to right, var(--primary), #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        p.subtitle { font-size: 1.1rem; color: var(--text-muted); font-weight: 300; }
+        .timezone-badge { display: inline-block; background: rgba(0, 255, 135, 0.1); color: var(--primary); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; border: 1px solid rgba(0, 255, 135, 0.2); }
 
-        .timeline-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            border-left: 2px solid rgba(255,255,255,0.1);
-            padding-left: 15px;
-        }
-
-        .timeline-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-            position: relative;
-        }
-
-        .timeline-links a::before {
-            content: '';
-            position: absolute;
-            left: -21px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            transition: background 0.2s;
-        }
-
-        .timeline-links a:hover, .timeline-links a.active {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .timeline-links a:hover::before, .timeline-links a.active::before {
-            background: var(--primary);
-        }
-
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            padding: 40px;
-            position: relative;
-        }
-
-        header {
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(to right, var(--primary), #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        p.subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 300;
-        }
-
-        .timezone-badge {
-            display: inline-block;
-            background: rgba(0, 255, 135, 0.1);
-            color: var(--primary);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 10px;
-            border: 1px solid rgba(0, 255, 135, 0.2);
-        }
-
-        /* Controls */
-        .controls {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        select {
-            padding: 10px 15px;
-            background: rgba(255,255,255,0.05);
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-        }
-
+        .controls { display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; align-items: center; }
+        select { padding: 10px 15px; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; font-size: 1rem; outline: none; cursor: pointer; backdrop-filter: blur(10px); }
         select:focus { border-color: var(--primary); }
         select option { background: var(--bg-dark); }
-
-        .btn-export {
-            padding: 10px 20px;
-            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
-            color: #000;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 800;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: opacity 0.2s;
-        }
+        .btn-export { padding: 10px 20px; background: linear-gradient(45deg, var(--primary), var(--primary-dark)); color: #000; border: none; border-radius: 8px; font-size: 1rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: opacity 0.2s; }
         .btn-export:hover { opacity: 0.9; }
 
-        /* Schedule Grid */
-        .date-section {
-            margin-bottom: 50px;
-        }
-
-        .date-header {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding-top: 20px; /* Offset for anchor links */
-        }
-
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
+        .date-section { margin-bottom: 50px; }
+        .date-header { font-size: 1.5rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(255, 255, 255, 0.1); color: #fff; padding-top: 20px; }
+        
+        .schedule-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        
         .match-card {
             background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -206,48 +83,58 @@
             transition: transform 0.3s ease, border-color 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-
-        .match-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 255, 135, 0.5);
-        }
-
-        .match-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), #00d4ff);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+        .match-card:hover { transform: translateY(-2px); border-color: rgba(0, 255, 135, 0.5); }
+        .match-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--primary), #00d4ff); opacity: 0; transition: opacity 0.3s ease; }
         .match-card:hover::before { opacity: 1; }
 
-        .match-time {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
+        .match-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .match-time { font-size: 1.2rem; font-weight: 800; color: var(--primary); }
+        .status-badge { font-size: 0.75rem; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; color: #fff; }
+        .status-badge.finished { background: rgba(0, 212, 255, 0.2); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.4); }
 
-        .match-teams {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .team { font-size: 1.1rem; font-weight: 600; width: 40%; }
+        .match-teams { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .team { font-size: 1.1rem; font-weight: 600; width: 38%; }
         .team-right { text-align: right; }
         .vs { font-size: 0.8rem; color: var(--text-muted); font-weight: 800; background: rgba(255, 255, 255, 0.1); padding: 4px 8px; border-radius: 6px; }
+        .score-badge { font-size: 1.4rem; font-weight: 800; background: rgba(255, 255, 255, 0.15); padding: 4px 12px; border-radius: 8px; color: #fff; border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px; }
 
-        .stadium { font-size: 0.8rem; color: var(--text-muted); }
-        .empty-state { padding: 40px; text-align: center; color: var(--text-muted); font-size: 1.2rem; }
+        .stadium { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px; }
 
-        /* Responsive */
+        /* Match Details Panel */
+        .btn-details {
+            margin-top: auto;
+            width: 100%;
+            padding: 8px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .btn-details:hover { background: rgba(255,255,255,0.1); }
+        
+        .match-details {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .match-details.open { display: block; animation: fadeIn 0.3s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+        .event-row { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px; }
+        .event-home { width: 45%; text-align: right; color: #ddd; }
+        .event-away { width: 45%; text-align: left; color: #ddd; }
+        .event-icon { font-size: 0.8rem; margin: 0 4px; }
+        .pen-text { color: var(--accent); font-size: 0.7rem; font-style: italic; }
+        .og-text { color: #ffae00; font-size: 0.7rem; font-style: italic; }
+
         @media (max-width: 900px) {
             .layout { flex-direction: column; }
             .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 20px; }
@@ -262,44 +149,33 @@
 <body>
 
 <div class="layout">
-    <!-- Sidebar Timeline -->
     <aside class="sidebar">
         <h3>Timeline</h3>
-        <div class="timeline-links" id="timeline">
-            <!-- Timeline links generated via JS -->
-        </div>
+        <div class="timeline-links" id="timeline"></div>
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
         <header>
             <h1>2026 World Cup Schedule</h1>
-            <p class="subtitle">Complete Official Match Schedule</p>
-            <div class="timezone-badge">📍 All Times converted to UAE Time (GST / UTC+4)</div>
+            <p class="subtitle">Live Scores & Official Match Schedule</p>
+            <div class="timezone-badge">📍 All Times in UAE Time (GST / UTC+4)</div>
         </header>
 
         <div class="controls">
-            <select id="team-filter">
-                <option value="all">All Teams</option>
-                <!-- Teams generated via JS -->
-            </select>
+            <select id="team-filter"><option value="all">All Teams</option></select>
             <button class="btn-export" id="export-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 Export to Calendar (iOS/.ics)
             </button>
         </div>
 
-        <div id="schedule-container">
-            <!-- Matches generated via JS -->
-        </div>
+        <div id="schedule-container"></div>
     </main>
 </div>
 
 <script>
-    // Raw Data injected during build
-    const rawMatches = [{"date":"June 11, 2026 (2026-06-11)","time":"1:00 p.m. UTC−6","home":"Mexico","away":"South Africa"},{"date":"June 11, 2026 (2026-06-11)","time":"8:00 p.m. UTC−6","home":"South Korea","away":"Czech Republic"},{"date":"June 18, 2026 (2026-06-18)","time":"12:00 p.m. UTC−4","home":"Czech Republic","away":"South Africa"},{"date":"June 18, 2026 (2026-06-18)","time":"7:00 p.m. UTC−6","home":"Mexico","away":"South Korea"},{"date":"June 24, 2026 (2026-06-24)","time":"7:00 p.m. UTC−6","home":"Czech Republic","away":"Mexico"},{"date":"June 24, 2026 (2026-06-24)","time":"7:00 p.m. UTC−6","home":"South Africa","away":"South Korea"},{"date":"June 12, 2026 (2026-06-12)","time":"3:00 p.m. UTC−4","home":"Canada","away":"Bosnia and Herzegovina"},{"date":"June 13, 2026 (2026-06-13)","time":"12:00 p.m. UTC−7","home":"Qatar","away":"Switzerland"},{"date":"June 18, 2026 (2026-06-18)","time":"12:00 p.m. UTC−7","home":"Switzerland","away":"Bosnia and Herzegovina"},{"date":"June 18, 2026 (2026-06-18)","time":"3:00 p.m. UTC−7","home":"Canada","away":"Qatar"},{"date":"June 24, 2026 (2026-06-24)","time":"12:00 p.m. UTC−7","home":"Switzerland","away":"Canada"},{"date":"June 24, 2026 (2026-06-24)","time":"12:00 p.m. UTC−7","home":"Bosnia and Herzegovina","away":"Qatar"},{"date":"June 13, 2026 (2026-06-13)","time":"6:00 p.m. UTC−4","home":"Brazil","away":"Morocco"},{"date":"June 13, 2026 (2026-06-13)","time":"9:00 p.m. UTC−4","home":"Haiti","away":"Scotland"},{"date":"June 19, 2026 (2026-06-19)","time":"6:00 p.m. UTC−4","home":"Scotland","away":"Morocco"},{"date":"June 19, 2026 (2026-06-19)","time":"8:30 p.m. UTC−4","home":"Brazil","away":"Haiti"},{"date":"June 24, 2026 (2026-06-24)","time":"6:00 p.m. UTC−4","home":"Scotland","away":"Brazil"},{"date":"June 24, 2026 (2026-06-24)","time":"6:00 p.m. UTC−4","home":"Morocco","away":"Haiti"},{"date":"June 12, 2026 (2026-06-12)","time":"6:00 p.m. UTC−7","home":"United States","away":"Paraguay"},{"date":"June 13, 2026 (2026-06-13)","time":"9:00 p.m. UTC−7","home":"Australia","away":"Turkey"},{"date":"June 19, 2026 (2026-06-19)","time":"12:00 p.m. UTC−7","home":"United States","away":"Australia"},{"date":"June 19, 2026 (2026-06-19)","time":"8:00 p.m. UTC−7","home":"Turkey","away":"Paraguay"},{"date":"June 25, 2026 (2026-06-25)","time":"7:00 p.m. UTC−7","home":"Turkey","away":"United States"},{"date":"June 25, 2026 (2026-06-25)","time":"7:00 p.m. UTC−7","home":"Paraguay","away":"Australia"},{"date":"June 14, 2026 (2026-06-14)","time":"12:00 p.m. UTC−5","home":"Germany","away":"Curaçao"},{"date":"June 14, 2026 (2026-06-14)","time":"7:00 p.m. UTC−4","home":"Ivory Coast","away":"Ecuador"},{"date":"June 20, 2026 (2026-06-20)","time":"4:00 p.m. UTC−4","home":"Germany","away":"Ivory Coast"},{"date":"June 20, 2026 (2026-06-20)","time":"7:00 p.m. UTC−5","home":"Ecuador","away":"Curaçao"},{"date":"June 25, 2026 (2026-06-25)","time":"4:00 p.m. UTC−4","home":"Curaçao","away":"Ivory Coast"},{"date":"June 25, 2026 (2026-06-25)","time":"4:00 p.m. UTC−4","home":"Ecuador","away":"Germany"},{"date":"June 14, 2026 (2026-06-14)","time":"3:00 p.m. UTC−5","home":"Netherlands","away":"Japan"},{"date":"June 14, 2026 (2026-06-14)","time":"8:00 p.m. UTC−6","home":"Sweden","away":"Tunisia"},{"date":"June 20, 2026 (2026-06-20)","time":"12:00 p.m. UTC−5","home":"Netherlands","away":"Sweden"},{"date":"June 20, 2026 (2026-06-20)","time":"10:00 p.m. UTC−6","home":"Tunisia","away":"Japan"},{"date":"June 25, 2026 (2026-06-25)","time":"6:00 p.m. UTC−5","home":"Japan","away":"Sweden"},{"date":"June 25, 2026 (2026-06-25)","time":"6:00 p.m. UTC−5","home":"Tunisia","away":"Netherlands"},{"date":"June 15, 2026 (2026-06-15)","time":"12:00 p.m. UTC−7","home":"Belgium","away":"Egypt"},{"date":"June 15, 2026 (2026-06-15)","time":"6:00 p.m. UTC−7","home":"Iran","away":"New Zealand"},{"date":"June 21, 2026 (2026-06-21)","time":"12:00 p.m. UTC−7","home":"Belgium","away":"Iran"},{"date":"June 21, 2026 (2026-06-21)","time":"6:00 p.m. UTC−7","home":"New Zealand","away":"Egypt"},{"date":"June 26, 2026 (2026-06-26)","time":"8:00 p.m. UTC−7","home":"Egypt","away":"Iran"},{"date":"June 26, 2026 (2026-06-26)","time":"8:00 p.m. UTC−7","home":"New Zealand","away":"Belgium"},{"date":"June 15, 2026 (2026-06-15)","time":"12:00 p.m. UTC−4","home":"Spain","away":"Cape Verde"},{"date":"June 15, 2026 (2026-06-15)","time":"6:00 p.m. UTC−4","home":"Saudi Arabia","away":"Uruguay"},{"date":"June 21, 2026 (2026-06-21)","time":"12:00 p.m. UTC−4","home":"Spain","away":"Saudi Arabia"},{"date":"June 21, 2026 (2026-06-21)","time":"6:00 p.m. UTC−4","home":"Uruguay","away":"Cape Verde"},{"date":"June 26, 2026 (2026-06-26)","time":"7:00 p.m. UTC−5","home":"Cape Verde","away":"Saudi Arabia"},{"date":"June 26, 2026 (2026-06-26)","time":"6:00 p.m. UTC−6","home":"Uruguay","away":"Spain"},{"date":"June 16, 2026 (2026-06-16)","time":"3:00 p.m. UTC−4","home":"France","away":"Senegal"},{"date":"June 16, 2026 (2026-06-16)","time":"6:00 p.m. UTC−4","home":"Iraq","away":"Norway"},{"date":"June 22, 2026 (2026-06-22)","time":"5:00 p.m. UTC−4","home":"France","away":"Iraq"},{"date":"June 22, 2026 (2026-06-22)","time":"8:00 p.m. UTC−4","home":"Norway","away":"Senegal"},{"date":"June 26, 2026 (2026-06-26)","time":"3:00 p.m. UTC−4","home":"Norway","away":"France"},{"date":"June 26, 2026 (2026-06-26)","time":"3:00 p.m. UTC−4","home":"Senegal","away":"Iraq"},{"date":"June 16, 2026 (2026-06-16)","time":"8:00 p.m. UTC−5","home":"Argentina","away":"Algeria"},{"date":"June 16, 2026 (2026-06-16)","time":"9:00 p.m. UTC−7","home":"Austria","away":"Jordan"},{"date":"June 22, 2026 (2026-06-22)","time":"12:00 p.m. UTC−5","home":"Argentina","away":"Austria"},{"date":"June 22, 2026 (2026-06-22)","time":"8:00 p.m. UTC−7","home":"Jordan","away":"Algeria"},{"date":"June 27, 2026 (2026-06-27)","time":"9:00 p.m. UTC−5","home":"Algeria","away":"Austria"},{"date":"June 27, 2026 (2026-06-27)","time":"9:00 p.m. UTC−5","home":"Jordan","away":"Argentina"},{"date":"June 17, 2026 (2026-06-17)","time":"12:00 p.m. UTC−5","home":"Portugal","away":"DR Congo"},{"date":"June 17, 2026 (2026-06-17)","time":"8:00 p.m. UTC−6","home":"Uzbekistan","away":"Colombia"},{"date":"June 23, 2026 (2026-06-23)","time":"12:00 p.m. UTC−5","home":"Portugal","away":"Uzbekistan"},{"date":"June 23, 2026 (2026-06-23)","time":"8:00 p.m. UTC−6","home":"Colombia","away":"DR Congo"},{"date":"June 27, 2026 (2026-06-27)","time":"7:30 p.m. UTC−4","home":"Colombia","away":"Portugal"},{"date":"June 27, 2026 (2026-06-27)","time":"7:30 p.m. UTC−4","home":"DR Congo","away":"Uzbekistan"},{"date":"June 17, 2026 (2026-06-17)","time":"3:00 p.m. UTC−5","home":"England","away":"Croatia"},{"date":"June 17, 2026 (2026-06-17)","time":"7:00 p.m. UTC−4","home":"Ghana","away":"Panama"},{"date":"June 23, 2026 (2026-06-23)","time":"4:00 p.m. UTC−4","home":"England","away":"Ghana"},{"date":"June 23, 2026 (2026-06-23)","time":"7:00 p.m. UTC−4","home":"Panama","away":"Croatia"},{"date":"June 27, 2026 (2026-06-27)","time":"5:00 p.m. UTC−4","home":"Panama","away":"England"},{"date":"June 27, 2026 (2026-06-27)","time":"5:00 p.m. UTC−4","home":"Croatia","away":"Ghana"},{"date":"June 28, 2026 (2026-06-28)","time":"12:00 p.m. UTC−7","home":"Runner-up Group A","away":"Runner-up Group B"},{"date":"June 29, 2026 (2026-06-29)","time":"12:00 p.m. UTC−5","home":"Winner Group C","away":"Runner-up Group F"},{"date":"June 29, 2026 (2026-06-29)","time":"4:30 p.m. UTC−4","home":"Germany","away":"3rd Group A/B/C/D/F"},{"date":"June 29, 2026 (2026-06-29)","time":"7:00 p.m. UTC−6","home":"Winner Group F","away":"Runner-up Group C"},{"date":"June 30, 2026 (2026-06-30)","time":"12:00 p.m. UTC−5","home":"Runner-up Group E","away":"Runner-up Group I"},{"date":"June 30, 2026 (2026-06-30)","time":"5:00 p.m. UTC−4","home":"Winner Group I","away":"3rd Group C/D/F/G/H"},{"date":"June 30, 2026 (2026-06-30)","time":"7:00 p.m. UTC−6","home":"Mexico","away":"3rd Group C/E/F/H/I"},{"date":"July 1, 2026 (2026-07-01)","time":"12:00 p.m. UTC−4","home":"Winner Group L","away":"3rd Group E/H/I/J/K"},{"date":"July 1, 2026 (2026-07-01)","time":"1:00 p.m. UTC−7","home":"Winner Group G","away":"3rd Group A/E/H/I/J"},{"date":"July 1, 2026 (2026-07-01)","time":"5:00 p.m. UTC−7","home":"United States","away":"3rd Group B/E/F/I/J"},{"date":"July 2, 2026 (2026-07-02)","time":"12:00 p.m. UTC−7","home":"Winner Group H","away":"Runner-up Group J"},{"date":"July 2, 2026 (2026-07-02)","time":"7:00 p.m. UTC−4","home":"Runner-up Group K","away":"Runner-up Group L"},{"date":"July 2, 2026 (2026-07-02)","time":"8:00 p.m. UTC−7","home":"Winner Group B","away":"3rd Group E/F/G/I/J"},{"date":"July 3, 2026 (2026-07-03)","time":"1:00 p.m. UTC−5","home":"Runner-up Group D","away":"Runner-up Group G"},{"date":"July 3, 2026 (2026-07-03)","time":"6:00 p.m. UTC−4","home":"Winner Group J","away":"Runner-up Group H"},{"date":"July 3, 2026 (2026-07-03)","time":"8:30 p.m. UTC−5","home":"Winner Group K","away":"3rd Group D/E/I/J/L"},{"date":"July 4, 2026 (2026-07-04)","time":"12:00 p.m. UTC−5","home":"Winner Match 73","away":"Winner Match 75"},{"date":"July 4, 2026 (2026-07-04)","time":"5:00 p.m. UTC−4","home":"Winner Match 74","away":"Winner Match 77"},{"date":"July 5, 2026 (2026-07-05)","time":"4:00 p.m. UTC−4","home":"Winner Match 76","away":"Winner Match 78"},{"date":"July 5, 2026 (2026-07-05)","time":"6:00 p.m. UTC−6","home":"Winner Match 79","away":"Winner Match 80"},{"date":"July 6, 2026 (2026-07-06)","time":"2:00 p.m. UTC−5","home":"Winner Match 83","away":"Winner Match 84"},{"date":"July 6, 2026 (2026-07-06)","time":"5:00 p.m. UTC−7","home":"Winner Match 81","away":"Winner Match 82"},{"date":"July 7, 2026 (2026-07-07)","time":"12:00 p.m. UTC−4","home":"Winner Match 86","away":"Winner Match 88"},{"date":"July 7, 2026 (2026-07-07)","time":"1:00 p.m. UTC−7","home":"Winner Match 85","away":"Winner Match 87"},{"date":"July 9, 2026 (2026-07-09)","time":"4:00 p.m. UTC−4","home":"Winner Match 89","away":"Winner Match 90"},{"date":"July 10, 2026 (2026-07-10)","time":"12:00 p.m. UTC−7","home":"Winner Match 93","away":"Winner Match 94"},{"date":"July 11, 2026 (2026-07-11)","time":"5:00 p.m. UTC−4","home":"Winner Match 91","away":"Winner Match 92"},{"date":"July 11, 2026 (2026-07-11)","time":"8:00 p.m. UTC−5","home":"Winner Match 95","away":"Winner Match 96"},{"date":"July 14, 2026 (2026-07-14)","time":"2:00 p.m. UTC−5","home":"Winner Match 97","away":"Winner Match 98"},{"date":"July 15, 2026 (2026-07-15)","time":"3:00 p.m. UTC−4","home":"Winner Match 99","away":"Winner Match 100"},{"date":"July 18, 2026 (2026-07-18)","time":"5:00 p.m. UTC−4","home":"Loser Match 101","away":"Loser Match 102"},{"date":"July 19, 2026 (2026-07-19)","time":"3:00 p.m. UTC−4","home":"Winner Match 101","away":"Winner Match 102"}];
+    const rawMatches = [{"date":"June 11, 2026 (2026-06-11)","time":"1:00 p.m. UTC−6","home":"Mexico","away":"South Africa","score":"2–0","homeGoals":[{"player":"Quiñones","times":["9'"],"isPenalty":false,"isOwnGoal":false},{"player":"Jiménez","times":["67'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 11, 2026 (2026-06-11)","time":"8:00 p.m. UTC−6","home":"South Korea","away":"Czech Republic","score":"2–1","homeGoals":[{"player":"Hwang In-beom","times":["67'"],"isPenalty":false,"isOwnGoal":false},{"player":"Oh Hyeon-gyu","times":["80'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 18, 2026 (2026-06-18)","time":"12:00 p.m. UTC−4","home":"Czech Republic","away":"South Africa","score":"1–1","homeGoals":[{"player":"Sadílek","times":["6'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Mokoena","times":["83' (pen.)"],"isPenalty":true,"isOwnGoal":false}]},{"date":"June 18, 2026 (2026-06-18)","time":"7:00 p.m. UTC−6","home":"Mexico","away":"South Korea","score":"1–0","homeGoals":[{"player":"Romo","times":["50'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 24, 2026 (2026-06-24)","time":"7:00 p.m. UTC−6","home":"Czech Republic","away":"Mexico","score":"Match 53","homeGoals":[],"awayGoals":[]},{"date":"June 24, 2026 (2026-06-24)","time":"7:00 p.m. UTC−6","home":"South Africa","away":"South Korea","score":"Match 54","homeGoals":[],"awayGoals":[]},{"date":"June 12, 2026 (2026-06-12)","time":"3:00 p.m. UTC−4","home":"Canada","away":"Bosnia and Herzegovina","score":"1–1","homeGoals":[{"player":"Larin","times":["78'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Lukić","times":["21'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 13, 2026 (2026-06-13)","time":"12:00 p.m. UTC−7","home":"Qatar","away":"Switzerland","score":"1–1","homeGoals":[{"player":"Muheim","times":["90+4' (o.g.)"],"isPenalty":false,"isOwnGoal":true}],"awayGoals":[{"player":"Embolo","times":["17' (pen.)"],"isPenalty":true,"isOwnGoal":false}]},{"date":"June 18, 2026 (2026-06-18)","time":"12:00 p.m. UTC−7","home":"Switzerland","away":"Bosnia and Herzegovina","score":"4–1","homeGoals":[{"player":"Manzambi","times":["74'","90'"],"isPenalty":false,"isOwnGoal":false},{"player":"Vargas","times":["84'"],"isPenalty":false,"isOwnGoal":false},{"player":"Xhaka","times":["90+7' (pen.)"],"isPenalty":true,"isOwnGoal":false}],"awayGoals":[{"player":"Mahmić","times":["90+3'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 18, 2026 (2026-06-18)","time":"3:00 p.m. UTC−7","home":"Canada","away":"Qatar","score":"6–0","homeGoals":[{"player":"Larin","times":["16'"],"isPenalty":false,"isOwnGoal":false},{"player":"J. David","times":["29'","45+3'","90+2'"],"isPenalty":false,"isOwnGoal":false},{"player":"Saliba","times":["64'"],"isPenalty":false,"isOwnGoal":false},{"player":"Manai","times":["75' (o.g.)"],"isPenalty":false,"isOwnGoal":true}],"awayGoals":[]},{"date":"June 24, 2026 (2026-06-24)","time":"12:00 p.m. UTC−7","home":"Switzerland","away":"Canada","score":"Match 51","homeGoals":[],"awayGoals":[]},{"date":"June 24, 2026 (2026-06-24)","time":"12:00 p.m. UTC−7","home":"Bosnia and Herzegovina","away":"Qatar","score":"Match 52","homeGoals":[],"awayGoals":[]},{"date":"June 13, 2026 (2026-06-13)","time":"6:00 p.m. UTC−4","home":"Brazil","away":"Morocco","score":"1–1","homeGoals":[{"player":"Vinícius","times":["32'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Saibari","times":["21'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 13, 2026 (2026-06-13)","time":"9:00 p.m. UTC−4","home":"Haiti","away":"Scotland","score":"0–1","homeGoals":[],"awayGoals":[{"player":"McGinn","times":["28'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 19, 2026 (2026-06-19)","time":"6:00 p.m. UTC−4","home":"Scotland","away":"Morocco","score":"0–1","homeGoals":[],"awayGoals":[{"player":"Saibari","times":["2'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 19, 2026 (2026-06-19)","time":"8:30 p.m. UTC−4","home":"Brazil","away":"Haiti","score":"3–0","homeGoals":[{"player":"Cunha","times":["23'","36'"],"isPenalty":false,"isOwnGoal":false},{"player":"Vinícius","times":["45+3'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 24, 2026 (2026-06-24)","time":"6:00 p.m. UTC−4","home":"Scotland","away":"Brazil","score":"Match 49","homeGoals":[],"awayGoals":[]},{"date":"June 24, 2026 (2026-06-24)","time":"6:00 p.m. UTC−4","home":"Morocco","away":"Haiti","score":"Match 50","homeGoals":[],"awayGoals":[]},{"date":"June 12, 2026 (2026-06-12)","time":"6:00 p.m. UTC−7","home":"United States","away":"Paraguay","score":"4–1","homeGoals":[{"player":"Bobadilla","times":["7' (o.g.)"],"isPenalty":false,"isOwnGoal":true},{"player":"Balogun","times":["31'","45+5'"],"isPenalty":false,"isOwnGoal":false},{"player":"Reyna","times":["90+8'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Maurício","times":["73'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 13, 2026 (2026-06-13)","time":"9:00 p.m. UTC−7","home":"Australia","away":"Turkey","score":"2–0","homeGoals":[{"player":"Irankunda","times":["27'"],"isPenalty":false,"isOwnGoal":false},{"player":"Metcalfe","times":["75'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 19, 2026 (2026-06-19)","time":"12:00 p.m. UTC−7","home":"United States","away":"Australia","score":"2–0","homeGoals":[{"player":"Burgess","times":["11' (o.g.)"],"isPenalty":false,"isOwnGoal":true},{"player":"Freeman","times":["43'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 19, 2026 (2026-06-19)","time":"8:00 p.m. UTC−7","home":"Turkey","away":"Paraguay","score":"0–1","homeGoals":[],"awayGoals":[{"player":"Galarza","times":["2'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 25, 2026 (2026-06-25)","time":"7:00 p.m. UTC−7","home":"Turkey","away":"United States","score":"Match 59","homeGoals":[],"awayGoals":[]},{"date":"June 25, 2026 (2026-06-25)","time":"7:00 p.m. UTC−7","home":"Paraguay","away":"Australia","score":"Match 60","homeGoals":[],"awayGoals":[]},{"date":"June 14, 2026 (2026-06-14)","time":"12:00 p.m. UTC−5","home":"Germany","away":"Curaçao","score":"7–1","homeGoals":[{"player":"Nmecha","times":["6'"],"isPenalty":false,"isOwnGoal":false},{"player":"Schlotterbeck","times":["38'"],"isPenalty":false,"isOwnGoal":false},{"player":"Havertz","times":["45+5' (pen.)","88'"],"isPenalty":true,"isOwnGoal":false},{"player":"Musiala","times":["47'"],"isPenalty":false,"isOwnGoal":false},{"player":"Brown","times":["68'"],"isPenalty":false,"isOwnGoal":false},{"player":"Undav","times":["78'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Comenencia","times":["21'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 14, 2026 (2026-06-14)","time":"7:00 p.m. UTC−4","home":"Ivory Coast","away":"Ecuador","score":"1–0","homeGoals":[{"player":"Diallo","times":["90'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 20, 2026 (2026-06-20)","time":"4:00 p.m. UTC−4","home":"Germany","away":"Ivory Coast","score":"2–1","homeGoals":[{"player":"Undav","times":["68'","90+4'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Kessié","times":["30'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 20, 2026 (2026-06-20)","time":"7:00 p.m. UTC−5","home":"Ecuador","away":"Curaçao","score":"0–0","homeGoals":[],"awayGoals":[]},{"date":"June 25, 2026 (2026-06-25)","time":"4:00 p.m. UTC−4","home":"Curaçao","away":"Ivory Coast","score":"Match 55","homeGoals":[],"awayGoals":[]},{"date":"June 25, 2026 (2026-06-25)","time":"4:00 p.m. UTC−4","home":"Ecuador","away":"Germany","score":"Match 56","homeGoals":[],"awayGoals":[]},{"date":"June 14, 2026 (2026-06-14)","time":"3:00 p.m. UTC−5","home":"Netherlands","away":"Japan","score":"2–2","homeGoals":[{"player":"Van Dijk","times":["51'"],"isPenalty":false,"isOwnGoal":false},{"player":"Summerville","times":["64'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Nakamura","times":["57'"],"isPenalty":false,"isOwnGoal":false},{"player":"Kamada","times":["88'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 14, 2026 (2026-06-14)","time":"8:00 p.m. UTC−6","home":"Sweden","away":"Tunisia","score":"5–1","homeGoals":[{"player":"Ayari","times":["7'","90+6'"],"isPenalty":false,"isOwnGoal":false},{"player":"Isak","times":["30'"],"isPenalty":false,"isOwnGoal":false},{"player":"Gyökeres","times":["59'"],"isPenalty":false,"isOwnGoal":false},{"player":"Svanberg","times":["84'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Rekik","times":["43'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 20, 2026 (2026-06-20)","time":"12:00 p.m. UTC−5","home":"Netherlands","away":"Sweden","score":"5–1","homeGoals":[{"player":"Brobbey","times":["5'","17'"],"isPenalty":false,"isOwnGoal":false},{"player":"Gakpo","times":["47'","54'"],"isPenalty":false,"isOwnGoal":false},{"player":"Summerville","times":["89'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Elanga","times":["59'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 20, 2026 (2026-06-20)","time":"10:00 p.m. UTC−6","home":"Tunisia","away":"Japan","score":"0–4","homeGoals":[],"awayGoals":[{"player":"Kamada","times":["4'"],"isPenalty":false,"isOwnGoal":false},{"player":"Ueda","times":["31'","83'"],"isPenalty":false,"isOwnGoal":false},{"player":"J. Itō","times":["69'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 25, 2026 (2026-06-25)","time":"6:00 p.m. UTC−5","home":"Japan","away":"Sweden","score":"Match 57","homeGoals":[],"awayGoals":[]},{"date":"June 25, 2026 (2026-06-25)","time":"6:00 p.m. UTC−5","home":"Tunisia","away":"Netherlands","score":"Match 58","homeGoals":[],"awayGoals":[]},{"date":"June 15, 2026 (2026-06-15)","time":"12:00 p.m. UTC−7","home":"Belgium","away":"Egypt","score":"1–1","homeGoals":[{"player":"Hany","times":["66' (o.g.)"],"isPenalty":false,"isOwnGoal":true}],"awayGoals":[{"player":"Ashour","times":["19'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 15, 2026 (2026-06-15)","time":"6:00 p.m. UTC−7","home":"Iran","away":"New Zealand","score":"2–2","homeGoals":[{"player":"Rezaeian","times":["32'"],"isPenalty":false,"isOwnGoal":false},{"player":"Mohebi","times":["64'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Just","times":["7'","54'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 21, 2026 (2026-06-21)","time":"12:00 p.m. UTC−7","home":"Belgium","away":"Iran","score":"0–0","homeGoals":[],"awayGoals":[]},{"date":"June 21, 2026 (2026-06-21)","time":"6:00 p.m. UTC−7","home":"New Zealand","away":"Egypt","score":"1–3","homeGoals":[{"player":"Surman","times":["15'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Ziko","times":["58'"],"isPenalty":false,"isOwnGoal":false},{"player":"Salah","times":["67'"],"isPenalty":false,"isOwnGoal":false},{"player":"Trézéguet","times":["82'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 26, 2026 (2026-06-26)","time":"8:00 p.m. UTC−7","home":"Egypt","away":"Iran","score":"Match 63","homeGoals":[],"awayGoals":[]},{"date":"June 26, 2026 (2026-06-26)","time":"8:00 p.m. UTC−7","home":"New Zealand","away":"Belgium","score":"Match 64","homeGoals":[],"awayGoals":[]},{"date":"June 15, 2026 (2026-06-15)","time":"12:00 p.m. UTC−4","home":"Spain","away":"Cape Verde","score":"0–0","homeGoals":[],"awayGoals":[]},{"date":"June 15, 2026 (2026-06-15)","time":"6:00 p.m. UTC−4","home":"Saudi Arabia","away":"Uruguay","score":"1–1","homeGoals":[{"player":"Al-Amri","times":["41'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"M. Araújo","times":["80'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 21, 2026 (2026-06-21)","time":"12:00 p.m. UTC−4","home":"Spain","away":"Saudi Arabia","score":"4–0","homeGoals":[{"player":"Yamal","times":["10'"],"isPenalty":false,"isOwnGoal":false},{"player":"Oyarzabal","times":["21'","24'"],"isPenalty":false,"isOwnGoal":false},{"player":"Al-Tambakti","times":["49' (o.g.)"],"isPenalty":false,"isOwnGoal":true}],"awayGoals":[]},{"date":"June 21, 2026 (2026-06-21)","time":"6:00 p.m. UTC−4","home":"Uruguay","away":"Cape Verde","score":"2–2","homeGoals":[{"player":"M. Araújo","times":["44'"],"isPenalty":false,"isOwnGoal":false},{"player":"Canobbio","times":["45+6'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"K. Pina","times":["21'"],"isPenalty":false,"isOwnGoal":false},{"player":"H. Varela","times":["61'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 26, 2026 (2026-06-26)","time":"7:00 p.m. UTC−5","home":"Cape Verde","away":"Saudi Arabia","score":"Match 65","homeGoals":[],"awayGoals":[]},{"date":"June 26, 2026 (2026-06-26)","time":"6:00 p.m. UTC−6","home":"Uruguay","away":"Spain","score":"Match 66","homeGoals":[],"awayGoals":[]},{"date":"June 16, 2026 (2026-06-16)","time":"3:00 p.m. UTC−4","home":"France","away":"Senegal","score":"3–1","homeGoals":[{"player":"Mbappé","times":["66'","90+6'"],"isPenalty":false,"isOwnGoal":false},{"player":"Barcola","times":["82'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Mbaye","times":["90+5'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 16, 2026 (2026-06-16)","time":"6:00 p.m. UTC−4","home":"Iraq","away":"Norway","score":"1–4","homeGoals":[{"player":"Hussein","times":["39'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Haaland","times":["29'","43'"],"isPenalty":false,"isOwnGoal":false},{"player":"Østigård","times":["76'"],"isPenalty":false,"isOwnGoal":false},{"player":"Hussein","times":["90+6' (o.g.)"],"isPenalty":false,"isOwnGoal":true}]},{"date":"June 22, 2026 (2026-06-22)","time":"5:00 p.m. UTC−4","home":"France","away":"Iraq","score":"Match 42","homeGoals":[],"awayGoals":[]},{"date":"June 22, 2026 (2026-06-22)","time":"8:00 p.m. UTC−4","home":"Norway","away":"Senegal","score":"Match 41","homeGoals":[],"awayGoals":[]},{"date":"June 26, 2026 (2026-06-26)","time":"3:00 p.m. UTC−4","home":"Norway","away":"France","score":"Match 61","homeGoals":[],"awayGoals":[]},{"date":"June 26, 2026 (2026-06-26)","time":"3:00 p.m. UTC−4","home":"Senegal","away":"Iraq","score":"Match 62","homeGoals":[],"awayGoals":[]},{"date":"June 16, 2026 (2026-06-16)","time":"8:00 p.m. UTC−5","home":"Argentina","away":"Algeria","score":"3–0","homeGoals":[{"player":"Messi","times":["17'","60'","76'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 16, 2026 (2026-06-16)","time":"9:00 p.m. UTC−7","home":"Austria","away":"Jordan","score":"3–1","homeGoals":[{"player":"Schmid","times":["20'"],"isPenalty":false,"isOwnGoal":false},{"player":"Al-Arab","times":["76' (o.g.)"],"isPenalty":false,"isOwnGoal":true},{"player":"Arnautović","times":["90+12' (pen.)"],"isPenalty":true,"isOwnGoal":false}],"awayGoals":[{"player":"Olwan","times":["50'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 22, 2026 (2026-06-22)","time":"12:00 p.m. UTC−5","home":"Argentina","away":"Austria","score":"Match 43","homeGoals":[],"awayGoals":[]},{"date":"June 22, 2026 (2026-06-22)","time":"8:00 p.m. UTC−7","home":"Jordan","away":"Algeria","score":"Match 44","homeGoals":[],"awayGoals":[]},{"date":"June 27, 2026 (2026-06-27)","time":"9:00 p.m. UTC−5","home":"Algeria","away":"Austria","score":"Match 69","homeGoals":[],"awayGoals":[]},{"date":"June 27, 2026 (2026-06-27)","time":"9:00 p.m. UTC−5","home":"Jordan","away":"Argentina","score":"Match 70","homeGoals":[],"awayGoals":[]},{"date":"June 17, 2026 (2026-06-17)","time":"12:00 p.m. UTC−5","home":"Portugal","away":"DR Congo","score":"1–1","homeGoals":[{"player":"J. Neves","times":["6'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Wissa","times":["45+5'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 17, 2026 (2026-06-17)","time":"8:00 p.m. UTC−6","home":"Uzbekistan","away":"Colombia","score":"1–3","homeGoals":[{"player":"Fayzullaev","times":["60'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Muñoz","times":["40'"],"isPenalty":false,"isOwnGoal":false},{"player":"Díaz","times":["65'"],"isPenalty":false,"isOwnGoal":false},{"player":"Campaz","times":["90+9'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 23, 2026 (2026-06-23)","time":"12:00 p.m. UTC−5","home":"Portugal","away":"Uzbekistan","score":"Match 47","homeGoals":[],"awayGoals":[]},{"date":"June 23, 2026 (2026-06-23)","time":"8:00 p.m. UTC−6","home":"Colombia","away":"DR Congo","score":"Match 48","homeGoals":[],"awayGoals":[]},{"date":"June 27, 2026 (2026-06-27)","time":"7:30 p.m. UTC−4","home":"Colombia","away":"Portugal","score":"Match 71","homeGoals":[],"awayGoals":[]},{"date":"June 27, 2026 (2026-06-27)","time":"7:30 p.m. UTC−4","home":"DR Congo","away":"Uzbekistan","score":"Match 72","homeGoals":[],"awayGoals":[]},{"date":"June 17, 2026 (2026-06-17)","time":"3:00 p.m. UTC−5","home":"England","away":"Croatia","score":"4–2","homeGoals":[{"player":"Kane","times":["12' (pen.)","42'"],"isPenalty":true,"isOwnGoal":false},{"player":"Bellingham","times":["47'"],"isPenalty":false,"isOwnGoal":false},{"player":"Rashford","times":["85'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[{"player":"Baturina","times":["36'"],"isPenalty":false,"isOwnGoal":false},{"player":"Musa","times":["45+5'"],"isPenalty":false,"isOwnGoal":false}]},{"date":"June 17, 2026 (2026-06-17)","time":"7:00 p.m. UTC−4","home":"Ghana","away":"Panama","score":"1–0","homeGoals":[{"player":"Yirenkyi","times":["90+5'"],"isPenalty":false,"isOwnGoal":false}],"awayGoals":[]},{"date":"June 23, 2026 (2026-06-23)","time":"4:00 p.m. UTC−4","home":"England","away":"Ghana","score":"Match 45","homeGoals":[],"awayGoals":[]},{"date":"June 23, 2026 (2026-06-23)","time":"7:00 p.m. UTC−4","home":"Panama","away":"Croatia","score":"Match 46","homeGoals":[],"awayGoals":[]},{"date":"June 27, 2026 (2026-06-27)","time":"5:00 p.m. UTC−4","home":"Panama","away":"England","score":"Match 67","homeGoals":[],"awayGoals":[]},{"date":"June 27, 2026 (2026-06-27)","time":"5:00 p.m. UTC−4","home":"Croatia","away":"Ghana","score":"Match 68","homeGoals":[],"awayGoals":[]},{"date":"June 28, 2026 (2026-06-28)","time":"12:00 p.m. UTC−7","home":"Runner-up Group A","away":"Runner-up Group B","score":"Match 73","homeGoals":[],"awayGoals":[]},{"date":"June 29, 2026 (2026-06-29)","time":"12:00 p.m. UTC−5","home":"Winner Group C","away":"Runner-up Group F","score":"Match 76","homeGoals":[],"awayGoals":[]},{"date":"June 29, 2026 (2026-06-29)","time":"4:30 p.m. UTC−4","home":"Germany","away":"3rd Group A/B/C/D/F","score":"Match 74","homeGoals":[],"awayGoals":[]},{"date":"June 29, 2026 (2026-06-29)","time":"7:00 p.m. UTC−6","home":"Winner Group F","away":"Runner-up Group C","score":"Match 75","homeGoals":[],"awayGoals":[]},{"date":"June 30, 2026 (2026-06-30)","time":"12:00 p.m. UTC−5","home":"Runner-up Group E","away":"Runner-up Group I","score":"Match 78","homeGoals":[],"awayGoals":[]},{"date":"June 30, 2026 (2026-06-30)","time":"5:00 p.m. UTC−4","home":"Winner Group I","away":"3rd Group C/D/F/G/H","score":"Match 77","homeGoals":[],"awayGoals":[]},{"date":"June 30, 2026 (2026-06-30)","time":"7:00 p.m. UTC−6","home":"Mexico","away":"3rd Group C/E/F/H/I","score":"Match 79","homeGoals":[],"awayGoals":[]},{"date":"July 1, 2026 (2026-07-01)","time":"12:00 p.m. UTC−4","home":"Winner Group L","away":"3rd Group E/H/I/J/K","score":"Match 80","homeGoals":[],"awayGoals":[]},{"date":"July 1, 2026 (2026-07-01)","time":"1:00 p.m. UTC−7","home":"Winner Group G","away":"3rd Group A/E/H/I/J","score":"Match 82","homeGoals":[],"awayGoals":[]},{"date":"July 1, 2026 (2026-07-01)","time":"5:00 p.m. UTC−7","home":"United States","away":"3rd Group B/E/F/I/J","score":"Match 81","homeGoals":[],"awayGoals":[]},{"date":"July 2, 2026 (2026-07-02)","time":"12:00 p.m. UTC−7","home":"Winner Group H","away":"Runner-up Group J","score":"Match 84","homeGoals":[],"awayGoals":[]},{"date":"July 2, 2026 (2026-07-02)","time":"7:00 p.m. UTC−4","home":"Runner-up Group K","away":"Runner-up Group L","score":"Match 83","homeGoals":[],"awayGoals":[]},{"date":"July 2, 2026 (2026-07-02)","time":"8:00 p.m. UTC−7","home":"Winner Group B","away":"3rd Group E/F/G/I/J","score":"Match 85","homeGoals":[],"awayGoals":[]},{"date":"July 3, 2026 (2026-07-03)","time":"1:00 p.m. UTC−5","home":"Runner-up Group D","away":"Runner-up Group G","score":"Match 88","homeGoals":[],"awayGoals":[]},{"date":"July 3, 2026 (2026-07-03)","time":"6:00 p.m. UTC−4","home":"Winner Group J","away":"Runner-up Group H","score":"Match 86","homeGoals":[],"awayGoals":[]},{"date":"July 3, 2026 (2026-07-03)","time":"8:30 p.m. UTC−5","home":"Winner Group K","away":"3rd Group D/E/I/J/L","score":"Match 87","homeGoals":[],"awayGoals":[]},{"date":"July 4, 2026 (2026-07-04)","time":"12:00 p.m. UTC−5","home":"Winner Match 73","away":"Winner Match 75","score":"Match 90","homeGoals":[],"awayGoals":[]},{"date":"July 4, 2026 (2026-07-04)","time":"5:00 p.m. UTC−4","home":"Winner Match 74","away":"Winner Match 77","score":"Match 89","homeGoals":[],"awayGoals":[]},{"date":"July 5, 2026 (2026-07-05)","time":"4:00 p.m. UTC−4","home":"Winner Match 76","away":"Winner Match 78","score":"Match 91","homeGoals":[],"awayGoals":[]},{"date":"July 5, 2026 (2026-07-05)","time":"6:00 p.m. UTC−6","home":"Winner Match 79","away":"Winner Match 80","score":"Match 92","homeGoals":[],"awayGoals":[]},{"date":"July 6, 2026 (2026-07-06)","time":"2:00 p.m. UTC−5","home":"Winner Match 83","away":"Winner Match 84","score":"Match 93","homeGoals":[],"awayGoals":[]},{"date":"July 6, 2026 (2026-07-06)","time":"5:00 p.m. UTC−7","home":"Winner Match 81","away":"Winner Match 82","score":"Match 94","homeGoals":[],"awayGoals":[]},{"date":"July 7, 2026 (2026-07-07)","time":"12:00 p.m. UTC−4","home":"Winner Match 86","away":"Winner Match 88","score":"Match 95","homeGoals":[],"awayGoals":[]},{"date":"July 7, 2026 (2026-07-07)","time":"1:00 p.m. UTC−7","home":"Winner Match 85","away":"Winner Match 87","score":"Match 96","homeGoals":[],"awayGoals":[]},{"date":"July 9, 2026 (2026-07-09)","time":"4:00 p.m. UTC−4","home":"Winner Match 89","away":"Winner Match 90","score":"Match 97","homeGoals":[],"awayGoals":[]},{"date":"July 10, 2026 (2026-07-10)","time":"12:00 p.m. UTC−7","home":"Winner Match 93","away":"Winner Match 94","score":"Match 98","homeGoals":[],"awayGoals":[]},{"date":"July 11, 2026 (2026-07-11)","time":"5:00 p.m. UTC−4","home":"Winner Match 91","away":"Winner Match 92","score":"Match 99","homeGoals":[],"awayGoals":[]},{"date":"July 11, 2026 (2026-07-11)","time":"8:00 p.m. UTC−5","home":"Winner Match 95","away":"Winner Match 96","score":"Match 100","homeGoals":[],"awayGoals":[]},{"date":"July 14, 2026 (2026-07-14)","time":"2:00 p.m. UTC−5","home":"Winner Match 97","away":"Winner Match 98","score":"Match 101","homeGoals":[],"awayGoals":[]},{"date":"July 15, 2026 (2026-07-15)","time":"3:00 p.m. UTC−4","home":"Winner Match 99","away":"Winner Match 100","score":"Match 102","homeGoals":[],"awayGoals":[]},{"date":"July 18, 2026 (2026-07-18)","time":"5:00 p.m. UTC−4","home":"Loser Match 101","away":"Loser Match 102","score":"Match 103","homeGoals":[],"awayGoals":[]},{"date":"July 19, 2026 (2026-07-19)","time":"3:00 p.m. UTC−4","home":"Winner Match 101","away":"Winner Match 102","score":"Match 104","homeGoals":[],"awayGoals":[]}];
 
-    // Helper: Convert UTC times to UAE Time (UTC+4)
     function convertToUAE(dateStr, timeStr) {
         const dateMatch = dateStr.match(/\((\d{4}-\d{2}-\d{2})\)/);
         if (!dateMatch) return null;
@@ -317,35 +193,24 @@
         if (ampm === 'p.m.' && hours !== 12) hours += 12;
         if (ampm === 'a.m.' && hours === 12) hours = 0;
         
-        const totalOffset = utcOffset + 4; // To UTC then to GST (+4)
+        const totalOffset = utcOffset + 4; 
         
         let uaeDateObj = new Date(isoDate + "T00:00:00Z");
-        uaeDateObj.setUTCHours(hours + totalOffset, mins, 0, 0); // Handle timezone shifts correctly
+        uaeDateObj.setUTCHours(hours + totalOffset, mins, 0, 0); 
         
-        // Output format
         const formatHours = uaeDateObj.getUTCHours().toString().padStart(2, '0');
         const formatMins = uaeDateObj.getUTCMinutes().toString().padStart(2, '0');
         
-        const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+        const options = { weekday: 'short', month: 'short', day: 'numeric' };
         const displayDate = uaeDateObj.toLocaleDateString('en-US', { timeZone: 'UTC', ...options});
-        const idDate = uaeDateObj.toISOString().split('T')[0]; // YYYY-MM-DD
+        const idDate = uaeDateObj.toISOString().split('T')[0]; 
         
-        // Exact UTC Timestamp for ICS export
-        // Note: The above setUTCHours converted the local match time to UTC. 
-        // Wait, the match time was local with UTC-X offset.
-        // Let's get the absolute UTC time for ICS:
         let absoluteUtcDate = new Date(isoDate + "T00:00:00Z");
-        absoluteUtcDate.setUTCHours(hours + utcOffset, mins, 0, 0); // Original time + offset = UTC
+        absoluteUtcDate.setUTCHours(hours + utcOffset, mins, 0, 0); 
         
-        return {
-            time: `${formatHours}:${formatMins}`,
-            displayDate: displayDate,
-            idDate: idDate,
-            utcTimestamp: absoluteUtcDate
-        };
+        return { time: `${formatHours}:${formatMins}`, displayDate, idDate, utcTimestamp: absoluteUtcDate };
     }
 
-    // Prepare processed data
     const matchesData = [];
     const teamsSet = new Set();
     
@@ -356,11 +221,32 @@
         
         teamsSet.add(m.home);
         teamsSet.add(m.away);
+
+        // Normalize goal events to a single timeline
+        let events = [];
+        if(m.homeGoals) {
+            m.homeGoals.forEach(g => {
+                g.times.forEach(t => events.push({ team: 'home', player: g.player, time: t, isPenalty: g.isPenalty, isOwnGoal: g.isOwnGoal }));
+            });
+        }
+        if(m.awayGoals) {
+            m.awayGoals.forEach(g => {
+                g.times.forEach(t => events.push({ team: 'away', player: g.player, time: t, isPenalty: g.isPenalty, isOwnGoal: g.isOwnGoal }));
+            });
+        }
+        
+        // Sort events by minute
+        events.sort((a,b) => {
+            const getMin = (t) => parseInt(t.replace(/[^0-9]/g, '')) || 0;
+            return getMin(a.time) - getMin(b.time);
+        });
         
         matchesData.push({
             id: idx + 1,
             home: m.home,
             away: m.away,
+            score: m.score,
+            events: events,
             uaeTime: uae.time,
             displayDate: uae.displayDate,
             idDate: uae.idDate,
@@ -368,35 +254,25 @@
         });
     });
 
-    // Group matches by date
     const groupedMatches = {};
     matchesData.forEach(m => {
-        if(!groupedMatches[m.idDate]) {
-            groupedMatches[m.idDate] = { display: m.displayDate, matches: [] };
-        }
+        if(!groupedMatches[m.idDate]) { groupedMatches[m.idDate] = { display: m.displayDate, matches: [] }; }
         groupedMatches[m.idDate].matches.push(m);
     });
-
     const sortedDates = Object.keys(groupedMatches).sort();
 
-    // DOM Elements
     const scheduleContainer = document.getElementById('schedule-container');
     const timelineContainer = document.getElementById('timeline');
     const teamFilter = document.getElementById('team-filter');
     const exportBtn = document.getElementById('export-btn');
 
-    // Init UI
     function init() {
-        // Populate Teams Dropdown
         const sortedTeams = Array.from(teamsSet).sort();
         sortedTeams.forEach(t => {
             const opt = document.createElement('option');
-            opt.value = t;
-            opt.textContent = t;
-            teamFilter.appendChild(opt);
+            opt.value = t; opt.textContent = t; teamFilter.appendChild(opt);
         });
 
-        // Event Listeners
         teamFilter.addEventListener('change', () => renderSchedule(teamFilter.value));
         exportBtn.addEventListener('click', () => exportICS(teamFilter.value));
         
@@ -404,7 +280,6 @@
         scrollToCurrentDay();
     }
 
-    // Render Schedule
     function renderSchedule(filterTeam) {
         scheduleContainer.innerHTML = '';
         timelineContainer.innerHTML = '';
@@ -419,13 +294,11 @@
             if (filteredMatches.length === 0) return;
             hasVisibleMatches = true;
 
-            // Render Timeline Link
             const link = document.createElement('a');
             link.href = '#' + dateKey;
-            link.textContent = group.display.replace(', 2026', ''); // Shorten timeline text
+            link.textContent = group.display.replace(', 2026', ''); 
             timelineContainer.appendChild(link);
 
-            // Render Section
             const section = document.createElement('div');
             section.className = 'date-section';
             section.id = dateKey;
@@ -433,15 +306,41 @@
             let html = `<h2 class="date-header">${group.display}</h2><div class="schedule-grid">`;
             
             filteredMatches.forEach(m => {
+                const isFinished = !!m.score;
+                const scoreDisplay = isFinished ? `<div class="score-badge">${m.score}</div>` : `<div class="vs">VS</div>`;
+                const statusHtml = isFinished ? `<span class="status-badge finished">FT</span>` : `<span class="status-badge">Upcoming</span>`;
+                
+                let detailsHtml = '';
+                if(m.events.length > 0) {
+                    let eventsList = '';
+                    m.events.forEach(e => {
+                        const icon = e.isOwnGoal ? '⚽ (OG)' : '⚽';
+                        const extra = e.isPenalty ? ' <span class="pen-text">(pen.)</span>' : (e.isOwnGoal ? ' <span class="og-text">(o.g.)</span>' : '');
+                        if(e.team === 'home') {
+                            eventsList += `<div class="event-row"><div class="event-home">${e.player} ${e.time}${extra} <span class="event-icon">${icon}</span></div><div class="event-away"></div></div>`;
+                        } else {
+                            eventsList += `<div class="event-row"><div class="event-home"></div><div class="event-away"><span class="event-icon">${icon}</span> ${e.time} ${e.player}${extra}</div></div>`;
+                        }
+                    });
+                    detailsHtml = `
+                        <button class="btn-details" onclick="toggleDetails('details-${m.id}')">Toggle Match Details ▾</button>
+                        <div class="match-details" id="details-${m.id}">${eventsList}</div>
+                    `;
+                }
+
                 html += `
                     <div class="match-card">
-                        <div class="match-time">${m.uaeTime} <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
-                        <div class="match-teams">
-                            <div class="team ${m.home === filterTeam ? 'highlight' : ''}" style="${m.home === filterTeam ? 'color: var(--primary)' : ''}">${m.home}</div>
-                            <div class="vs">VS</div>
-                            <div class="team team-right ${m.away === filterTeam ? 'highlight' : ''}" style="${m.away === filterTeam ? 'color: var(--primary)' : ''}">${m.away}</div>
+                        <div class="match-header-row">
+                            <div class="match-time">${m.uaeTime} <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+                            ${statusHtml}
                         </div>
                         <div class="stadium">Match ${m.id} • FIFA World Cup 2026</div>
+                        <div class="match-teams">
+                            <div class="team ${m.home === filterTeam ? 'highlight' : ''}" style="${m.home === filterTeam ? 'color: var(--primary)' : ''}">${m.home}</div>
+                            ${scoreDisplay}
+                            <div class="team team-right ${m.away === filterTeam ? 'highlight' : ''}" style="${m.away === filterTeam ? 'color: var(--primary)' : ''}">${m.away}</div>
+                        </div>
+                        ${detailsHtml}
                     </div>
                 `;
             });
@@ -450,110 +349,64 @@
             scheduleContainer.appendChild(section);
         });
 
-        if (!hasVisibleMatches) {
-            scheduleContainer.innerHTML = '<div class="empty-state">No matches found for the selected filter.</div>';
-        }
-
-        // Setup scroll spy for timeline links
+        if (!hasVisibleMatches) scheduleContainer.innerHTML = '<div class="empty-state">No matches found for the selected filter.</div>';
         setupScrollSpy();
     }
 
-    // Auto-scroll to today
+    window.toggleDetails = function(id) {
+        const el = document.getElementById(id);
+        if(el.classList.contains('open')) el.classList.remove('open');
+        else el.classList.add('open');
+    }
+
     function scrollToCurrentDay() {
-        const today = new Date();
-        // Since World Cup is in June/July 2026, let's format today to match our IDs.
-        const todayStr = today.toISOString().split('T')[0];
-        
+        const todayStr = new Date().toISOString().split('T')[0];
         const targetElement = document.getElementById(todayStr);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        } else if (sortedDates.length > 0) {
-            // If today isn't a match day, find the next upcoming match
+        if (targetElement) targetElement.scrollIntoView({ behavior: 'smooth' });
+        else if (sortedDates.length > 0) {
             const nextDate = sortedDates.find(d => d > todayStr);
-            if (nextDate) {
-                document.getElementById(nextDate).scrollIntoView({ behavior: 'smooth' });
-            }
+            if (nextDate) document.getElementById(nextDate).scrollIntoView({ behavior: 'smooth' });
         }
     }
 
-    // Highlight timeline links based on scroll
     function setupScrollSpy() {
         const sections = document.querySelectorAll('.date-section');
         const navLinks = document.querySelectorAll('.timeline-links a');
-        
         if(sections.length === 0) return;
-
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
                     navLinks.forEach(link => {
                         link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + id) {
+                        if (link.getAttribute('href') === '#' + entry.target.getAttribute('id')) {
                             link.classList.add('active');
-                            // Also scroll the sidebar so the active link is visible
                             link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                         }
                     });
                 }
             });
         }, { rootMargin: '-20% 0px -70% 0px' });
-
         sections.forEach(sec => observer.observe(sec));
     }
 
-    // Generate ICS Calendar File
     function exportICS(filterTeam) {
-        let matchesToExport = matchesData;
-        if (filterTeam !== 'all') {
-            matchesToExport = matchesData.filter(m => m.home === filterTeam || m.away === filterTeam);
-        }
-
-        if (matchesToExport.length === 0) {
-            alert('No matches to export for ' + filterTeam);
-            return;
-        }
-
+        let matchesToExport = filterTeam !== 'all' ? matchesData.filter(m => m.home === filterTeam || m.away === filterTeam) : matchesData;
+        if (matchesToExport.length === 0) return alert('No matches to export');
+        
         let icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//2026 World Cup Schedule//EN\nCALSCALE:GREGORIAN\n";
-        
         matchesToExport.forEach(m => {
-            const dtstart = formatICSDate(m.utcTimestamp);
-            // Assume matches last 2 hours
-            const endTimestamp = new Date(m.utcTimestamp.getTime() + 2 * 60 * 60 * 1000);
-            const dtend = formatICSDate(endTimestamp);
-            
-            icsContent += "BEGIN:VEVENT\n";
-            icsContent += `DTSTART:${dtstart}\n`;
-            icsContent += `DTEND:${dtend}\n`;
-            icsContent += `SUMMARY:World Cup 2026: ${m.home} vs ${m.away}\n`;
-            icsContent += "LOCATION:FIFA World Cup 2026 Venue\n";
-            icsContent += `UID:${m.id}-wc2026@schedule.local\n`;
-            icsContent += "END:VEVENT\n";
+            const dtstart = m.utcTimestamp.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            const dtend = new Date(m.utcTimestamp.getTime() + 2 * 3600000).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            icsContent += "BEGIN:VEVENT\nDTSTART:" + dtstart + "\nDTEND:" + dtend + "\nSUMMARY:World Cup: " + m.home + " vs " + m.away + "\nLOCATION:FIFA World Cup Venue\nUID:wc-" + m.id + "\nEND:VEVENT\n";
         });
-        
         icsContent += "END:VCALENDAR";
 
-        // Download Blob
         const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
-        a.href = url;
+        a.href = URL.createObjectURL(blob);
         a.download = `WC2026_Schedule${filterTeam !== 'all' ? '_' + filterTeam.replace(/\s+/g, '') : ''}.ics`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
     }
 
-    function formatICSDate(dateObj) {
-        // Formats Date to YYYYMMDDTHHMMSSZ
-        return dateObj.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-    }
-
-    // Run
     init();
-
-</script>
-
-</body>
-</html>
+</script></body></html>
