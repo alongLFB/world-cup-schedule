@@ -3,7 +3,7 @@ const i18n = {
         timeline: "Timeline",
         title: "2026 World Cup Schedule",
         subtitle: "Live Scores & Official Match Schedule",
-        tzBadge: "📍 All Times in UAE Time (GST / UTC+4)",
+        tzBadge: () => `📍 Local Time (${Intl.DateTimeFormat().resolvedOptions().timeZone})`,
         allTeams: "All Teams",
         exportBtn: "Export to Calendar",
         shareBtn: "Share",
@@ -14,14 +14,14 @@ const i18n = {
         toggleDetails: "Toggle Match Details ▾",
         noMatches: "No matches found for the selected filter.",
         iosHint: "💡 <strong>Tip for iOS Users:</strong> Please open this page in the built-in <strong>Safari</strong> browser to seamlessly import events into your calendar.",
-        shareText: "🏆 Check out the 2026 World Cup Live Schedule & Scores (UAE Time)! https://worldcup2026.alonglfb.com/",
+        shareText: "🏆 Check out the 2026 World Cup Live Schedule & Scores (Local Time)! https://worldcup2026.alonglfb.com/",
         copied: "Copied to clipboard!"
     },
     zh: {
         timeline: "时间轴",
         title: "2026 世界杯赛程",
         subtitle: "实时比分与官方赛程表",
-        tzBadge: "📍 阿联酋时间 (GST / UTC+4)",
+        tzBadge: () => `📍 本地时间 (${Intl.DateTimeFormat().resolvedOptions().timeZone})`,
         allTeams: "所有球队",
         exportBtn: "导出到日历",
         shareBtn: "分享",
@@ -32,7 +32,7 @@ const i18n = {
         toggleDetails: "查看对局详情 ▾",
         noMatches: "未找到符合条件的比赛。",
         iosHint: "💡 <strong>iOS 用户提示：</strong> 请使用系统自带的 <strong>Safari</strong> 浏览器打开本页面，以便无缝导入日历。",
-        shareText: "🏆 2026美加墨世界杯赛程与实时比分 (阿联酋时区)！快来看看吧：https://worldcup2026.alonglfb.com/",
+        shareText: "🏆 2026美加墨世界杯赛程与实时比分 (自动适配本地时区)！快来看看吧：https://worldcup2026.alonglfb.com/",
         copied: "已复制到剪贴板！"
     }
 };
@@ -67,14 +67,14 @@ function translateTeam(teamEn) {
 function formatDate(dateObj) {
     if (currentLang === 'zh') {
         const options = { month: 'short', day: 'numeric', weekday: 'short' };
-        return dateObj.toLocaleDateString('zh-CN', { timeZone: 'UTC', ...options });
+        return dateObj.toLocaleDateString('zh-CN', options);
     } else {
         const options = { weekday: 'short', month: 'short', day: 'numeric' };
-        return dateObj.toLocaleDateString('en-US', { timeZone: 'UTC', ...options });
+        return dateObj.toLocaleDateString('en-US', options);
     }
 }
 
-function convertToUAE(dateStr, timeStr) {
+function convertToLocal(dateStr, timeStr) {
     const dateMatch = dateStr.match(/\((\d{4}-\d{2}-\d{2})\)/);
     if (!dateMatch) return null;
     const isoDate = dateMatch[1];
@@ -91,24 +91,23 @@ function convertToUAE(dateStr, timeStr) {
     if (ampm === 'p.m.' && hours !== 12) hours += 12;
     if (ampm === 'a.m.' && hours === 12) hours = 0;
     
-    const totalOffset = utcOffset + 4; 
-    
-    let uaeDateObj = new Date(isoDate + "T00:00:00Z");
-    uaeDateObj.setUTCHours(hours + totalOffset, mins, 0, 0); 
-    
-    const formatHours = uaeDateObj.getUTCHours().toString().padStart(2, '0');
-    const formatMins = uaeDateObj.getUTCMinutes().toString().padStart(2, '0');
-    
-    const idDate = uaeDateObj.toISOString().split('T')[0]; 
-    
+    // Calculate precise UTC Date based on original string
     let absoluteUtcDate = new Date(isoDate + "T00:00:00Z");
     absoluteUtcDate.setUTCHours(hours + utcOffset, mins, 0, 0); 
+    
+    // JS automatically computes local representation via native methods
+    const formatHours = absoluteUtcDate.getHours().toString().padStart(2, '0');
+    const formatMins = absoluteUtcDate.getMinutes().toString().padStart(2, '0');
+    
+    const idDate = absoluteUtcDate.getFullYear() + "-" + 
+                   (absoluteUtcDate.getMonth() + 1).toString().padStart(2, '0') + "-" +
+                   absoluteUtcDate.getDate().toString().padStart(2, '0');
     
     return { 
         time: `${formatHours}:${formatMins}`, 
         idDate, 
         utcTimestamp: absoluteUtcDate,
-        dateObj: uaeDateObj
+        dateObj: absoluteUtcDate
     };
 }
 
@@ -117,8 +116,8 @@ const teamsSet = new Set();
 
 rawMatches.forEach((m, idx) => {
     if (!m.date || !m.home || !m.away) return;
-    const uae = convertToUAE(m.date, m.time);
-    if (!uae) return;
+    const localTimeData = convertToLocal(m.date, m.time);
+    if (!localTimeData) return;
     
     teamsSet.add(m.home);
     teamsSet.add(m.away);
@@ -145,10 +144,10 @@ rawMatches.forEach((m, idx) => {
         awayEn: m.away,
         score: m.score,
         events: events,
-        uaeTime: uae.time,
-        idDate: uae.idDate,
-        utcTimestamp: uae.utcTimestamp,
-        dateObj: uae.dateObj
+        localTime: localTimeData.time,
+        idDate: localTimeData.idDate,
+        utcTimestamp: localTimeData.utcTimestamp,
+        dateObj: localTimeData.dateObj
     });
 });
 
@@ -165,7 +164,7 @@ function initStaticI18n() {
     document.getElementById('sidebar-title').textContent = t.timeline;
     document.getElementById('title-main').textContent = t.title;
     document.getElementById('title-sub').textContent = t.subtitle;
-    document.getElementById('tz-badge').textContent = t.tzBadge;
+    document.getElementById('tz-badge').textContent = t.tzBadge();
     document.getElementById('opt-all').textContent = t.allTeams;
     document.getElementById('btn-export-text').textContent = t.exportBtn;
     document.getElementById('btn-share-text').textContent = t.shareBtn;
@@ -279,7 +278,7 @@ function renderSchedule(filterTeam) {
             html += `
                 <div class="match-card">
                     <div class="match-header-row">
-                        <div class="match-time">${m.uaeTime} <span style="font-size:0.8rem; font-weight:400; color:#94a3b8">GST</span></div>
+                        <div class="match-time">${m.localTime}</div>
                         ${statusHtml}
                     </div>
                     <div class="stadium">${i18n[currentLang].matchText(m.id)}</div>
