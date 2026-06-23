@@ -1485,8 +1485,42 @@
     "time": "12:00 p.m. UTC−5",
     "home": "Portugal",
     "away": "Uzbekistan",
-    "score": "Match 47",
-    "homeGoals": [],
+    "score": "5–0",
+    "homeGoals": [
+      {
+        "player": "Ronaldo",
+        "times": [
+          "6'",
+          "39'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Mendes",
+        "times": [
+          "17'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Nematov",
+        "times": [
+          "60' (o.g.)"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": true
+      },
+      {
+        "player": "Leão",
+        "times": [
+          "87'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": []
   },
   {
