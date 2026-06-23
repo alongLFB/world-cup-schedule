@@ -1198,8 +1198,26 @@
     "time": "5:00 p.m. UTC−4",
     "home": "France",
     "away": "Iraq",
-    "score": "Match 42",
-    "homeGoals": [],
+    "score": "3–0",
+    "homeGoals": [
+      {
+        "player": "Mbappé",
+        "times": [
+          "14'",
+          "54'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Dembélé",
+        "times": [
+          "66'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": []
   },
   {
@@ -1207,9 +1225,37 @@
     "time": "8:00 p.m. UTC−4",
     "home": "Norway",
     "away": "Senegal",
-    "score": "Match 41",
-    "homeGoals": [],
-    "awayGoals": []
+    "score": "3–2",
+    "homeGoals": [
+      {
+        "player": "Pedersen",
+        "times": [
+          "43'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Haaland",
+        "times": [
+          "48'",
+          "58'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "I. Sarr",
+        "times": [
+          "53'",
+          "90+3'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 26, 2026 (2026-06-26)",
@@ -1316,9 +1362,35 @@
     "time": "8:00 p.m. UTC−7",
     "home": "Jordan",
     "away": "Algeria",
-    "score": "Match 44",
-    "homeGoals": [],
-    "awayGoals": []
+    "score": "1–2",
+    "homeGoals": [
+      {
+        "player": "Al-Rashdan",
+        "times": [
+          "36'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Benbouali",
+        "times": [
+          "69'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Gouiri",
+        "times": [
+          "82'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
@@ -1679,7 +1751,7 @@
   {
     "date": "July 3, 2026 (2026-07-03)",
     "time": "6:00 p.m. UTC−4",
-    "home": "Winner Group J",
+    "home": "Argentina",
     "away": "Runner-up Group H",
     "score": "Match 86",
     "homeGoals": [],

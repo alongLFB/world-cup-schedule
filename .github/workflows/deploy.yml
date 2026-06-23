@@ -1,0 +1,22 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - master # 触发的分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}     # 服务器IP
+          username: ${{ secrets.SERVER_USER }} # 服务器用户名
+          key: ${{ secrets.SERVER_SSH_KEY }}   # 服务器私钥
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          script: |
+            cd ~/github/world-cup-schedule
+            git pull origin master
+            # 如果是 Node 项目可以追加重启命令，例如: pm2 restart all

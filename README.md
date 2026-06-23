@@ -12,7 +12,8 @@ A modern, fully interactive, and responsive web application to track the 2026 FI
 🌐 **Demo / Live Website:** [https://worldcup2026.alonglfb.com/](https://worldcup2026.alonglfb.com/)
 
 ### Features
-* **UAE Timezone Support**: All match times are strictly localized to UAE Time (GST / UTC+4).
+* **Multi-Timezone Support**: Automatically displays match times in your local timezone, with an option to manually select any other timezone.
+* **Share Functionality**: Generate a shareable link that preserves your currently selected team, timezone, and language preferences.
 * **Live Match Details**: Completed matches display the actual scoreline and a chronological timeline of goals (including scorers, minutes, penalties, and own goals).
 * **Sticky Navigation & Timeline**: The sidebar timeline auto-scrolls to the current date, and top controls stay floating while you scroll.
 * **Team Filtering**: A dropdown menu allows you to isolate and view only the path of your favorite team.
@@ -50,7 +51,8 @@ This project uses a Node.js web scraper to pull official match data directly fro
 🌐 **演示网址：** [https://worldcup2026.alonglfb.com/](https://worldcup2026.alonglfb.com/)
 
 ### 核心功能
-* **阿联酋专属时区**: 所有比赛开球时间已精确转换为阿联酋当地时间 (GST / UTC+4)。
+* **多时区支持**: 自动识别并使用您的本地时区，同时支持手动切换到全球任意时区。
+* **一键分享**: 支持生成专属分享链接，完美保留您当前选择的球队、时区和语言设置，方便快捷地分享给好友。
 * **动态赛况详情**: 针对已结束的比赛，卡片会自动展示真实比分，点击后可展开一条完整的进球时间轴（包含进球球员、分钟数、点球或乌龙球标注）。
 * **智能悬浮操作区**: 在手机和电脑上向下滚动页面时，侧边栏日期时间轴会自动追踪当前进度，顶部的“球队筛选”、“导出日历”按钮也会智能吸附在屏幕顶端，随时可用。
 * **一键导出日历 (.ics)**: 可将全部赛程或单支球队的赛程生成标准的日历文件，完美兼容 iOS 系统自带日历并自动适配时区。
