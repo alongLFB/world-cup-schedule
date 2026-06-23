@@ -23,4 +23,5 @@ jobs:
           script: |
             cd ~/github/world-cup-schedule
             git pull origin master
-            # 如果是 Node 项目可以追加重启命令，例如: pm2 restart all
+            # 自动修复文件权限，确保 Web 服务器 (如 Nginx) 有读取权限
+            chmod -R a+rX .
