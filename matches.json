@@ -5,6 +5,7 @@
     "home": "Mexico",
     "away": "South Africa",
     "score": "2–0",
+    "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [
       {
         "player": "Quiñones",
@@ -31,6 +32,7 @@
     "home": "South Korea",
     "away": "Czech Republic",
     "score": "2–1",
+    "venue": "Estadio Akron, Zapopan",
     "homeGoals": [
       {
         "player": "Hwang In-beom",
@@ -57,6 +59,7 @@
     "home": "Czech Republic",
     "away": "South Africa",
     "score": "1–1",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [
       {
         "player": "Sadílek",
@@ -84,6 +87,7 @@
     "home": "Mexico",
     "away": "South Korea",
     "score": "1–0",
+    "venue": "Estadio Akron, Zapopan",
     "homeGoals": [
       {
         "player": "Romo",
@@ -102,6 +106,7 @@
     "home": "Czech Republic",
     "away": "Mexico",
     "score": "Match 53",
+    "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -111,6 +116,7 @@
     "home": "South Africa",
     "away": "South Korea",
     "score": "Match 54",
+    "venue": "Estadio BBVA, Guadalupe",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -120,6 +126,7 @@
     "home": "Canada",
     "away": "Bosnia and Herzegovina",
     "score": "1–1",
+    "venue": "BMO Field, Toronto",
     "homeGoals": [
       {
         "player": "Larin",
@@ -147,6 +154,7 @@
     "home": "Qatar",
     "away": "Switzerland",
     "score": "1–1",
+    "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [
       {
         "player": "Muheim",
@@ -174,6 +182,7 @@
     "home": "Switzerland",
     "away": "Bosnia and Herzegovina",
     "score": "4–1",
+    "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [
       {
         "player": "Manzambi",
@@ -218,6 +227,7 @@
     "home": "Canada",
     "away": "Qatar",
     "score": "6–0",
+    "venue": "BC Place, Vancouver",
     "homeGoals": [
       {
         "player": "Larin",
@@ -262,6 +272,7 @@
     "home": "Switzerland",
     "away": "Canada",
     "score": "Match 51",
+    "venue": "BC Place, Vancouver",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -271,6 +282,7 @@
     "home": "Bosnia and Herzegovina",
     "away": "Qatar",
     "score": "Match 52",
+    "venue": "Lumen Field, Seattle",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -280,6 +292,7 @@
     "home": "Brazil",
     "away": "Morocco",
     "score": "1–1",
+    "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [
       {
         "player": "Vinícius",
@@ -307,6 +320,7 @@
     "home": "Haiti",
     "away": "Scotland",
     "score": "0–1",
+    "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
     "awayGoals": [
       {
@@ -325,6 +339,7 @@
     "home": "Scotland",
     "away": "Morocco",
     "score": "0–1",
+    "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
     "awayGoals": [
       {
@@ -343,6 +358,7 @@
     "home": "Brazil",
     "away": "Haiti",
     "score": "3–0",
+    "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [
       {
         "player": "Cunha",
@@ -370,6 +386,7 @@
     "home": "Scotland",
     "away": "Brazil",
     "score": "Match 49",
+    "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -379,6 +396,7 @@
     "home": "Morocco",
     "away": "Haiti",
     "score": "Match 50",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -388,6 +406,7 @@
     "home": "United States",
     "away": "Paraguay",
     "score": "4–1",
+    "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [
       {
         "player": "Bobadilla",
@@ -432,6 +451,7 @@
     "home": "Australia",
     "away": "Turkey",
     "score": "2–0",
+    "venue": "BC Place, Vancouver",
     "homeGoals": [
       {
         "player": "Irankunda",
@@ -458,6 +478,7 @@
     "home": "United States",
     "away": "Australia",
     "score": "2–0",
+    "venue": "Lumen Field, Seattle",
     "homeGoals": [
       {
         "player": "Burgess",
@@ -484,6 +505,7 @@
     "home": "Turkey",
     "away": "Paraguay",
     "score": "0–1",
+    "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [],
     "awayGoals": [
       {
@@ -502,6 +524,7 @@
     "home": "Turkey",
     "away": "United States",
     "score": "Match 59",
+    "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -511,6 +534,7 @@
     "home": "Paraguay",
     "away": "Australia",
     "score": "Match 60",
+    "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -520,6 +544,7 @@
     "home": "Germany",
     "away": "Curaçao",
     "score": "7–1",
+    "venue": "NRG Stadium, Houston",
     "homeGoals": [
       {
         "player": "Nmecha",
@@ -588,6 +613,7 @@
     "home": "Ivory Coast",
     "away": "Ecuador",
     "score": "1–0",
+    "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [
       {
         "player": "Diallo",
@@ -606,6 +632,7 @@
     "home": "Germany",
     "away": "Ivory Coast",
     "score": "2–1",
+    "venue": "BMO Field, Toronto",
     "homeGoals": [
       {
         "player": "Undav",
@@ -634,6 +661,7 @@
     "home": "Ecuador",
     "away": "Curaçao",
     "score": "0–0",
+    "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -643,6 +671,7 @@
     "home": "Curaçao",
     "away": "Ivory Coast",
     "score": "Match 55",
+    "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -652,6 +681,7 @@
     "home": "Ecuador",
     "away": "Germany",
     "score": "Match 56",
+    "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -661,6 +691,7 @@
     "home": "Netherlands",
     "away": "Japan",
     "score": "2–2",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [
       {
         "player": "Van Dijk",
@@ -704,6 +735,7 @@
     "home": "Sweden",
     "away": "Tunisia",
     "score": "5–1",
+    "venue": "Estadio BBVA, Guadalupe",
     "homeGoals": [
       {
         "player": "Ayari",
@@ -756,6 +788,7 @@
     "home": "Netherlands",
     "away": "Sweden",
     "score": "5–1",
+    "venue": "NRG Stadium, Houston",
     "homeGoals": [
       {
         "player": "Brobbey",
@@ -801,6 +834,7 @@
     "home": "Tunisia",
     "away": "Japan",
     "score": "0–4",
+    "venue": "Estadio BBVA, Guadalupe",
     "homeGoals": [],
     "awayGoals": [
       {
@@ -836,6 +870,7 @@
     "home": "Japan",
     "away": "Sweden",
     "score": "Match 57",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -845,6 +880,7 @@
     "home": "Tunisia",
     "away": "Netherlands",
     "score": "Match 58",
+    "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -854,6 +890,7 @@
     "home": "Belgium",
     "away": "Egypt",
     "score": "1–1",
+    "venue": "Lumen Field, Seattle",
     "homeGoals": [
       {
         "player": "Hany",
@@ -881,6 +918,7 @@
     "home": "Iran",
     "away": "New Zealand",
     "score": "2–2",
+    "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [
       {
         "player": "Rezaeian",
@@ -917,6 +955,7 @@
     "home": "Belgium",
     "away": "Iran",
     "score": "0–0",
+    "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -926,6 +965,7 @@
     "home": "New Zealand",
     "away": "Egypt",
     "score": "1–3",
+    "venue": "BC Place, Vancouver",
     "homeGoals": [
       {
         "player": "Surman",
@@ -969,6 +1009,7 @@
     "home": "Egypt",
     "away": "Iran",
     "score": "Match 63",
+    "venue": "Lumen Field, Seattle",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -978,6 +1019,7 @@
     "home": "New Zealand",
     "away": "Belgium",
     "score": "Match 64",
+    "venue": "BC Place, Vancouver",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -987,6 +1029,7 @@
     "home": "Spain",
     "away": "Cape Verde",
     "score": "0–0",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -996,6 +1039,7 @@
     "home": "Saudi Arabia",
     "away": "Uruguay",
     "score": "1–1",
+    "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [
       {
         "player": "Al-Amri",
@@ -1023,6 +1067,7 @@
     "home": "Spain",
     "away": "Saudi Arabia",
     "score": "4–0",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [
       {
         "player": "Yamal",
@@ -1058,6 +1103,7 @@
     "home": "Uruguay",
     "away": "Cape Verde",
     "score": "2–2",
+    "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [
       {
         "player": "M. Araújo",
@@ -1101,6 +1147,7 @@
     "home": "Cape Verde",
     "away": "Saudi Arabia",
     "score": "Match 65",
+    "venue": "NRG Stadium, Houston",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1110,6 +1157,7 @@
     "home": "Uruguay",
     "away": "Spain",
     "score": "Match 66",
+    "venue": "Estadio Akron, Zapopan",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1119,6 +1167,7 @@
     "home": "France",
     "away": "Senegal",
     "score": "3–1",
+    "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [
       {
         "player": "Mbappé",
@@ -1155,6 +1204,7 @@
     "home": "Iraq",
     "away": "Norway",
     "score": "1–4",
+    "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [
       {
         "player": "Hussein",
@@ -1199,6 +1249,7 @@
     "home": "France",
     "away": "Iraq",
     "score": "3–0",
+    "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [
       {
         "player": "Mbappé",
@@ -1226,6 +1277,7 @@
     "home": "Norway",
     "away": "Senegal",
     "score": "3–2",
+    "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [
       {
         "player": "Pedersen",
@@ -1263,6 +1315,7 @@
     "home": "Norway",
     "away": "France",
     "score": "Match 61",
+    "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1272,6 +1325,7 @@
     "home": "Senegal",
     "away": "Iraq",
     "score": "Match 62",
+    "venue": "BMO Field, Toronto",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1281,6 +1335,7 @@
     "home": "Argentina",
     "away": "Algeria",
     "score": "3–0",
+    "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [
       {
         "player": "Messi",
@@ -1301,6 +1356,7 @@
     "home": "Austria",
     "away": "Jordan",
     "score": "3–1",
+    "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [
       {
         "player": "Schmid",
@@ -1344,6 +1400,7 @@
     "home": "Argentina",
     "away": "Austria",
     "score": "2–0",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [
       {
         "player": "Messi",
@@ -1363,6 +1420,7 @@
     "home": "Jordan",
     "away": "Algeria",
     "score": "1–2",
+    "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [
       {
         "player": "Al-Rashdan",
@@ -1398,6 +1456,7 @@
     "home": "Algeria",
     "away": "Austria",
     "score": "Match 69",
+    "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1407,6 +1466,7 @@
     "home": "Jordan",
     "away": "Argentina",
     "score": "Match 70",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1416,6 +1476,7 @@
     "home": "Portugal",
     "away": "DR Congo",
     "score": "1–1",
+    "venue": "NRG Stadium, Houston",
     "homeGoals": [
       {
         "player": "J. Neves",
@@ -1443,6 +1504,7 @@
     "home": "Uzbekistan",
     "away": "Colombia",
     "score": "1–3",
+    "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [
       {
         "player": "Fayzullaev",
@@ -1486,6 +1548,7 @@
     "home": "Portugal",
     "away": "Uzbekistan",
     "score": "5–0",
+    "venue": "NRG Stadium, Houston",
     "homeGoals": [
       {
         "player": "Ronaldo",
@@ -1529,6 +1592,7 @@
     "home": "Colombia",
     "away": "DR Congo",
     "score": "Match 48",
+    "venue": "Estadio Akron, Zapopan",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1538,6 +1602,7 @@
     "home": "Colombia",
     "away": "Portugal",
     "score": "Match 71",
+    "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1547,6 +1612,7 @@
     "home": "DR Congo",
     "away": "Uzbekistan",
     "score": "Match 72",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1556,6 +1622,7 @@
     "home": "England",
     "away": "Croatia",
     "score": "4–2",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [
       {
         "player": "Kane",
@@ -1608,6 +1675,7 @@
     "home": "Ghana",
     "away": "Panama",
     "score": "1–0",
+    "venue": "BMO Field, Toronto",
     "homeGoals": [
       {
         "player": "Yirenkyi",
@@ -1626,6 +1694,7 @@
     "home": "England",
     "away": "Ghana",
     "score": "Match 45",
+    "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1635,6 +1704,7 @@
     "home": "Panama",
     "away": "Croatia",
     "score": "Match 46",
+    "venue": "BMO Field, Toronto",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1644,6 +1714,7 @@
     "home": "Panama",
     "away": "England",
     "score": "Match 67",
+    "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1653,6 +1724,7 @@
     "home": "Croatia",
     "away": "Ghana",
     "score": "Match 68",
+    "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1662,6 +1734,7 @@
     "home": "Runner-up Group A",
     "away": "Runner-up Group B",
     "score": "Match 73",
+    "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1671,6 +1744,7 @@
     "home": "Winner Group C",
     "away": "Runner-up Group F",
     "score": "Match 76",
+    "venue": "NRG Stadium, Houston",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1680,6 +1754,7 @@
     "home": "Germany",
     "away": "3rd Group A/B/C/D/F",
     "score": "Match 74",
+    "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1689,6 +1764,7 @@
     "home": "Winner Group F",
     "away": "Runner-up Group C",
     "score": "Match 75",
+    "venue": "Estadio BBVA, Guadalupe",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1698,6 +1774,7 @@
     "home": "Runner-up Group E",
     "away": "Runner-up Group I",
     "score": "Match 78",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1707,6 +1784,7 @@
     "home": "Winner Group I",
     "away": "3rd Group C/D/F/G/H",
     "score": "Match 77",
+    "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1716,6 +1794,7 @@
     "home": "Mexico",
     "away": "3rd Group C/E/F/H/I",
     "score": "Match 79",
+    "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1725,6 +1804,7 @@
     "home": "Winner Group L",
     "away": "3rd Group E/H/I/J/K",
     "score": "Match 80",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1734,6 +1814,7 @@
     "home": "Winner Group G",
     "away": "3rd Group A/E/H/I/J",
     "score": "Match 82",
+    "venue": "Lumen Field, Seattle",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1743,6 +1824,7 @@
     "home": "United States",
     "away": "3rd Group B/E/F/I/J",
     "score": "Match 81",
+    "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1752,6 +1834,7 @@
     "home": "Winner Group H",
     "away": "Runner-up Group J",
     "score": "Match 84",
+    "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1761,6 +1844,7 @@
     "home": "Runner-up Group K",
     "away": "Runner-up Group L",
     "score": "Match 83",
+    "venue": "BMO Field, Toronto",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1770,6 +1854,7 @@
     "home": "Winner Group B",
     "away": "3rd Group E/F/G/I/J",
     "score": "Match 85",
+    "venue": "BC Place, Vancouver",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1779,6 +1864,7 @@
     "home": "Runner-up Group D",
     "away": "Runner-up Group G",
     "score": "Match 88",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1788,6 +1874,7 @@
     "home": "Argentina",
     "away": "Runner-up Group H",
     "score": "Match 86",
+    "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1797,6 +1884,7 @@
     "home": "Winner Group K",
     "away": "3rd Group D/E/I/J/L",
     "score": "Match 87",
+    "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1806,6 +1894,7 @@
     "home": "Winner Match 73",
     "away": "Winner Match 75",
     "score": "Match 90",
+    "venue": "NRG Stadium, Houston",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1815,6 +1904,7 @@
     "home": "Winner Match 74",
     "away": "Winner Match 77",
     "score": "Match 89",
+    "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1824,6 +1914,7 @@
     "home": "Winner Match 76",
     "away": "Winner Match 78",
     "score": "Match 91",
+    "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1833,6 +1924,7 @@
     "home": "Winner Match 79",
     "away": "Winner Match 80",
     "score": "Match 92",
+    "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1842,6 +1934,7 @@
     "home": "Winner Match 83",
     "away": "Winner Match 84",
     "score": "Match 93",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1851,6 +1944,7 @@
     "home": "Winner Match 81",
     "away": "Winner Match 82",
     "score": "Match 94",
+    "venue": "Lumen Field, Seattle",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1860,6 +1954,7 @@
     "home": "Winner Match 86",
     "away": "Winner Match 88",
     "score": "Match 95",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1869,6 +1964,7 @@
     "home": "Winner Match 85",
     "away": "Winner Match 87",
     "score": "Match 96",
+    "venue": "BC Place, Vancouver",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1878,6 +1974,7 @@
     "home": "Winner Match 89",
     "away": "Winner Match 90",
     "score": "Match 97",
+    "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1887,6 +1984,7 @@
     "home": "Winner Match 93",
     "away": "Winner Match 94",
     "score": "Match 98",
+    "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1896,6 +1994,7 @@
     "home": "Winner Match 91",
     "away": "Winner Match 92",
     "score": "Match 99",
+    "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1905,6 +2004,7 @@
     "home": "Winner Match 95",
     "away": "Winner Match 96",
     "score": "Match 100",
+    "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1914,6 +2014,7 @@
     "home": "Winner Match 97",
     "away": "Winner Match 98",
     "score": "Match 101",
+    "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1923,6 +2024,7 @@
     "home": "Winner Match 99",
     "away": "Winner Match 100",
     "score": "Match 102",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1932,6 +2034,7 @@
     "home": "Loser Match 101",
     "away": "Loser Match 102",
     "score": "Match 103",
+    "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
     "awayGoals": []
   },
@@ -1941,6 +2044,7 @@
     "home": "Winner Match 101",
     "away": "Winner Match 102",
     "score": "Match 104",
+    "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
     "awayGoals": []
   }

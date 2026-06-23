@@ -50,7 +50,29 @@ const teamNamesZH = {
     "Egypt": "埃及", "Algeria": "阿尔及利亚", "Mali": "马里", "Ivory Coast": "科特迪瓦",
     "Peru": "秘鲁", "Chile": "智利", "Sweden": "瑞典", "Norway": "挪威", "Czech Republic": "捷克",
     "Austria": "奥地利", "Hungary": "匈牙利", "Turkey": "土耳其", "Ukraine": "乌克兰",
-    "Winner": "胜者", "Runner-up": "第二名", "Third place": "第三名"
+    "Winner": "胜者", "Runner-up": "第二名", "Third place": "第三名",
+    "Bosnia and Herzegovina": "波黑", "Haiti": "海地", "Scotland": "苏格兰", "Paraguay": "巴拉圭",
+    "Curaçao": "库拉索", "New Zealand": "新西兰", "Cape Verde": "佛得角", "Iraq": "伊拉克",
+    "Jordan": "约旦", "DR Congo": "民主刚果", "Uzbekistan": "乌兹别克斯坦", "Panama": "巴拿马"
+};
+
+const venueNamesZH = {
+    "AT&T Stadium, Arlington": "AT&T体育场，阿灵顿",
+    "Arrowhead Stadium, Kansas City": "箭头体育场，堪萨斯城",
+    "BC Place, Vancouver": "卑诗体育馆，温哥华",
+    "BMO Field, Toronto": "BMO球场，多伦多",
+    "Estadio Akron, Zapopan": "阿克伦体育场，萨波潘",
+    "Estadio Azteca, Mexico City": "阿兹特克体育场，墨西哥城",
+    "Estadio BBVA, Guadalupe": "BBVA体育场，瓜达卢佩",
+    "Gillette Stadium, Foxborough": "吉列体育场，福克斯堡",
+    "Hard Rock Stadium, Miami Gardens": "硬石体育场，迈阿密花园",
+    "Levi's Stadium, Santa Clara": "李维斯体育场，圣克拉拉",
+    "Lincoln Financial Field, Philadelphia": "林肯金融体育场，费城",
+    "Lumen Field, Seattle": "流明体育场，西雅图",
+    "Mercedes-Benz Stadium, Atlanta": "梅赛德斯-奔驰体育场，亚特兰大",
+    "MetLife Stadium, East Rutherford": "大都会人寿体育场，东卢瑟福",
+    "NRG Stadium, Houston": "NRG体育场，休斯敦",
+    "SoFi Stadium, Inglewood": "SoFi体育场，英格尔伍德"
 };
 
 let currentLang = localStorage.getItem('lang') || 'en';
@@ -59,9 +81,16 @@ function translateTeam(teamEn) {
     if (currentLang === 'en') return teamEn;
     // Handle partial matches for unconfirmed teams like "Winner Match 1"
     if (teamEn.includes('Winner Match')) return teamEn.replace('Winner Match', '胜者场次');
+    if (teamEn.includes('Loser Match')) return teamEn.replace('Loser Match', '败者场次');
     if (teamEn.includes('Runner-up Group')) return teamEn.replace('Runner-up Group', '小组第二');
     if (teamEn.includes('Winner Group')) return teamEn.replace('Winner Group', '小组第一');
+    if (teamEn.includes('3rd Group')) return teamEn.replace('3rd Group', '小组第三');
     return teamNamesZH[teamEn] || teamEn;
+}
+
+function translateVenue(venueEn) {
+    if (currentLang === 'en') return venueEn;
+    return venueNamesZH[venueEn] || venueEn;
 }
 
 function formatDate(dateObj) {
@@ -143,6 +172,7 @@ rawMatches.forEach((m, idx) => {
         homeEn: m.home,
         awayEn: m.away,
         score: m.score,
+        venueEn: m.venue || '',
         events: events,
         localTime: localTimeData.time,
         idDate: localTimeData.idDate,
@@ -256,6 +286,7 @@ function renderSchedule(filterTeam) {
             
             const hTeam = translateTeam(m.homeEn);
             const aTeam = translateTeam(m.awayEn);
+            const venue = translateVenue(m.venueEn);
 
             let detailsHtml = '';
             if(m.events.length > 0) {
@@ -281,7 +312,7 @@ function renderSchedule(filterTeam) {
                         <div class="match-time">${m.localTime}</div>
                         ${statusHtml}
                     </div>
-                    <div class="stadium">${i18n[currentLang].matchText(m.id)}</div>
+                    <div class="stadium">${i18n[currentLang].matchText(m.id)}${venue ? ' • ' + venue : ''}</div>
                     <div class="match-teams">
                         <div class="team ${m.homeEn === filterTeam ? 'highlight' : ''}" style="${m.homeEn === filterTeam ? 'color: var(--primary)' : ''}">${hTeam}</div>
                         ${scoreDisplay}
@@ -348,7 +379,8 @@ function exportICS(filterTeam) {
         const dtend = new Date(m.utcTimestamp.getTime() + 2 * 3600000).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
         const hTeam = translateTeam(m.homeEn);
         const aTeam = translateTeam(m.awayEn);
-        icsContent += "BEGIN:VEVENT\\nDTSTART:" + dtstart + "\\nDTEND:" + dtend + "\\nSUMMARY:World Cup: " + hTeam + " vs " + aTeam + "\\nLOCATION:FIFA World Cup Venue\\nUID:wc-" + m.id + "\\nEND:VEVENT\\n";
+        const venue = translateVenue(m.venueEn).replace(/,/g, '\\\\,');
+        icsContent += "BEGIN:VEVENT\\nDTSTART:" + dtstart + "\\nDTEND:" + dtend + "\\nSUMMARY:World Cup: " + hTeam + " vs " + aTeam + "\\nLOCATION:" + venue + "\\nUID:wc-" + m.id + "\\nEND:VEVENT\\n";
     });
     icsContent += "END:VCALENDAR";
 

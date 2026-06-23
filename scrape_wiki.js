@@ -67,12 +67,16 @@ const fs = require('fs');
                     let score = scoreElem ? scoreElem.textContent.trim() : null;
                     if(score && score.includes('v')) score = null; // "v" means not played yet
 
+                    const locationElem = box.querySelector('.fright [itemprop="location"]');
+                    const venue = locationElem ? locationElem.textContent.trim().replace(/\s+/g, ' ') : '';
+
                     matches.push({
                         date: dateElem.textContent.trim(),
                         time: timeElem.textContent.trim(),
                         home: homeElem.textContent.trim(),
                         away: awayElem.textContent.trim(),
                         score: score,
+                        venue: venue,
                         homeGoals: extractGoals(homeGoalElem),
                         awayGoals: extractGoals(awayGoalElem)
                     });
