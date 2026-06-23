@@ -2,8 +2,8 @@ name: Update Schedule Data
 
 on:
   schedule:
-    # 每天 00:00 和 12:00 UTC 执行 (根据你的时区可能需要调整)
-    - cron: '0 0,12 * * *'
+    # 每天 18:00 到 23:59 UTC 期间，每半小时执行一次
+    - cron: '0,30 18-23 * * *'
   workflow_dispatch: # 允许你在 GitHub Actions 页面手动点击运行
 
 jobs:
