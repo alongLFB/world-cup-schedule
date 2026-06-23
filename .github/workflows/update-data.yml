@@ -1,0 +1,45 @@
+name: Update Schedule Data
+
+on:
+  schedule:
+    # 每天 00:00 和 12:00 UTC 执行 (根据你的时区可能需要调整)
+    - cron: '0 0,12 * * *'
+  workflow_dispatch: # 允许你在 GitHub Actions 页面手动点击运行
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # 使用较新的 Node 版本
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Scrape latest data
+        run: node scrape_wiki.js
+
+      - name: Build frontend HTML
+        run: node build_html.js
+
+      - name: Commit and Push changes
+        run: |
+          # 配置 git 用户信息为 github-actions bot
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # 将可能改动的文件添加到暂存区
+          git add matches.json schedule.html app.js style.css
+          
+          # 检查是否有文件变更，有变更才 commit 和 push
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: auto-update schedule and build [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi

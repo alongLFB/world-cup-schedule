@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master # 触发的分支
+  workflow_run:
+    workflows: ["Update Schedule Data"]
+    types:
+      - completed
 
 jobs:
   deploy:
