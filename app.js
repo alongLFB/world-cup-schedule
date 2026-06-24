@@ -138,13 +138,12 @@ function getFlag(teamEn) {
     return teamFlags[teamEn] ? teamFlags[teamEn] + " " : "";
 }
 
-function getMatchStage(dateObj) {
-    const d = dateObj.toISOString().split('T')[0];
-    if (d <= '2026-06-27') return 'GROUP';
-    if (d >= '2026-06-28' && d <= '2026-07-03') return 'R32';
-    if (d >= '2026-07-04' && d <= '2026-07-07') return 'R16';
-    if (d >= '2026-07-09' && d <= '2026-07-11') return 'QF';
-    if (d >= '2026-07-14' && d <= '2026-07-15') return 'SF';
+function getMatchStage(matchId) {
+    if (matchId <= 72) return 'GROUP';
+    if (matchId <= 88) return 'R32';
+    if (matchId <= 96) return 'R16';
+    if (matchId <= 100) return 'QF';
+    if (matchId <= 102) return 'SF';
     return 'FINAL';
 }
 
@@ -449,7 +448,7 @@ rawMatches.forEach((m, idx) => {
         idDate: localTimeData.idDate,
         utcTimestamp: localTimeData.utcTimestamp,
         dateObj: localTimeData.dateObj,
-        stage: getMatchStage(localTimeData.dateObj)
+        stage: getMatchStage(idx + 1)
     });
 });
 
