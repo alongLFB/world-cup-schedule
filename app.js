@@ -455,6 +455,17 @@ function initStaticI18n() {
     langToggle.textContent = t.langToggle;
     document.getElementById('ios-hint-text').innerHTML = t.iosHint;
 
+    const bracketViewContainer = document.getElementById('bracket-view');
+    const btnToggleText = document.getElementById('btn-toggle-text');
+    if (btnToggleText && bracketViewContainer) {
+        const isBracket = bracketViewContainer.style.display === 'block';
+        btnToggleText.textContent = isBracket ? t.timelineView : t.bracketView;
+    }
+    const btnDownloadBracket = document.getElementById('btn-download-bracket');
+    if (btnDownloadBracket) {
+        btnDownloadBracket.textContent = t.downloadBracket;
+    }
+
     const searchInput = document.getElementById('search-input');
     if (searchInput) searchInput.placeholder = currentLang === 'zh' ? '搜索球队 (例如 巴西, ARG)' : 'Search a team (e.g. Brazil, ARG)';
     const lblGroup = document.getElementById('lbl-group');
