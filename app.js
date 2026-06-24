@@ -701,7 +701,7 @@ function renderSchedule() {
 
             let html = `<h2 class="date-header">${group.display}</h2><div class="schedule-grid">`;
 
-            group.matches.forEach(m => {
+            group.matches.sort((a, b) => a.utcTimestamp - b.utcTimestamp).forEach(m => {
                 const isFinished = !!m.score && !m.score.toLowerCase().includes('match');
                 const scoreDisplay = isFinished ? `<div class="score-badge">${m.score}</div>` : `<div class="vs">VS</div>`;
                 const statusHtml = isFinished ? `<span class="status-badge finished">${i18n[currentLang].finished}</span>` : `<span class="status-badge">${i18n[currentLang].upcoming}</span>`;
