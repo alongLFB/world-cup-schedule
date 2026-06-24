@@ -164,7 +164,9 @@ p.subtitle { font-size: 1.1rem; color: var(--text-muted); font-weight: 300; }
 .score-badge { font-size: 1.4rem; font-weight: 800; background: rgba(255, 255, 255, 0.15); padding: 4px 12px; border-radius: 8px; color: #fff; border: 1px solid rgba(255,255,255,0.3); letter-spacing: 1px; }
 
 .stadium { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.match-footer-tags { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
 .group-pill { border: 1px solid rgba(230, 197, 83, 0.5); color: #e6c553; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.5px; }
+.stage-pill { border: 1px solid rgba(0, 212, 255, 0.5); color: #00d4ff; }
 
 /* Match Details Panel */
 .btn-details {

@@ -10,7 +10,8 @@ const i18n = {
         langToggle: "🌐 中文",
         upcoming: "Upcoming",
         finished: "FT",
-        matchText: (id) => `Match ${id} • FIFA World Cup 2026`,
+        matchText: (id) => `Match ${id}`,
+        venuePrefix: "Venue: ",
         toggleDetails: "Toggle Match Details ▾",
         noMatches: "No matches found for the selected filter.",
         iosHint: "💡 <strong>Tip for iOS Users:</strong> Please open this page in the built-in <strong>Safari</strong> browser to seamlessly import events into your calendar.",
@@ -41,7 +42,8 @@ const i18n = {
         langToggle: "🌐 English",
         upcoming: "未开赛",
         finished: "完场",
-        matchText: (id) => `第 ${id} 场 • 2026 FIFA 世界杯`,
+        matchText: (id) => `第 ${id} 场`,
+        venuePrefix: "比赛场地: ",
         toggleDetails: "查看对局详情 ▾",
         noMatches: "未找到符合条件的比赛。",
         iosHint: "💡 <strong>iOS 用户提示：</strong> 请使用系统自带的 <strong>Safari</strong> 浏览器打开本页面，以便无缝导入日历。",
@@ -144,7 +146,22 @@ function getMatchStage(matchId) {
     if (matchId <= 96) return 'R16';
     if (matchId <= 100) return 'QF';
     if (matchId <= 102) return 'SF';
+    if (matchId === 103) return 'THIRD_PLACE';
     return 'FINAL';
+}
+
+function getStageLabel(stageStr) {
+    const t = i18n[currentLang];
+    const map = {
+        'GROUP': t.groupStage,
+        'R32': t.round32,
+        'R16': t.round16,
+        'QF': t.quarterFinal,
+        'SF': t.semiFinal,
+        'THIRD_PLACE': t.thirdPlace,
+        'FINAL': t.final
+    };
+    return map[stageStr] || stageStr;
 }
 
 let currentLang = localStorage.getItem('lang') || 'en';
@@ -712,7 +729,12 @@ function renderSchedule() {
                 const groupA = groupMappings[m.homeEn];
                 const groupB = groupMappings[m.awayEn];
                 const matchGroup = groupA && groupA === groupB ? groupA : (groupA || groupB);
-                const groupPillHtml = matchGroup && m.stage === 'GROUP' ? `<span class="group-pill">GROUP ${matchGroup}</span> ` : '';
+                const groupLabel = currentLang === 'zh' ? `${matchGroup} 组` : `Group ${matchGroup}`;
+                const groupPillHtml = matchGroup && m.stage === 'GROUP' ? `<span class="group-pill stage-pill">${groupLabel}</span>` : '';
+                const stageLabel = getStageLabel(m.stage);
+                const stageTagHtml = m.stage !== 'GROUP' ? `<span class="group-pill stage-pill">${stageLabel}</span>` : `<span class="group-pill stage-pill">${stageLabel}</span>`;
+                
+                const footerTagsHtml = `<div class="match-footer-tags">${groupPillHtml}${m.stage !== 'GROUP' ? stageTagHtml : ''}</div>`;
 
                 let detailsHtml = '';
                 if (m.events.length > 0) {
@@ -743,7 +765,8 @@ function renderSchedule() {
                             ${scoreDisplay}
                             <div class="team team-right">${aTeam}</div>
                         </div>
-                        <div class="stadium">${groupPillHtml}${i18n[currentLang].matchText(m.id)}${venue ? ' • ' + venue : ''}</div>
+                        ${footerTagsHtml}
+                        <div class="stadium">${i18n[currentLang].matchText(m.id)}${venue ? ' • ' + i18n[currentLang].venuePrefix + venue : ''}</div>
                         ${detailsHtml}
                     </div>
                 `;
