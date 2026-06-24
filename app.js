@@ -15,7 +15,9 @@ const i18n = {
         noMatches: "No matches found for the selected filter.",
         iosHint: "💡 <strong>Tip for iOS Users:</strong> Please open this page in the built-in <strong>Safari</strong> browser to seamlessly import events into your calendar.",
         shareText: "🏆 Check out the 2026 World Cup Live Schedule & Scores (Local Time)! https://worldcup2026.alonglfb.com/",
-        copied: "Copied to clipboard!"
+        copied: "Copied to clipboard!",
+        matchesComingUp: (n) => `${n} matches coming up`,
+        historyMatches: "History Matches"
     },
     zh: {
         timeline: "时间轴",
@@ -33,7 +35,9 @@ const i18n = {
         noMatches: "未找到符合条件的比赛。",
         iosHint: "💡 <strong>iOS 用户提示：</strong> 请使用系统自带的 <strong>Safari</strong> 浏览器打开本页面，以便无缝导入日历。",
         shareText: "🏆 2026美加墨世界杯赛程与实时比分 (自动适配本地时区)！快来看看吧：https://worldcup2026.alonglfb.com/",
-        copied: "已复制到剪贴板！"
+        copied: "已复制到剪贴板！",
+        matchesComingUp: (n) => `即将进行 ${n} 场比赛`,
+        historyMatches: "历史比赛"
     }
 };
 
@@ -75,6 +79,53 @@ const venueNamesZH = {
     "SoFi Stadium, Inglewood": "SoFi体育场，英格尔伍德"
 };
 
+const groupMappings = {
+    'Mexico': 'A', 'South Africa': 'A', 'South Korea': 'A', 'Czech Republic': 'A',
+    'Canada': 'B', 'Bosnia and Herzegovina': 'B', 'Qatar': 'B', 'Switzerland': 'B',
+    'Brazil': 'C', 'Morocco': 'C', 'Haiti': 'C', 'Scotland': 'C',
+    'United States': 'D', 'Paraguay': 'D', 'Australia': 'D', 'Turkey': 'D',
+    'Germany': 'E', 'Curaçao': 'E', 'Ivory Coast': 'E', 'Ecuador': 'E',
+    'Netherlands': 'F', 'Japan': 'F', 'Sweden': 'F', 'Tunisia': 'F',
+    'Belgium': 'G', 'Egypt': 'G', 'Iran': 'G', 'New Zealand': 'G',
+    'Spain': 'H', 'Cape Verde': 'H', 'Saudi Arabia': 'H', 'Uruguay': 'H',
+    'France': 'I', 'Senegal': 'I', 'Iraq': 'I', 'Norway': 'I',
+    'Argentina': 'J', 'Algeria': 'J', 'Austria': 'J', 'Jordan': 'J',
+    'Portugal': 'K', 'DR Congo': 'K', 'Uzbekistan': 'K', 'Colombia': 'K',
+    'England': 'L', 'Croatia': 'L', 'Ghana': 'L', 'Panama': 'L'
+};
+
+const teamFlags = {
+    "Mexico": "🇲🇽", "South Africa": "🇿🇦", "United States": "🇺🇸", "Argentina": "🇦🇷",
+    "Canada": "🇨🇦", "Brazil": "🇧🇷", "France": "🇫🇷", "England": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "Spain": "🇪🇸", "Portugal": "🇵🇹", "Germany": "🇩🇪", "Italy": "🇮🇹",
+    "Netherlands": "🇳🇱", "Belgium": "🇧🇪", "Croatia": "🇭🇷", "Uruguay": "🇺🇾",
+    "Japan": "🇯🇵", "South Korea": "🇰🇷", "Morocco": "🇲🇦", "Senegal": "🇸🇳",
+    "Iran": "🇮🇷", "Saudi Arabia": "🇸🇦", "Australia": "🇦🇺", "Ecuador": "🇪🇨",
+    "Switzerland": "🇨🇭", "Denmark": "🇩🇰", "Colombia": "🇨🇴", "Serbia": "🇷🇸",
+    "Poland": "🇵🇱", "Cameroon": "🇨🇲", "Ghana": "🇬🇭", "Tunisia": "🇹🇳",
+    "Costa Rica": "🇨🇷", "Wales": "🏴󠁧󠁢󠁷󠁬󠁳󠁿", "Qatar": "🇶🇦", "Nigeria": "🇳🇬",
+    "Egypt": "🇪🇬", "Algeria": "🇩🇿", "Mali": "🇲🇱", "Ivory Coast": "🇨🇮",
+    "Peru": "🇵🇪", "Chile": "🇨🇱", "Sweden": "🇸🇪", "Norway": "🇳🇴", "Czech Republic": "🇨🇿",
+    "Austria": "🇦🇹", "Hungary": "🇭🇺", "Turkey": "🇹🇷", "Ukraine": "🇺🇦",
+    "Bosnia and Herzegovina": "🇧🇦", "Haiti": "🇭🇹", "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Paraguay": "🇵🇾",
+    "Curaçao": "🇨🇼", "New Zealand": "🇳🇿", "Cape Verde": "🇨🇻", "Iraq": "🇮🇶",
+    "Jordan": "🇯🇴", "DR Congo": "🇨🇩", "Uzbekistan": "🇺🇿", "Panama": "🇵🇦"
+};
+
+function getFlag(teamEn) {
+    return teamFlags[teamEn] ? teamFlags[teamEn] + " " : "";
+}
+
+function getMatchStage(dateObj) {
+    const d = dateObj.toISOString().split('T')[0];
+    if (d <= '2026-06-27') return 'GROUP';
+    if (d >= '2026-06-28' && d <= '2026-07-03') return 'R32';
+    if (d >= '2026-07-04' && d <= '2026-07-07') return 'R16';
+    if (d >= '2026-07-09' && d <= '2026-07-11') return 'QF';
+    if (d >= '2026-07-14' && d <= '2026-07-15') return 'SF';
+    return 'FINAL';
+}
+
 let currentLang = localStorage.getItem('lang') || 'en';
 
 function translateTeam(teamEn) {
@@ -107,34 +158,34 @@ function convertToLocal(dateStr, timeStr) {
     const dateMatch = dateStr.match(/\((\d{4}-\d{2}-\d{2})\)/);
     if (!dateMatch) return null;
     const isoDate = dateMatch[1];
-    
+
     const timeRegex = /(\d{1,2}):(\d{2})\s*(a\.m\.|p\.m\.)\s*UTC[−-](\d)/i;
     const timeMatch = timeStr.match(timeRegex);
     if (!timeMatch) return null;
-    
+
     let hours = parseInt(timeMatch[1], 10);
     const mins = parseInt(timeMatch[2], 10);
     const ampm = timeMatch[3].toLowerCase();
     const utcOffset = parseInt(timeMatch[4], 10);
-    
+
     if (ampm === 'p.m.' && hours !== 12) hours += 12;
     if (ampm === 'a.m.' && hours === 12) hours = 0;
-    
+
     // Calculate precise UTC Date based on original string
     let absoluteUtcDate = new Date(isoDate + "T00:00:00Z");
-    absoluteUtcDate.setUTCHours(hours + utcOffset, mins, 0, 0); 
-    
+    absoluteUtcDate.setUTCHours(hours + utcOffset, mins, 0, 0);
+
     // JS automatically computes local representation via native methods
     const formatHours = absoluteUtcDate.getHours().toString().padStart(2, '0');
     const formatMins = absoluteUtcDate.getMinutes().toString().padStart(2, '0');
-    
-    const idDate = absoluteUtcDate.getFullYear() + "-" + 
-                   (absoluteUtcDate.getMonth() + 1).toString().padStart(2, '0') + "-" +
-                   absoluteUtcDate.getDate().toString().padStart(2, '0');
-    
-    return { 
-        time: `${formatHours}:${formatMins}`, 
-        idDate, 
+
+    const idDate = absoluteUtcDate.getFullYear() + "-" +
+        (absoluteUtcDate.getMonth() + 1).toString().padStart(2, '0') + "-" +
+        absoluteUtcDate.getDate().toString().padStart(2, '0');
+
+    return {
+        time: `${formatHours}:${formatMins}`,
+        idDate,
         utcTimestamp: absoluteUtcDate,
         dateObj: absoluteUtcDate
     };
@@ -147,26 +198,26 @@ rawMatches.forEach((m, idx) => {
     if (!m.date || !m.home || !m.away) return;
     const localTimeData = convertToLocal(m.date, m.time);
     if (!localTimeData) return;
-    
+
     teamsSet.add(m.home);
     teamsSet.add(m.away);
 
     let events = [];
-    if(m.homeGoals) {
+    if (m.homeGoals) {
         m.homeGoals.forEach(g => {
             g.times.forEach(t => events.push({ team: 'home', player: g.player, time: t, isPenalty: g.isPenalty, isOwnGoal: g.isOwnGoal }));
         });
     }
-    if(m.awayGoals) {
+    if (m.awayGoals) {
         m.awayGoals.forEach(g => {
             g.times.forEach(t => events.push({ team: 'away', player: g.player, time: t, isPenalty: g.isPenalty, isOwnGoal: g.isOwnGoal }));
         });
     }
-    events.sort((a,b) => {
+    events.sort((a, b) => {
         const getMin = (t) => parseInt(t.replace(/[^0-9]/g, '')) || 0;
         return getMin(a.time) - getMin(b.time);
     });
-    
+
     matchesData.push({
         id: idx + 1,
         homeEn: m.home,
@@ -177,7 +228,8 @@ rawMatches.forEach((m, idx) => {
         localTime: localTimeData.time,
         idDate: localTimeData.idDate,
         utcTimestamp: localTimeData.utcTimestamp,
-        dateObj: localTimeData.dateObj
+        dateObj: localTimeData.dateObj,
+        stage: getMatchStage(localTimeData.dateObj)
     });
 });
 
@@ -195,25 +247,53 @@ function initStaticI18n() {
     document.getElementById('title-main').textContent = t.title;
     document.getElementById('title-sub').textContent = t.subtitle;
     document.getElementById('tz-badge').textContent = t.tzBadge();
-    document.getElementById('opt-all').textContent = t.allTeams;
     document.getElementById('btn-export-text').textContent = t.exportBtn;
     document.getElementById('btn-share-text').textContent = t.shareBtn;
     langToggle.textContent = t.langToggle;
     document.getElementById('ios-hint-text').innerHTML = t.iosHint;
+
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) searchInput.placeholder = currentLang === 'zh' ? '搜索球队 (例如 巴西, ARG)' : 'Search a team (e.g. Brazil, ARG)';
+    const lblGroup = document.getElementById('lbl-group');
+    if (lblGroup) lblGroup.textContent = currentLang === 'zh' ? '组别' : 'GROUP';
+    const clearFilters = document.getElementById('clear-filters');
+    if (clearFilters) clearFilters.textContent = currentLang === 'zh' ? '清除过滤' : 'CLEAR FILTERS';
+    const allOpt = document.querySelector('#group-select option[value="ALL"]');
+    if (allOpt) allOpt.textContent = currentLang === 'zh' ? '所有' : 'All';
 }
 
 function init() {
-    const sortedTeams = Array.from(teamsSet).sort();
-    sortedTeams.forEach(t => {
-        const opt = document.createElement('option');
-        opt.value = t; 
-        opt.textContent = t; // Will be updated on render based on lang
-        teamFilter.appendChild(opt);
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.addEventListener('input', () => renderSchedule());
+    }
+
+    document.querySelectorAll('.stage-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.stage-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            renderSchedule();
+        });
     });
 
-    teamFilter.addEventListener('change', () => renderSchedule(teamFilter.value));
-    exportBtn.addEventListener('click', () => exportICS(teamFilter.value));
-    
+    const groupSelect = document.getElementById('group-select');
+    if (groupSelect) {
+        groupSelect.addEventListener('change', () => renderSchedule());
+    }
+
+    const clearFilters = document.getElementById('clear-filters');
+    if (clearFilters) {
+        clearFilters.addEventListener('click', () => {
+            document.getElementById('search-input').value = '';
+            document.querySelectorAll('.stage-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.stage-btn[data-stage="ALL"]').classList.add('active');
+            document.getElementById('group-select').value = 'ALL';
+            renderSchedule();
+        });
+    }
+
+    exportBtn.addEventListener('click', () => exportICS());
+
     shareBtn.addEventListener('click', () => {
         navigator.clipboard.writeText(i18n[currentLang].shareText).then(() => {
             toast.textContent = i18n[currentLang].copied;
@@ -226,114 +306,157 @@ function init() {
         currentLang = currentLang === 'en' ? 'zh' : 'en';
         localStorage.setItem('lang', currentLang);
         initStaticI18n();
-        renderSchedule(teamFilter.value);
+        renderSchedule();
     });
-    
+
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     if (isIOS) {
         document.getElementById('ios-hint').style.display = 'block';
     }
-    
+
     initStaticI18n();
-    renderSchedule('all');
+    renderSchedule();
     scrollToCurrentDay();
 }
 
-function renderSchedule(filterTeam) {
+function renderSchedule() {
     scheduleContainer.innerHTML = '';
     timelineContainer.innerHTML = '';
-    
-    // Update select options language dynamically
-    Array.from(teamFilter.options).forEach(opt => {
-        if (opt.value === 'all') opt.textContent = i18n[currentLang].allTeams;
-        else opt.textContent = translateTeam(opt.value);
-    });
 
-    const groupedMatches = {};
-    matchesData.forEach(m => {
-        if(!groupedMatches[m.idDate]) { groupedMatches[m.idDate] = { display: formatDate(m.dateObj), matches: [] }; }
-        groupedMatches[m.idDate].matches.push(m);
-    });
-    const sortedDates = Object.keys(groupedMatches).sort();
+    const searchQ = document.getElementById('search-input').value.toLowerCase().trim();
+    const activeStage = document.querySelector('.stage-btn.active').getAttribute('data-stage');
+    const activeGroup = document.getElementById('group-select').value;
 
-    let hasVisibleMatches = false;
+    let upcomingMatchesCount = 0;
 
-    sortedDates.forEach(dateKey => {
-        const group = groupedMatches[dateKey];
-        const filteredMatches = filterTeam === 'all' 
-            ? group.matches 
-            : group.matches.filter(m => m.homeEn === filterTeam || m.awayEn === filterTeam);
-            
-        if (filteredMatches.length === 0) return;
-        hasVisibleMatches = true;
+    const filteredMatches = matchesData.filter(m => {
+        if (activeStage !== 'ALL' && m.stage !== activeStage) return false;
 
-        const link = document.createElement('a');
-        link.href = '#' + dateKey;
-        // Keep timeline concise
-        link.textContent = currentLang === 'zh' ? group.display : group.display.split(',')[0] + ' ' + group.display.split(',')[1]; 
-        timelineContainer.appendChild(link);
-
-        const section = document.createElement('div');
-        section.className = 'date-section';
-        section.id = dateKey;
-        
-        let html = `<h2 class="date-header">${group.display}</h2><div class="schedule-grid">`;
-        
-        filteredMatches.forEach(m => {
-            const isFinished = !!m.score && !m.score.toLowerCase().includes('match');
-            const scoreDisplay = isFinished ? `<div class="score-badge">${m.score}</div>` : `<div class="vs">VS</div>`;
-            const statusHtml = isFinished ? `<span class="status-badge finished">${i18n[currentLang].finished}</span>` : `<span class="status-badge">${i18n[currentLang].upcoming}</span>`;
-            
-            const hTeam = translateTeam(m.homeEn);
-            const aTeam = translateTeam(m.awayEn);
-            const venue = translateVenue(m.venueEn);
-
-            let detailsHtml = '';
-            if(m.events.length > 0) {
-                let eventsList = '';
-                m.events.forEach(e => {
-                    const icon = e.isOwnGoal ? '⚽ (OG)' : '⚽';
-                    const extra = e.isPenalty ? ' <span class="pen-text">(pen.)</span>' : (e.isOwnGoal ? ' <span class="og-text">(o.g.)</span>' : '');
-                    if(e.team === 'home') {
-                        eventsList += `<div class="event-row"><div class="event-home">${e.player} ${e.time}${extra} <span class="event-icon">${icon}</span></div><div class="event-away"></div></div>`;
-                    } else {
-                        eventsList += `<div class="event-row"><div class="event-home"></div><div class="event-away"><span class="event-icon">${icon}</span> ${e.time} ${e.player}${extra}</div></div>`;
-                    }
-                });
-                detailsHtml = `
-                    <button class="btn-details" onclick="toggleDetails('details-${m.id}')">${i18n[currentLang].toggleDetails}</button>
-                    <div class="match-details" id="details-${m.id}">${eventsList}</div>
-                `;
+        if (activeGroup !== 'ALL') {
+            const hGroup = groupMappings[m.homeEn];
+            const aGroup = groupMappings[m.awayEn];
+            if (hGroup !== activeGroup && aGroup !== activeGroup) {
+                if (!m.homeEn.includes(`Group ${activeGroup}`) && !m.awayEn.includes(`Group ${activeGroup}`)) {
+                    return false;
+                }
             }
+        }
 
-            html += `
-                <div class="match-card">
-                    <div class="match-header-row">
-                        <div class="match-time">${m.localTime}</div>
-                        ${statusHtml}
-                    </div>
-                    <div class="stadium">${i18n[currentLang].matchText(m.id)}${venue ? ' • ' + venue : ''}</div>
-                    <div class="match-teams">
-                        <div class="team ${m.homeEn === filterTeam ? 'highlight' : ''}" style="${m.homeEn === filterTeam ? 'color: var(--primary)' : ''}">${hTeam}</div>
-                        ${scoreDisplay}
-                        <div class="team team-right ${m.awayEn === filterTeam ? 'highlight' : ''}" style="${m.awayEn === filterTeam ? 'color: var(--primary)' : ''}">${aTeam}</div>
-                    </div>
-                    ${detailsHtml}
-                </div>
-            `;
-        });
-        html += `</div>`;
-        section.innerHTML = html;
-        scheduleContainer.appendChild(section);
+        if (searchQ) {
+            const hEn = m.homeEn.toLowerCase();
+            const aEn = m.awayEn.toLowerCase();
+            const hZh = translateTeam(m.homeEn).toLowerCase();
+            const aZh = translateTeam(m.awayEn).toLowerCase();
+            if (!hEn.includes(searchQ) && !aEn.includes(searchQ) && !hZh.includes(searchQ) && !aZh.includes(searchQ)) return false;
+        }
+
+        return true;
     });
 
-    if (!hasVisibleMatches) scheduleContainer.innerHTML = `<div class="empty-state">${i18n[currentLang].noMatches}</div>`;
+    const groupedUpcoming = {};
+    const groupedHistory = {};
+
+    filteredMatches.forEach(m => {
+        const isFinished = !!m.score && !m.score.toLowerCase().includes('match');
+        if (!isFinished) upcomingMatchesCount++;
+
+        const targetDict = isFinished ? groupedHistory : groupedUpcoming;
+        if (!targetDict[m.idDate]) { targetDict[m.idDate] = { display: formatDate(m.dateObj), matches: [] }; }
+        targetDict[m.idDate].matches.push(m);
+    });
+
+    document.getElementById('match-count').textContent = i18n[currentLang].matchesComingUp(upcomingMatchesCount);
+
+    function renderSection(grouped, titleHtml, isHistory) {
+        if (Object.keys(grouped).length === 0) return;
+
+        const sortedDates = Object.keys(grouped).sort();
+        if (titleHtml) {
+            const h2 = document.createElement('h2');
+            h2.className = 'history-header';
+            h2.textContent = titleHtml;
+            scheduleContainer.appendChild(h2);
+        }
+
+        sortedDates.forEach(dateKey => {
+            const group = grouped[dateKey];
+
+            const link = document.createElement('a');
+            link.href = '#' + dateKey + (isHistory ? '-hist' : '');
+            link.textContent = currentLang === 'zh' ? group.display : group.display.split(',')[0] + ' ' + group.display.split(',')[1];
+            if (isHistory) link.style.opacity = '0.5';
+            timelineContainer.appendChild(link);
+
+            const section = document.createElement('div');
+            section.className = 'date-section' + (isHistory ? ' history-section' : '');
+            section.id = dateKey + (isHistory ? '-hist' : '');
+
+            let html = `<h2 class="date-header">${group.display}</h2><div class="schedule-grid">`;
+
+            group.matches.forEach(m => {
+                const isFinished = !!m.score && !m.score.toLowerCase().includes('match');
+                const scoreDisplay = isFinished ? `<div class="score-badge">${m.score}</div>` : `<div class="vs">VS</div>`;
+                const statusHtml = isFinished ? `<span class="status-badge finished">${i18n[currentLang].finished}</span>` : `<span class="status-badge">${i18n[currentLang].upcoming}</span>`;
+
+                const hTeam = getFlag(m.homeEn) + translateTeam(m.homeEn);
+                const aTeam = getFlag(m.awayEn) + translateTeam(m.awayEn);
+                const venue = translateVenue(m.venueEn);
+
+                const groupA = groupMappings[m.homeEn];
+                const groupB = groupMappings[m.awayEn];
+                const matchGroup = groupA && groupA === groupB ? groupA : (groupA || groupB);
+                const groupPillHtml = matchGroup && m.stage === 'GROUP' ? `<span class="group-pill">GROUP ${matchGroup}</span> ` : '';
+
+                let detailsHtml = '';
+                if (m.events.length > 0) {
+                    let eventsList = '';
+                    m.events.forEach(e => {
+                        const icon = e.isOwnGoal ? '⚽ (OG)' : '⚽';
+                        const extra = e.isPenalty ? ' <span class="pen-text">(pen.)</span>' : (e.isOwnGoal ? ' <span class="og-text">(o.g.)</span>' : '');
+                        if (e.team === 'home') {
+                            eventsList += `<div class="event-row"><div class="event-home">${e.player} ${e.time}${extra} <span class="event-icon">${icon}</span></div><div class="event-away"></div></div>`;
+                        } else {
+                            eventsList += `<div class="event-row"><div class="event-home"></div><div class="event-away"><span class="event-icon">${icon}</span> ${e.time} ${e.player}${extra}</div></div>`;
+                        }
+                    });
+                    detailsHtml = `
+                        <button class="btn-details" onclick="toggleDetails('details-${m.id}')">${i18n[currentLang].toggleDetails}</button>
+                        <div class="match-details" id="details-${m.id}">${eventsList}</div>
+                    `;
+                }
+
+                html += `
+                    <div class="match-card">
+                        <div class="match-header-row">
+                            <div class="match-time">${m.localTime}</div>
+                            ${statusHtml}
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">${hTeam}</div>
+                            ${scoreDisplay}
+                            <div class="team team-right">${aTeam}</div>
+                        </div>
+                        <div class="stadium">${groupPillHtml}${i18n[currentLang].matchText(m.id)}${venue ? ' • ' + venue : ''}</div>
+                        ${detailsHtml}
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            section.innerHTML = html;
+            scheduleContainer.appendChild(section);
+        });
+    }
+
+    renderSection(groupedUpcoming, null, false);
+    renderSection(groupedHistory, i18n[currentLang].historyMatches, true);
+
+    if (filteredMatches.length === 0) scheduleContainer.innerHTML = `<div class="empty-state">${i18n[currentLang].noMatches}</div>`;
     setupScrollSpy();
 }
 
-window.toggleDetails = function(id) {
+window.toggleDetails = function (id) {
     const el = document.getElementById(id);
-    if(el.classList.contains('open')) el.classList.remove('open');
+    if (el.classList.contains('open')) el.classList.remove('open');
     else el.classList.add('open');
 }
 
@@ -343,7 +466,7 @@ function scrollToCurrentDay() {
     if (targetElement) targetElement.scrollIntoView({ behavior: 'smooth' });
     else if (matchesData.length > 0) {
         // Just scroll to first available date element if future match
-        const sortedDates = Array.from(new Set(matchesData.map(m=>m.idDate))).sort();
+        const sortedDates = Array.from(new Set(matchesData.map(m => m.idDate))).sort();
         const nextDate = sortedDates.find(d => d > todayStr);
         if (nextDate) document.getElementById(nextDate).scrollIntoView({ behavior: 'smooth' });
     }
@@ -352,7 +475,7 @@ function scrollToCurrentDay() {
 function setupScrollSpy() {
     const sections = document.querySelectorAll('.date-section');
     const navLinks = document.querySelectorAll('.timeline-links a');
-    if(sections.length === 0) return;
+    if (sections.length === 0) return;
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -369,25 +492,63 @@ function setupScrollSpy() {
     sections.forEach(sec => observer.observe(sec));
 }
 
-function exportICS(filterTeam) {
-    let matchesToExport = filterTeam !== 'all' ? matchesData.filter(m => m.homeEn === filterTeam || m.awayEn === filterTeam) : matchesData;
+function exportICS() {
+    const searchQ = document.getElementById('search-input').value.toLowerCase().trim();
+    const activeStage = document.querySelector('.stage-btn.active').getAttribute('data-stage');
+    const activeGroup = document.getElementById('group-select').value;
+
+    let matchesToExport = matchesData.filter(m => {
+        if (activeStage !== 'ALL' && m.stage !== activeStage) return false;
+        if (activeGroup !== 'ALL') {
+            const hGroup = groupMappings[m.homeEn];
+            const aGroup = groupMappings[m.awayEn];
+            if (hGroup !== activeGroup && aGroup !== activeGroup && !m.homeEn.includes(`Group ${activeGroup}`) && !m.awayEn.includes(`Group ${activeGroup}`)) return false;
+        }
+        if (searchQ) {
+            const hEn = m.homeEn.toLowerCase();
+            const aEn = m.awayEn.toLowerCase();
+            const hZh = translateTeam(m.homeEn).toLowerCase();
+            const aZh = translateTeam(m.awayEn).toLowerCase();
+            if (!hEn.includes(searchQ) && !aEn.includes(searchQ) && !hZh.includes(searchQ) && !aZh.includes(searchQ)) return false;
+        }
+        return true;
+    });
     if (matchesToExport.length === 0) return alert('No matches to export');
-    
-    let icsContent = "BEGIN:VCALENDAR\\nVERSION:2.0\\nPRODID:-//2026 World Cup Schedule//EN\\nCALSCALE:GREGORIAN\\n";
+
+    // 1. 使用反引号，并确保每一行结尾都是 \r
+    let icsContent = `BEGIN:VCALENDAR\r
+VERSION:2.0\r
+PRODID:-//2026 World Cup Schedule//EN\r
+CALSCALE:GREGORIAN\r\n`;
+
     matchesToExport.forEach(m => {
         const dtstart = m.utcTimestamp.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
         const dtend = new Date(m.utcTimestamp.getTime() + 2 * 3600000).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
         const hTeam = translateTeam(m.homeEn);
         const aTeam = translateTeam(m.awayEn);
-        const venue = translateVenue(m.venueEn).replace(/,/g, '\\\\,');
-        icsContent += "BEGIN:VEVENT\\nDTSTART:" + dtstart + "\\nDTEND:" + dtend + "\\nSUMMARY:World Cup: " + hTeam + " vs " + aTeam + "\\nLOCATION:" + venue + "\\nUID:wc-" + m.id + "\\nEND:VEVENT\\n";
+        // ics 规范中逗号需要转义，这里保留你的逻辑
+        const venue = translateVenue(m.venueEn).replace(/,/g, '\\,');
+
+        // 2. 这里的 VEVENT 内部也全部换成模板字符串，尾部加 \r
+        icsContent += `BEGIN:VEVENT\r
+DTSTART:${dtstart}\r
+DTEND:${dtend}\r
+SUMMARY:World Cup: ${hTeam} vs ${aTeam}\r
+LOCATION:${venue}\r
+UID:wc-${m.id}\r
+END:VEVENT\r\n`;
     });
+
     icsContent += "END:VCALENDAR";
 
+    // 3. 这里的 Blob 加上特殊的 \r\n 转换配置（部分老版本浏览器兼容性优化，但主要靠上面字符串搞定）
     const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `WC2026_Schedule${filterTeam !== 'all' ? '_' + filterTeam.replace(/\s+/g, '') : ''}.ics`;
+
+    const filterSuffix = searchQ || (activeGroup !== 'ALL' ? 'Group' + activeGroup : (activeStage !== 'ALL' ? activeStage : ''));
+    a.download = `WC2026_Schedule${filterSuffix ? '_' + filterSuffix.replace(/\s+/g, '') : ''}.ics`;
+
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
 }
 
