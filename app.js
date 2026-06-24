@@ -17,7 +17,10 @@ const i18n = {
         shareText: "🏆 Check out the 2026 World Cup Live Schedule & Scores (Local Time)! https://worldcup2026.alonglfb.com/",
         copied: "Copied to clipboard!",
         matchesComingUp: (n) => `${n} matches coming up`,
-        historyMatches: "History Matches"
+        historyMatches: "History Matches",
+        bracketView: "Bracket View",
+        timelineView: "Timeline View",
+        downloadBracket: "📸 Download Bracket Image"
     },
     zh: {
         timeline: "时间轴",
@@ -37,7 +40,10 @@ const i18n = {
         shareText: "🏆 2026美加墨世界杯赛程与实时比分 (自动适配本地时区)！快来看看吧：https://worldcup2026.alonglfb.com/",
         copied: "已复制到剪贴板！",
         matchesComingUp: (n) => `即将进行 ${n} 场比赛`,
-        historyMatches: "历史比赛"
+        historyMatches: "历史比赛",
+        bracketView: "晋级图表",
+        timelineView: "列表视图",
+        downloadBracket: "📸 下载晋级图片"
     }
 };
 
