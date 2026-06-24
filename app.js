@@ -20,7 +20,15 @@ const i18n = {
         historyMatches: "History Matches",
         bracketView: "Bracket View",
         timelineView: "Timeline View",
-        downloadBracket: "📸 Download Bracket Image"
+        downloadBracket: "📸 Download Bracket Image",
+        bracketTitle: "2026 WORLD CUP MATCH SCHEDULE",
+        groupStage: "GROUP STAGE",
+        round32: "ROUND OF 32",
+        round16: "ROUND OF 16",
+        quarterFinal: "QUARTER FINAL",
+        semiFinal: "SEMI FINAL",
+        final: "FINAL",
+        thirdPlace: "THIRD PLACE"
     },
     zh: {
         timeline: "时间轴",
@@ -43,7 +51,15 @@ const i18n = {
         historyMatches: "历史比赛",
         bracketView: "晋级图表",
         timelineView: "列表视图",
-        downloadBracket: "📸 下载晋级图片"
+        downloadBracket: "📸 下载晋级图片",
+        bracketTitle: "2026 世界杯赛程对阵图",
+        groupStage: "小组赛",
+        round32: "1/16 决赛",
+        round16: "1/8 决赛",
+        quarterFinal: "1/4 决赛",
+        semiFinal: "半决赛",
+        final: "决赛",
+        thirdPlace: "季军赛"
     }
 };
 
@@ -308,31 +324,32 @@ function renderBracket() {
     const leftGroupsHtml = buildGroupCol(['A', 'B', 'C', 'D', 'E', 'F']);
     const rightGroupsHtml = buildGroupCol(['G', 'H', 'I', 'J', 'K', 'L']);
 
+    const t = i18n[currentLang];
     const centerHtml = `<div class="bracket-center">
         <div class="bracket-trophy">🏆</div>
-        <div class="bracket-match-info" style="margin-top:10px; color:#e6c553; font-weight:800; font-size:0.7rem;">THIRD PLACE</div>
+        <div class="bracket-match-info" style="margin-top:10px; color:#e6c553; font-weight:800; font-size:0.7rem;">${t.thirdPlace}</div>
         ${getMatchHTML(103)}
-        <div class="bracket-match-info" style="margin-top:10px; color:#e6c553; font-weight:800; font-size:0.8rem;">FINAL</div>
+        <div class="bracket-match-info" style="margin-top:10px; color:#e6c553; font-weight:800; font-size:0.8rem;">${t.final}</div>
         ${getMatchHTML(104)}
     </div>`;
 
     const fullHtml = `
         <div class="bracket-wrapper">
             <div class="bracket-header-banner">
-                <h1>2026 WORLD CUP MATCH SCHEDULE</h1>
+                <h1>${t.bracketTitle}</h1>
             </div>
             <div class="bracket-stage-header">
-                <div class="bracket-stage-title">GROUP STAGE</div>
-                <div class="bracket-stage-title">ROUND OF 32</div>
-                <div class="bracket-stage-title">ROUND OF 16</div>
-                <div class="bracket-stage-title">QUARTER FINAL</div>
-                <div class="bracket-stage-title">SEMI FINAL</div>
-                <div class="bracket-stage-title" style="border-right: none; color: #e6c553;">FINAL</div>
-                <div class="bracket-stage-title" style="border-left: 1px solid rgba(255,255,255,0.2);">SEMI FINAL</div>
-                <div class="bracket-stage-title">QUARTER FINAL</div>
-                <div class="bracket-stage-title">ROUND OF 16</div>
-                <div class="bracket-stage-title">ROUND OF 32</div>
-                <div class="bracket-stage-title">GROUP STAGE</div>
+                <div class="bracket-stage-title">${t.groupStage}</div>
+                <div class="bracket-stage-title">${t.round32}</div>
+                <div class="bracket-stage-title">${t.round16}</div>
+                <div class="bracket-stage-title">${t.quarterFinal}</div>
+                <div class="bracket-stage-title">${t.semiFinal}</div>
+                <div class="bracket-stage-title" style="border-right: none; color: #e6c553;">${t.final}</div>
+                <div class="bracket-stage-title" style="border-left: 1px solid rgba(255,255,255,0.2);">${t.semiFinal}</div>
+                <div class="bracket-stage-title">${t.quarterFinal}</div>
+                <div class="bracket-stage-title">${t.round16}</div>
+                <div class="bracket-stage-title">${t.round32}</div>
+                <div class="bracket-stage-title">${t.groupStage}</div>
             </div>
             <div class="bracket-container" style="background:transparent; padding:0; box-shadow:none; border-radius:0; min-width:auto;">
                 ${leftGroupsHtml}
