@@ -1,4 +1,5 @@
 :root {
+    color-scheme: dark;
     --primary: #00ff87;
     --primary-dark: #00cc6a;
     --bg-dark: #0a0f1c;
@@ -9,7 +10,7 @@
     --timeline-w: 200px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background-color: #050811; }
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,7 +19,9 @@ html { scroll-behavior: smooth; }
 }
 
 body {
-    background: linear-gradient(135deg, #050811 0%, #0a0f1c 100%);
+    background-color: #050811;
+    background-image: linear-gradient(135deg, #050811 0%, #0a0f1c 100%);
+    background-attachment: fixed;
     color: var(--text-main);
     min-height: 100vh;
 }
@@ -55,7 +58,7 @@ p.subtitle { font-size: 1.1rem; color: var(--text-muted); font-weight: 300; }
 .timezone-badge { display: inline-block; background: rgba(0, 255, 135, 0.1); color: var(--primary); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-top: 10px; border: 1px solid rgba(0, 255, 135, 0.2); }
 
 .top-actions {
-    display: flex; gap: 15px; margin-bottom: 15px; justify-content: flex-end; align-items: center;
+    display: flex; gap: 15px; margin-bottom: 15px; justify-content: flex-end; align-items: center; flex-wrap: wrap;
 }
 .controls-wrapper {
     position: sticky; top: 10px; z-index: 50; margin-bottom: 30px;
@@ -220,8 +223,8 @@ p.subtitle { font-size: 1.1rem; color: var(--text-muted); font-weight: 300; }
     background: rgba(255, 174, 0, 0.1);
     padding: 8px 12px;
     border-radius: 6px;
-    margin-top: -25px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     display: none;
     border: 1px solid rgba(255, 174, 0, 0.2);
 }
