@@ -187,6 +187,104 @@ function translatePlayer(enName) {
     return i18n.zh.players[enName] || enName;
 }
 
+const starHighlights = {
+    'Argentina': { en: "Messi's Last Dance? The quest to defend the title", zh: "梅西的最后一舞？能否带领潘帕斯雄鹰成功卫冕" },
+    'Portugal': { en: "Cristiano Ronaldo's ultimate quest", zh: "C罗的终极挑战，葡萄牙黄金一代出击" },
+    'France': { en: "Mbappé leads a star-studded attack", zh: "姆巴佩领衔高卢雄鸡豪华锋线，志在夺冠" },
+    'Brazil': { en: "Vinícius Jr. & Rodrygo samba magic", zh: "维尼修斯与罗德里戈演绎桑巴足球新篇章" },
+    'England': { en: "Bellingham & Kane chasing glory", zh: "贝林厄姆与凯恩冲击队史第二冠" },
+    'Germany': { en: "Musiala & Wirtz: The new era", zh: "穆西亚拉与维尔茨掀起日耳曼战车青春风暴" },
+    'Spain': { en: "Yamal & Pedri: La Roja's young core", zh: "亚马尔与佩德里：斗牛士军团的新核展现统治力" },
+    'Netherlands': { en: "Van Dijk anchors the Oranje defense", zh: "范迪克坐镇防线，全攻全守的橙衣军团蓄势待发" },
+    'Japan': { en: "Samurai Blue looking for an upset", zh: "蓝武士阵营星光熠熠，无惧欧美顶级强敌" },
+    'South Korea': { en: "Son Heung-min's leadership", zh: "亚洲一哥孙兴慜带队，太极虎渴望再创奇迹" },
+    'United States': { en: "Pulisic leads the host nation", zh: "普利西奇领衔东道主捍卫主场荣誉，野心勃勃" },
+    'Mexico': { en: "El Tri seeking the elusive fifth match", zh: "阿兹特克雄鹰坐镇主场，冲击队史最佳战绩" },
+    'Canada': { en: "Alphonso Davies & Jonathan David's pace", zh: "阿方索·戴维斯与大卫的黄金双翼齐飞" },
+    'Italy': { en: "Azzurri redemption arc", zh: "蓝衣军团渴望完成救赎，重返世界之巅" },
+    'Belgium': { en: "De Bruyne pulls the strings", zh: "德布劳内坐镇中场，欧洲红魔的华丽进攻" },
+    'Croatia': { en: "Modrić's endless magic", zh: "魔笛莫德里奇的不老传说，格子军团底蕴犹存" },
+    'Uruguay': { en: "Valverde & Núñez's explosive power", zh: "巴尔韦德与努涅斯领衔，乌拉圭新一代全面崛起" },
+    'Morocco': { en: "Hakimi & Ziyech's African pride", zh: "阿什拉夫与齐耶赫领衔，亚特拉斯雄狮再攀高峰" },
+    'Senegal': { en: "Mané's Lions of Teranga", zh: "马内领衔特兰加雄狮，非洲霸主不容小觑" },
+    'Colombia': { en: "Luis Díaz brings the flair", zh: "路易斯·迪亚斯盘带秀，哥伦比亚激情出击" },
+    'Switzerland': { en: "Granit Xhaka's tactical masterclass", zh: "扎卡掌控全局，瑞士军刀依旧锋利无比" },
+    'Denmark': { en: "Eriksen & Højlund's Danish dynamite", zh: "埃里克森与霍伊伦的丹麦童话新篇章" },
+    'Serbia': { en: "Mitrović & Vlahović strike force", zh: "米特洛维奇与弗拉霍维奇组成的恐怖双塔" },
+    'Poland': { en: "Lewandowski's final bow?", zh: "莱万多夫斯基的神锋本色，波兰铁骑的最后冲锋" },
+    'Chile': { en: "La Roja's fierce intensity", zh: "美洲杯双冠王底蕴，智利红魔誓死拼杀" },
+    'Peru': { en: "Inca warriors never back down", zh: "印加勇士的坚韧防守与犀利反击" },
+    'Sweden': { en: "Isak & Kulusevski leading the line", zh: "伊萨克与库卢塞夫斯基的北欧海盗新风暴" },
+    'Norway': { en: "Haaland's goalscoring terror", zh: "恐怖机器哈兰德登场，进球盛宴即将开启！" },
+    'Ecuador': { en: "Caicedo controls the midfield", zh: "凯塞多一夫当关，厄瓜多尔高原战神出征" },
+    'Saudi Arabia': { en: "Green Falcons eyeing an upset", zh: "沙特绿鹰期盼复刻爆冷神迹，展现亚洲力量" },
+    'Iran': { en: "Taremi & Azmoun's deadly duo", zh: "塔雷米与阿兹蒙双剑合璧，波斯铁骑的强悍冲击" },
+    'Australia': { en: "Socceroos physical dominance", zh: "袋鼠军团的强悍身体对抗，冲击力十足" },
+    'Ghana': { en: "Kudus brings the magic", zh: "库杜斯的灵光乍现，黑星加纳渴望重塑辉煌" },
+    'Cameroon': { en: "Indomitable Lions' raw power", zh: "喀麦隆非洲雄狮的狂野奔袭，不惧任何对手" },
+    'Nigeria': { en: "Osimhen's attacking threat", zh: "奥斯梅恩的顶级锋线牵制力，非洲超级雄鹰" },
+    'Egypt': { en: "Salah's Pharaonic magic", zh: "法老萨拉赫的边路走廊，埃及绝地反击的利器" },
+    'Algeria': { en: "Mahrez's technical brilliance", zh: "马赫雷斯的丝滑盘带，北非之狐灵动出击" },
+    'Ivory Coast': { en: "African powerhouses return", zh: "科特迪瓦大象军团众星云集，重返最高舞台" },
+    'Turkey': { en: "Güler & Çalhanoğlu's creativity", zh: "居莱尔与恰尔汗奥卢的土耳其星月神剑" },
+    'Ukraine': { en: "Mudryk & Dovbyk's fierce counter", zh: "穆德里克与多夫比克，乌克兰铁军的绝命反击" },
+    'Scotland': { en: "Robertson & McGinn's passion", zh: "罗伯逊领衔，苏格兰风笛的顽强意志力" },
+    'Wales': { en: "Johnson & Wilson's dragon fire", zh: "红龙威尔士的青春突击，永不言弃" },
+    'Czech Republic': { en: "Souček's aerial dominance", zh: "绍切克坐镇中场，东欧铁骑的硬核对抗" },
+    'Austria': { en: "Rangnick's heavy metal football", zh: "朗尼克挂帅，奥地利高位逼抢的重金属足球" },
+    'Hungary': { en: "Szoboszlai's long range rockets", zh: "索博斯洛伊的百步穿杨，匈牙利再现魔扎特风采" },
+    'Bosnia and Herzegovina': { en: "Džeko's timeless target man", zh: "老将哲科的支点作用，波黑龙之军团不屈远征" },
+    'Qatar': { en: "Afif & Ali's telepathic connection", zh: "阿菲夫与阿里默契连线，亚洲杯霸主的证明之战" },
+    'Uzbekistan': { en: "Shomurodov leading the Wolves", zh: "肖穆罗多夫领衔，中亚白狼首次亮相世界杯舞台" },
+    'DR Congo': { en: "Leopards seeking redemption", zh: "刚果(金)黑豹军团的野性呼唤，重燃非洲希望" },
+    'Paraguay': { en: "Almirón's lightning speed", zh: "阿尔米隆的闪电突破，巴拉圭坚盾利矛" },
+    'New Zealand': { en: "Wood's target man presence", zh: "克里斯·伍德的绝对制空权，新西兰全白军团出击" },
+    'Panama': { en: "Los Canaleros tactical discipline", zh: "巴拿马的铁血防守反击，中北美的坚韧力量" },
+    'Haiti': { en: "Les Grenadiers passionate play", zh: "海地国脚的狂野足球，加勒比海的旋风" },
+    'Curaçao': { en: "Caribbean dark horses", zh: "库拉索的荷兰裔技术流，加勒比头号黑马" },
+    'Cape Verde': { en: "Blue Sharks making history", zh: "佛得角蓝鲨军团的奇迹之旅，小国大梦想" },
+    'Iraq': { en: "Lions of Mesopotamia fierce spirit", zh: "美索不达米亚雄狮的铁血精神，不畏强敌" },
+    'Jordan': { en: "Al-Taamari's dazzling runs", zh: "塔马里的梦幻舞步，约旦的亚洲杯黑马本色延续" },
+    'South Africa': { en: "Bafana Bafana flair", zh: "南非足球的南非式节奏与灵动" },
+    'Mali': { en: "Bissouma anchors the Eagles", zh: "比苏马坐镇中场，马里雄鹰展翅高飞" },
+    'Tunisia': { en: "Eagles of Carthage tactical setup", zh: "迦太基雄鹰的严密防守，北非战术大师" }
+};
+
+const rivalryHighlights = [
+    { teams: ['Argentina', 'Brazil'], en: "South American Superclásico", zh: "南美超级德比：火星撞地球的宿命之战！" },
+    { teams: ['England', 'France'], en: "Historic European rivalry", zh: "英法百年恩怨：欧洲最强对决！" },
+    { teams: ['Germany', 'Netherlands'], en: "Fierce neighbors clash", zh: "德荷恩怨局：水火不容的邻居！" },
+    { teams: ['Spain', 'Portugal'], en: "Iberian Derby", zh: "伊比利亚半岛德比，巅峰对决！" },
+    { teams: ['Japan', 'South Korea'], en: "East Asian Derby", zh: "东亚巅峰德比，绝不退让！" },
+    { teams: ['United States', 'Mexico'], en: "CONCACAF Kings battle", zh: "中北美霸主之争，针锋相对！" }
+];
+
+function getHighlights(homeEn, awayEn, lang) {
+    let list = [];
+    
+    // Check rivalries
+    for (let r of rivalryHighlights) {
+        if (r.teams.includes(homeEn) && r.teams.includes(awayEn)) {
+            list.push(r[lang]);
+        }
+    }
+    
+    // Check star players
+    if (starHighlights[homeEn]) list.push(starHighlights[homeEn][lang]);
+    if (starHighlights[awayEn]) list.push(starHighlights[awayEn][lang]);
+    
+    // Fallback for empty highlights
+    if (list.length === 0) {
+        if (lang === 'zh') {
+            list.push(`关键战役：${translateTeam(homeEn)} vs ${translateTeam(awayEn)} 谁能更胜一筹？`);
+        } else {
+            list.push(`Crucial clash: ${homeEn} vs ${awayEn}`);
+        }
+    }
+    
+    return list.slice(0, 3);
+}
+
 function renderBracket() {
     const bContainer = document.getElementById('bracket-container');
     if (!bContainer) return;
@@ -735,6 +833,13 @@ function renderSchedule() {
                 const stageTagHtml = m.stage !== 'GROUP' ? `<span class="group-pill stage-pill">${stageLabel}</span>` : `<span class="group-pill stage-pill">${stageLabel}</span>`;
                 
                 const footerTagsHtml = `<div class="match-footer-tags">${groupPillHtml}${m.stage !== 'GROUP' ? stageTagHtml : ''}</div>`;
+                
+                const highlights = getHighlights(m.homeEn, m.awayEn, currentLang);
+                let highlightsHtml = '';
+                if (highlights.length > 0) {
+                    let items = highlights.map(h => `<li><span class="highlight-icon">🔥</span> ${h}</li>`).join('');
+                    highlightsHtml = `<div class="match-highlights"><ul>${items}</ul></div>`;
+                }
 
                 let detailsHtml = '';
                 if (m.events.length > 0) {
@@ -765,6 +870,7 @@ function renderSchedule() {
                             ${scoreDisplay}
                             <div class="team team-right">${aTeam}</div>
                         </div>
+                        ${highlightsHtml}
                         ${footerTagsHtml}
                         <div class="stadium">${i18n[currentLang].matchText(m.id)}${venue ? ' • ' + i18n[currentLang].venuePrefix + venue : ''}</div>
                         ${detailsHtml}
