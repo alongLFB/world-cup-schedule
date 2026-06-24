@@ -40,6 +40,10 @@ const html = `<!DOCTYPE html>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                 <span id="btn-share-text">Share</span>
             </button>
+            <button class="btn-export" id="btn-toggle-view">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                <span id="btn-toggle-text">Bracket View</span>
+            </button>
             <button class="btn-lang" id="lang-toggle">🌐 中文</button>
         </div>
 
@@ -78,6 +82,16 @@ const html = `<!DOCTYPE html>
         </div>
 
         <div id="schedule-container"></div>
+        <div id="bracket-view" style="display: none;">
+            <div class="filter-summary" style="margin-bottom: 15px; justify-content: center; box-shadow: none; border: none; background: transparent;">
+                <button id="btn-download-bracket" class="btn-export">📸 Download Bracket Image</button>
+            </div>
+            <div class="bracket-scroll-container">
+                <div class="bracket-container" id="bracket-container">
+                    <!-- Bracket gets rendered here -->
+                </div>
+            </div>
+        </div>
     </main>
 </div>
 
@@ -86,6 +100,7 @@ const html = `<!DOCTYPE html>
 <script>
     const rawMatches = ${JSON.stringify(matches)};
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="app.js?v=${version}"></script>
 </body>
 </html>`;

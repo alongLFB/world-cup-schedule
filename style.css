@@ -245,3 +245,207 @@ p.subtitle { font-size: 1.1rem; color: var(--text-muted); font-weight: 300; }
     transform: translateX(-50%) translateY(0);
     opacity: 1;
 }
+
+/* Bracket View Styles */
+.bracket-scroll-container {
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+.bracket-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 1400px;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.bracket-header-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.bracket-header-banner h1 {
+    color: #e6c553;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+.bracket-stage-header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: #252525;
+}
+.bracket-stage-title {
+    flex: 1;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 0;
+    color: #fff;
+}
+.bracket-stage-title:last-child {
+    border-right: none;
+}
+.bracket-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+.bracket-side {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.bracket-side.right {
+    flex-direction: row-reverse;
+}
+.bracket-round {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    padding: 0 5px;
+}
+.bracket-match {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    width: 140px;
+}
+.bracket-match-info {
+    text-align: center;
+    font-size: 0.5rem;
+    color: #ccc;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+.bracket-team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    padding: 2px 6px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    font-size: 0.65rem;
+    height: 24px;
+}
+.bracket-team-left {
+    display: flex;
+    align-items: center;
+}
+.bracket-badge {
+    background: #d32f2f;
+    color: #fff;
+    font-size: 0.5rem;
+    border-radius: 10px;
+    padding: 2px 4px;
+    margin-right: 4px;
+    min-width: 18px;
+    text-align: center;
+}
+.bracket-score {
+    color: #d32f2f;
+    font-weight: 800;
+}
+.bracket-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    width: 160px;
+}
+.bracket-trophy {
+    font-size: 4rem;
+    margin: 20px 0;
+    text-shadow: 0 0 20px rgba(230,197,83,0.5);
+}
+
+.bracket-group-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 220px;
+    margin: 0 10px;
+}
+.bracket-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.bracket-group-letter {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    width: 25px;
+    text-align: center;
+    margin-right: 5px;
+}
+.bracket-group-matches {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.bracket-group-match {
+    display: flex;
+    flex-direction: column;
+    margin: 2px 0;
+}
+.bracket-group-match-info {
+    font-size: 0.45rem;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 2px;
+}
+.bracket-group-match-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    padding: 2px 6px;
+    font-size: 0.55rem;
+    font-weight: 800;
+}
+.bracket-group-team {
+    width: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.bracket-group-team.right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+.bracket-group-scorebox {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #eee;
+}
+.bracket-group-score {
+    padding: 1px 4px;
+    min-width: 14px;
+    text-align: center;
+    color: #d32f2f;
+}
+.bracket-group-score:first-child {
+    border-right: 1px solid #ccc;
+}

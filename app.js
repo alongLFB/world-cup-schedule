@@ -144,6 +144,203 @@ function translateVenue(venueEn) {
     return venueNamesZH[venueEn] || venueEn;
 }
 
+function translatePlayer(enName) {
+    if (currentLang === 'en') return enName;
+    return i18n.zh.players[enName] || enName;
+}
+
+function renderBracket() {
+    const bContainer = document.getElementById('bracket-container');
+    if (!bContainer) return;
+
+    const leftR32 = [73, 75, 74, 77, 81, 82, 83, 84];
+    const leftR16 = [90, 89, 94, 93];
+    const leftQF = [97, 98];
+    const leftSF = [101];
+
+    const rightR32 = [76, 78, 79, 80, 85, 87, 86, 88];
+    const rightR16 = [91, 92, 96, 95];
+    const rightQF = [99, 100];
+    const rightSF = [102];
+
+    const getMatchHTML = (matchId) => {
+        const m = matchesData.find(x => x.id === matchId);
+        if (!m) return '';
+        
+        const hName = translateTeam(m.homeEn);
+        const aName = translateTeam(m.awayEn);
+        
+        let hScore = '', aScore = '';
+        if (m.score && !m.score.includes('Match')) {
+            const parts = m.score.split('–');
+            if(parts.length === 2) {
+                hScore = `<span class="bracket-score">${parts[0].trim()}</span>`;
+                aScore = `<span class="bracket-score">${parts[1].trim()}</span>`;
+            } else if (m.score.includes('-')) {
+                const partsAlt = m.score.split('-');
+                if(partsAlt.length === 2) {
+                    hScore = `<span class="bracket-score">${partsAlt[0].trim()}</span>`;
+                    aScore = `<span class="bracket-score">${partsAlt[1].trim()}</span>`;
+                }
+            }
+        }
+        
+        let shortHName = hName.length > 12 ? hName.substring(0, 12) + '...' : hName;
+        let shortAName = aName.length > 12 ? aName.substring(0, 12) + '...' : aName;
+
+        let displayDate = "";
+        if(currentLang === 'zh') {
+            displayDate = `${m.dateObj.getMonth()+1}月${m.dateObj.getDate()}日 - ${m.localTime}`;
+        } else {
+            const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+            displayDate = `${monthNames[m.dateObj.getMonth()]} ${m.dateObj.getDate()} - ${m.localTime} UAE TIME`;
+        }
+
+        let hBadge = m.homeEn.includes('Winner Match') ? 'W' + m.homeEn.split(' ')[2] : m.homeEn.substring(0,3).toUpperCase();
+        let aBadge = m.awayEn.includes('Winner Match') ? 'W' + m.awayEn.split(' ')[2] : m.awayEn.substring(0,3).toUpperCase();
+
+        return `
+            <div class="bracket-match">
+                <div class="bracket-match-info">MATCH ${matchId}<br>${displayDate}</div>
+                <div class="bracket-team">
+                    <div class="bracket-team-left"><span class="bracket-badge">${hBadge}</span>${shortHName}</div>
+                    ${hScore}
+                </div>
+                <div class="bracket-team">
+                    <div class="bracket-team-left"><span class="bracket-badge">${aBadge}</span>${shortAName}</div>
+                    ${aScore}
+                </div>
+            </div>
+        `;
+    };
+
+    const getGroupMatchHTML = (matchId) => {
+        const m = matchesData.find(x => x.id === matchId);
+        if (!m) return '';
+        const hName = translateTeam(m.homeEn);
+        const aName = translateTeam(m.awayEn);
+        const hFlag = teamFlags[m.homeEn] || '🌍';
+        const aFlag = teamFlags[m.awayEn] || '🌍';
+        
+        let hScore = '&nbsp;', aScore = '&nbsp;';
+        if (m.score && !m.score.includes('Match')) {
+            const parts = m.score.split('–');
+            if(parts.length === 2) {
+                hScore = parts[0].trim();
+                aScore = parts[1].trim();
+            } else if (m.score.includes('-')) {
+                const partsAlt = m.score.split('-');
+                if(partsAlt.length === 2) {
+                    hScore = partsAlt[0].trim();
+                    aScore = partsAlt[1].trim();
+                }
+            }
+        }
+
+        let displayDate = "";
+        if(currentLang === 'zh') {
+            displayDate = `${m.dateObj.getMonth()+1}月${m.dateObj.getDate()}日 - ${m.localTime}`;
+        } else {
+            const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+            displayDate = `${monthNames[m.dateObj.getMonth()]} ${m.dateObj.getDate()} - ${m.localTime} UAE TIME`;
+        }
+        
+        return `
+            <div class="bracket-group-match">
+                <div class="bracket-group-match-info">${displayDate}</div>
+                <div class="bracket-group-match-content">
+                    <div class="bracket-group-team">${hFlag} ${hName}</div>
+                    <div class="bracket-group-scorebox">
+                        <div class="bracket-group-score">${hScore}</div>
+                        <div class="bracket-group-score">${aScore}</div>
+                    </div>
+                    <div class="bracket-group-team right">${aName} ${aFlag}</div>
+                </div>
+            </div>
+        `;
+    };
+
+    const buildRound = (matchIds) => {
+        return `<div class="bracket-round">${matchIds.map(id => getMatchHTML(id)).join('')}</div>`;
+    };
+
+    const leftHtml = `<div class="bracket-side left">
+        ${buildRound(leftR32)}
+        ${buildRound(leftR16)}
+        ${buildRound(leftQF)}
+        ${buildRound(leftSF)}
+    </div>`;
+
+    const rightHtml = `<div class="bracket-side right">
+        ${buildRound(rightR32)}
+        ${buildRound(rightR16)}
+        ${buildRound(rightQF)}
+        ${buildRound(rightSF)}
+    </div>`;
+
+    const groups = {A:[], B:[], C:[], D:[], E:[], F:[], G:[], H:[], I:[], J:[], K:[], L:[]};
+    for (let i = 1; i <= 72; i++) {
+        const m = matchesData.find(x => x.id === i);
+        if (!m) continue;
+        const g = groupMappings[m.homeEn] || groupMappings[m.awayEn];
+        if (g && groups[g]) groups[g].push(i);
+    }
+    
+    const buildGroupCol = (groupKeys) => {
+        return `<div class="bracket-group-col">
+            ${groupKeys.map(g => `
+                <div class="bracket-group">
+                    <div class="bracket-group-letter">${g}</div>
+                    <div class="bracket-group-matches">
+                        ${groups[g].map(id => getGroupMatchHTML(id)).join('')}
+                    </div>
+                </div>
+            `).join('')}
+        </div>`;
+    };
+
+    const leftGroupsHtml = buildGroupCol(['A', 'B', 'C', 'D', 'E', 'F']);
+    const rightGroupsHtml = buildGroupCol(['G', 'H', 'I', 'J', 'K', 'L']);
+
+    const centerHtml = `<div class="bracket-center">
+        <div class="bracket-trophy">🏆</div>
+        <div class="bracket-match-info" style="margin-top:10px; color:#e6c553; font-weight:800; font-size:0.7rem;">THIRD PLACE</div>
+        ${getMatchHTML(103)}
+        <div class="bracket-match-info" style="margin-top:10px; color:#e6c553; font-weight:800; font-size:0.8rem;">FINAL</div>
+        ${getMatchHTML(104)}
+    </div>`;
+
+    const fullHtml = `
+        <div class="bracket-wrapper">
+            <div class="bracket-header-banner">
+                <h1>2026 WORLD CUP MATCH SCHEDULE</h1>
+            </div>
+            <div class="bracket-stage-header">
+                <div class="bracket-stage-title">GROUP STAGE</div>
+                <div class="bracket-stage-title">ROUND OF 32</div>
+                <div class="bracket-stage-title">ROUND OF 16</div>
+                <div class="bracket-stage-title">QUARTER FINAL</div>
+                <div class="bracket-stage-title">SEMI FINAL</div>
+                <div class="bracket-stage-title" style="border-right: none; color: #e6c553;">FINAL</div>
+                <div class="bracket-stage-title" style="border-left: 1px solid rgba(255,255,255,0.2);">SEMI FINAL</div>
+                <div class="bracket-stage-title">QUARTER FINAL</div>
+                <div class="bracket-stage-title">ROUND OF 16</div>
+                <div class="bracket-stage-title">ROUND OF 32</div>
+                <div class="bracket-stage-title">GROUP STAGE</div>
+            </div>
+            <div class="bracket-container" style="background:transparent; padding:0; box-shadow:none; border-radius:0; min-width:auto;">
+                ${leftGroupsHtml}
+                ${leftHtml}
+                ${centerHtml}
+                ${rightHtml}
+                ${rightGroupsHtml}
+            </div>
+        </div>
+    `;
+
+    bContainer.innerHTML = fullHtml;
+}
+
 function formatDate(dateObj) {
     if (currentLang === 'zh') {
         const options = { month: 'short', day: 'numeric', weekday: 'short' };
@@ -341,6 +538,59 @@ function init() {
     initStaticI18n();
     renderSchedule();
     scrollToCurrentDay();
+
+    const btnToggleView = document.getElementById('btn-toggle-view');
+    const scheduleContainerWrap = document.querySelector('.controls-wrapper');
+    const bracketView = document.getElementById('bracket-view');
+    
+    if (btnToggleView) {
+        btnToggleView.addEventListener('click', () => {
+            const isBracket = bracketView.style.display === 'block';
+            if (isBracket) {
+                bracketView.style.display = 'none';
+                scheduleContainerWrap.style.display = 'block';
+                scheduleContainer.style.display = 'block';
+                document.getElementById('btn-toggle-text').textContent = currentLang === 'zh' ? '晋级图表' : 'Bracket View';
+            } else {
+                bracketView.style.display = 'block';
+                scheduleContainerWrap.style.display = 'none';
+                scheduleContainer.style.display = 'none';
+                document.getElementById('btn-toggle-text').textContent = currentLang === 'zh' ? '列表视图' : 'Timeline View';
+                renderBracket();
+            }
+        });
+    }
+
+    const btnDownloadBracket = document.getElementById('btn-download-bracket');
+    if (btnDownloadBracket) {
+        btnDownloadBracket.addEventListener('click', () => {
+            if (typeof html2canvas !== 'undefined') {
+                const btn = btnDownloadBracket;
+                const originalText = btn.textContent;
+                btn.textContent = 'Generating...';
+                btn.style.display = 'none';
+                
+                html2canvas(document.getElementById('bracket-container'), {
+                    backgroundColor: '#1a1a1a',
+                    scale: 2
+                }).then(canvas => {
+                    btn.style.display = 'inline-block';
+                    btn.textContent = originalText;
+                    
+                    const link = document.createElement('a');
+                    link.download = 'WorldCup2026_Bracket.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                }).catch(err => {
+                    btn.style.display = 'inline-block';
+                    btn.textContent = originalText;
+                    console.error('Canvas error:', err);
+                });
+            } else {
+                alert('html2canvas library not loaded yet.');
+            }
+        });
+    }
 }
 
 function renderSchedule() {
