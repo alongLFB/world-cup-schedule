@@ -12,7 +12,7 @@ const html = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 FIFA World Cup Schedule (UAE Time)</title>
+    <title>2026 FIFA World Cup Schedule & Live Scores</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=${version}">
 </head>
@@ -28,7 +28,7 @@ const html = `<!DOCTYPE html>
         <header>
             <h1 id="title-main">2026 World Cup Schedule</h1>
             <p class="subtitle" id="title-sub">Live Scores & Official Match Schedule</p>
-            <div class="timezone-badge" id="tz-badge">📍 All Times in UAE Time (GST / UTC+4)</div>
+            <div class="timezone-badge" id="tz-badge">📍 Auto-detecting Local Time...</div>
         </header>
 
         <div class="top-actions">
