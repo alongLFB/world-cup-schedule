@@ -1591,9 +1591,18 @@
     "time": "8:00 p.m. UTC−6",
     "home": "Colombia",
     "away": "DR Congo",
-    "score": "Match 48",
+    "score": "1–0",
     "venue": "Estadio Akron, Zapopan",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Muñoz",
+        "times": [
+          "76'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": []
   },
   {
@@ -1703,10 +1712,19 @@
     "time": "7:00 p.m. UTC−4",
     "home": "Panama",
     "away": "Croatia",
-    "score": "Match 46",
+    "score": "0–1",
     "venue": "BMO Field, Toronto",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [
+      {
+        "player": "Budimir",
+        "times": [
+          "54'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
