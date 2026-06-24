@@ -271,20 +271,80 @@
     "time": "12:00 p.m. UTC−7",
     "home": "Switzerland",
     "away": "Canada",
-    "score": "Match 51",
+    "score": "2–1",
     "venue": "BC Place, Vancouver",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Vargas",
+        "times": [
+          "46'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Manzambi",
+        "times": [
+          "57'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "P. David",
+        "times": [
+          "76'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
     "time": "12:00 p.m. UTC−7",
     "home": "Bosnia and Herzegovina",
     "away": "Qatar",
-    "score": "Match 52",
+    "score": "3–1",
     "venue": "Lumen Field, Seattle",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Alajbegović",
+        "times": [
+          "29'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Abunada",
+        "times": [
+          "34' (o.g.)"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": true
+      },
+      {
+        "player": "Mahmić",
+        "times": [
+          "80'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Al-Haydos",
+        "times": [
+          "42'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 13, 2026 (2026-06-13)",
@@ -1280,7 +1340,7 @@
     "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [
       {
-        "player": "Pedersen",
+        "player": "Holmgren Pedersen",
         "times": [
           "43'"
         ],
@@ -1750,7 +1810,7 @@
     "date": "June 28, 2026 (2026-06-28)",
     "time": "12:00 p.m. UTC−7",
     "home": "Runner-up Group A",
-    "away": "Runner-up Group B",
+    "away": "Canada",
     "score": "Match 73",
     "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
@@ -1869,7 +1929,7 @@
   {
     "date": "July 2, 2026 (2026-07-02)",
     "time": "8:00 p.m. UTC−7",
-    "home": "Winner Group B",
+    "home": "Switzerland",
     "away": "3rd Group E/F/G/I/J",
     "score": "Match 85",
     "venue": "BC Place, Vancouver",
