@@ -295,11 +295,35 @@ function init() {
     exportBtn.addEventListener('click', () => exportICS());
 
     shareBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(i18n[currentLang].shareText).then(() => {
+        const textToCopy = i18n[currentLang].shareText;
+        const showToast = () => {
             toast.textContent = i18n[currentLang].copied;
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 2000);
-        });
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(textToCopy).then(showToast).catch(() => fallbackCopy(textToCopy));
+        } else {
+            fallbackCopy(textToCopy);
+        }
+
+        function fallbackCopy(text) {
+            try {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-999999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast();
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+        }
     });
 
     langToggle.addEventListener('click', () => {
@@ -549,7 +573,8 @@ END:VEVENT\r\n`;
     const filterSuffix = searchQ || (activeGroup !== 'ALL' ? 'Group' + activeGroup : (activeStage !== 'ALL' ? activeStage : ''));
     a.download = `WC2026_Schedule${filterSuffix ? '_' + filterSuffix.replace(/\s+/g, '') : ''}.ics`;
 
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    // Trigger download without appending to body, which avoids null body errors
+    a.click();
 }
 
 init();
