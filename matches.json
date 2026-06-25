@@ -445,20 +445,88 @@
     "time": "6:00 p.m. UTC−4",
     "home": "Scotland",
     "away": "Brazil",
-    "score": "Match 49",
+    "score": "0–3",
     "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [
+      {
+        "player": "Vinícius",
+        "times": [
+          "7'",
+          "45+3'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Cunha",
+        "times": [
+          "60'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
     "time": "6:00 p.m. UTC−4",
     "home": "Morocco",
     "away": "Haiti",
-    "score": "Match 50",
+    "score": "4–2",
     "venue": "Mercedes-Benz Stadium, Atlanta",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Hakimi",
+        "times": [
+          "39'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Saibari",
+        "times": [
+          "45+1'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Rahimi",
+        "times": [
+          "78'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Yassine",
+        "times": [
+          "89'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Bounou",
+        "times": [
+          "10' (o.g.)"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": true
+      },
+      {
+        "player": "Isidor",
+        "times": [
+          "43'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 12, 2026 (2026-06-12)",
@@ -1819,7 +1887,7 @@
   {
     "date": "June 29, 2026 (2026-06-29)",
     "time": "12:00 p.m. UTC−5",
-    "home": "Winner Group C",
+    "home": "Brazil",
     "away": "Runner-up Group F",
     "score": "Match 76",
     "venue": "NRG Stadium, Houston",
@@ -1840,7 +1908,7 @@
     "date": "June 29, 2026 (2026-06-29)",
     "time": "7:00 p.m. UTC−6",
     "home": "Winner Group F",
-    "away": "Runner-up Group C",
+    "away": "Morocco",
     "score": "Match 75",
     "venue": "Estadio BBVA, Guadalupe",
     "homeGoals": [],
@@ -1900,7 +1968,7 @@
     "date": "July 1, 2026 (2026-07-01)",
     "time": "5:00 p.m. UTC−7",
     "home": "United States",
-    "away": "3rd Group B/E/I",
+    "away": "3rd Group B/I",
     "score": "Match 81",
     "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [],
