@@ -832,20 +832,56 @@
     "time": "4:00 p.m. UTC−4",
     "home": "Curaçao",
     "away": "Ivory Coast",
-    "score": "Match 55",
+    "score": "0–2",
     "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [
+      {
+        "player": "Pépé",
+        "times": [
+          "7'",
+          "64'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 25, 2026 (2026-06-25)",
     "time": "4:00 p.m. UTC−4",
     "home": "Ecuador",
     "away": "Germany",
-    "score": "Match 56",
+    "score": "2–1",
     "venue": "MetLife Stadium, East Rutherford",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Angulo",
+        "times": [
+          "9'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Plata",
+        "times": [
+          "77'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Sané",
+        "times": [
+          "2'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 14, 2026 (2026-06-14)",
@@ -1951,7 +1987,7 @@
   {
     "date": "June 30, 2026 (2026-06-30)",
     "time": "12:00 p.m. UTC−5",
-    "home": "Runner-up Group E",
+    "home": "Ivory Coast",
     "away": "Runner-up Group I",
     "score": "Match 78",
     "venue": "AT&T Stadium, Arlington",
@@ -1972,7 +2008,7 @@
     "date": "June 30, 2026 (2026-06-30)",
     "time": "7:00 p.m. UTC−6",
     "home": "Mexico",
-    "away": "3rd Group C/E/F/H/I",
+    "away": "3rd Group C/E/H",
     "score": "Match 79",
     "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
@@ -1982,7 +2018,7 @@
     "date": "July 1, 2026 (2026-07-01)",
     "time": "12:00 p.m. UTC−4",
     "home": "Winner Group L",
-    "away": "3rd Group E/H/I/J/K",
+    "away": "3rd Group E/I/J/K",
     "score": "Match 80",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
