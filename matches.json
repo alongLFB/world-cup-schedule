@@ -105,19 +105,53 @@
     "time": "7:00 p.m. UTC−6",
     "home": "Czech Republic",
     "away": "Mexico",
-    "score": "Match 53",
+    "score": "0–3",
     "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [
+      {
+        "player": "M. Chávez",
+        "times": [
+          "55'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Quiñones",
+        "times": [
+          "61'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Fidalgo",
+        "times": [
+          "90+4'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
     "time": "7:00 p.m. UTC−6",
     "home": "South Africa",
     "away": "South Korea",
-    "score": "Match 54",
+    "score": "1–0",
     "venue": "Estadio BBVA, Guadalupe",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Maseko",
+        "times": [
+          "63'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": []
   },
   {
@@ -1877,7 +1911,7 @@
   {
     "date": "June 28, 2026 (2026-06-28)",
     "time": "12:00 p.m. UTC−7",
-    "home": "Runner-up Group A",
+    "home": "South Africa",
     "away": "Canada",
     "score": "Match 73",
     "venue": "SoFi Stadium, Inglewood",
@@ -1958,7 +1992,7 @@
     "date": "July 1, 2026 (2026-07-01)",
     "time": "1:00 p.m. UTC−7",
     "home": "Winner Group G",
-    "away": "3rd Group A/E/H/I/J",
+    "away": "3rd Group A/H/I/J",
     "score": "Match 82",
     "venue": "Lumen Field, Seattle",
     "homeGoals": [],
