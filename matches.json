@@ -1606,7 +1606,7 @@
     "time": "3:00 p.m. UTC−4",
     "home": "Norway",
     "away": "France",
-    "score": "Match 61",
+    "score": "1–4",
     "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
     "awayGoals": []
@@ -1616,9 +1616,43 @@
     "time": "3:00 p.m. UTC−4",
     "home": "Senegal",
     "away": "Iraq",
-    "score": "Match 62",
+    "score": "5–0",
     "venue": "BMO Field, Toronto",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Diarra",
+        "times": [
+          "4'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "I. Sarr",
+        "times": [
+          "56'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "P. Gueye",
+        "times": [
+          "59'",
+          "71'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "I. Ndiaye",
+        "times": [
+          "82'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": []
   },
   {
@@ -2062,7 +2096,7 @@
     "date": "June 29, 2026 (2026-06-29)",
     "time": "4:30 p.m. UTC−4",
     "home": "Germany",
-    "away": "3rd Group C/D/F",
+    "away": "3rd Group D/F",
     "score": "Match 74",
     "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
@@ -2082,7 +2116,7 @@
     "date": "June 30, 2026 (2026-06-30)",
     "time": "12:00 p.m. UTC−5",
     "home": "Ivory Coast",
-    "away": "Runner-up Group I",
+    "away": "Norway",
     "score": "Match 78",
     "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
@@ -2091,8 +2125,8 @@
   {
     "date": "June 30, 2026 (2026-06-30)",
     "time": "5:00 p.m. UTC−4",
-    "home": "Winner Group I",
-    "away": "3rd Group D/F/G",
+    "home": "France",
+    "away": "3rd Group F/G",
     "score": "Match 77",
     "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
@@ -2102,7 +2136,7 @@
     "date": "June 30, 2026 (2026-06-30)",
     "time": "7:00 p.m. UTC−6",
     "home": "Mexico",
-    "away": "3rd Group C/E/H",
+    "away": "3rd Group E/H",
     "score": "Match 79",
     "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
@@ -2162,7 +2196,7 @@
     "date": "July 2, 2026 (2026-07-02)",
     "time": "8:00 p.m. UTC−7",
     "home": "Switzerland",
-    "away": "3rd Group E/F/G/I/J",
+    "away": "3rd Group E/G/I/J",
     "score": "Match 85",
     "venue": "BC Place, Vancouver",
     "homeGoals": [],
@@ -2192,7 +2226,7 @@
     "date": "July 3, 2026 (2026-07-03)",
     "time": "8:30 p.m. UTC−5",
     "home": "Winner Group K",
-    "away": "3rd Group D/E/I/J/L",
+    "away": "3rd Group D/E/I/L",
     "score": "Match 87",
     "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
