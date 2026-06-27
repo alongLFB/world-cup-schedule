@@ -1300,20 +1300,81 @@
     "time": "8:00 p.m. UTC−7",
     "home": "Egypt",
     "away": "Iran",
-    "score": "Match 63",
+    "score": "1–1",
     "venue": "Lumen Field, Seattle",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Saber",
+        "times": [
+          "5'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Rezaeian",
+        "times": [
+          "14'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 26, 2026 (2026-06-26)",
     "time": "8:00 p.m. UTC−7",
     "home": "New Zealand",
     "away": "Belgium",
-    "score": "Match 64",
+    "score": "1–5",
     "venue": "BC Place, Vancouver",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Just",
+        "times": [
+          "84'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Trossard",
+        "times": [
+          "28'",
+          "50'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "De Bruyne",
+        "times": [
+          "66'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Lukaku",
+        "times": [
+          "86'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Saelemaekers",
+        "times": [
+          "90+4'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 15, 2026 (2026-06-15)",
@@ -2164,7 +2225,7 @@
   {
     "date": "July 1, 2026 (2026-07-01)",
     "time": "1:00 p.m. UTC−7",
-    "home": "Winner Group G",
+    "home": "Belgium",
     "away": "3rd Group A/I/J",
     "score": "Match 82",
     "venue": "Lumen Field, Seattle",
@@ -2205,7 +2266,7 @@
     "date": "July 2, 2026 (2026-07-02)",
     "time": "8:00 p.m. UTC−7",
     "home": "Switzerland",
-    "away": "3rd Group E/G/I/J",
+    "away": "3rd Group G/J",
     "score": "Match 85",
     "venue": "BC Place, Vancouver",
     "homeGoals": [],
@@ -2215,7 +2276,7 @@
     "date": "July 3, 2026 (2026-07-03)",
     "time": "1:00 p.m. UTC−5",
     "home": "Australia",
-    "away": "Runner-up Group G",
+    "away": "Egypt",
     "score": "Match 88",
     "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
