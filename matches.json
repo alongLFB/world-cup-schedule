@@ -1438,7 +1438,7 @@
     "time": "7:00 p.m. UTC−5",
     "home": "Cape Verde",
     "away": "Saudi Arabia",
-    "score": "Match 65",
+    "score": "0–0",
     "venue": "NRG Stadium, Houston",
     "homeGoals": [],
     "awayGoals": []
@@ -1448,10 +1448,19 @@
     "time": "6:00 p.m. UTC−6",
     "home": "Uruguay",
     "away": "Spain",
-    "score": "Match 66",
+    "score": "0–1",
     "venue": "Estadio Akron, Zapopan",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [
+      {
+        "player": "Baena",
+        "times": [
+          "42'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 16, 2026 (2026-06-16)",
@@ -2096,7 +2105,7 @@
     "date": "June 29, 2026 (2026-06-29)",
     "time": "4:30 p.m. UTC−4",
     "home": "Germany",
-    "away": "3rd Group C/D/F",
+    "away": "Paraguay",
     "score": "Match 74",
     "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
@@ -2126,7 +2135,7 @@
     "date": "June 30, 2026 (2026-06-30)",
     "time": "5:00 p.m. UTC−4",
     "home": "France",
-    "away": "3rd Group F/G",
+    "away": "Sweden",
     "score": "Match 77",
     "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
@@ -2136,7 +2145,7 @@
     "date": "June 30, 2026 (2026-06-30)",
     "time": "7:00 p.m. UTC−6",
     "home": "Mexico",
-    "away": "3rd Group C/E/H",
+    "away": "3rd Group C/E",
     "score": "Match 79",
     "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
@@ -2146,7 +2155,7 @@
     "date": "July 1, 2026 (2026-07-01)",
     "time": "12:00 p.m. UTC−4",
     "home": "Winner Group L",
-    "away": "3rd Group E/I/J/K",
+    "away": "3rd Group I/J/K",
     "score": "Match 80",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
@@ -2156,7 +2165,7 @@
     "date": "July 1, 2026 (2026-07-01)",
     "time": "1:00 p.m. UTC−7",
     "home": "Winner Group G",
-    "away": "3rd Group A/H/I/J",
+    "away": "3rd Group A/I/J",
     "score": "Match 82",
     "venue": "Lumen Field, Seattle",
     "homeGoals": [],
@@ -2175,7 +2184,7 @@
   {
     "date": "July 2, 2026 (2026-07-02)",
     "time": "12:00 p.m. UTC−7",
-    "home": "Winner Group H",
+    "home": "Spain",
     "away": "Runner-up Group J",
     "score": "Match 84",
     "venue": "SoFi Stadium, Inglewood",
@@ -2216,7 +2225,7 @@
     "date": "July 3, 2026 (2026-07-03)",
     "time": "6:00 p.m. UTC−4",
     "home": "Argentina",
-    "away": "Runner-up Group H",
+    "away": "Cape Verde",
     "score": "Match 86",
     "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
@@ -2226,7 +2235,7 @@
     "date": "July 3, 2026 (2026-07-03)",
     "time": "8:30 p.m. UTC−5",
     "home": "Winner Group K",
-    "away": "3rd Group D/E/I/L",
+    "away": "3rd Group E/I/L",
     "score": "Match 87",
     "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
