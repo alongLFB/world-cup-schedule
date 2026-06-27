@@ -2127,20 +2127,63 @@
     "time": "5:00 p.m. UTC−4",
     "home": "Panama",
     "away": "England",
-    "score": "Match 67",
+    "score": "0–2",
     "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [
+      {
+        "player": "Bellingham",
+        "times": [
+          "62'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Kane",
+        "times": [
+          "67'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
     "time": "5:00 p.m. UTC−4",
     "home": "Croatia",
     "away": "Ghana",
-    "score": "Match 68",
+    "score": "2–1",
     "venue": "Lincoln Financial Field, Philadelphia",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "P. Sučić",
+        "times": [
+          "31'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Vlašić",
+        "times": [
+          "83'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Luckassen",
+        "times": [
+          "73'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 28, 2026 (2026-06-28)",
@@ -2206,7 +2249,7 @@
     "date": "June 30, 2026 (2026-06-30)",
     "time": "7:00 p.m. UTC−6",
     "home": "Mexico",
-    "away": "3rd Group C/E",
+    "away": "Ecuador",
     "score": "Match 79",
     "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
@@ -2215,8 +2258,8 @@
   {
     "date": "July 1, 2026 (2026-07-01)",
     "time": "12:00 p.m. UTC−4",
-    "home": "Winner Group L",
-    "away": "3rd Group I/J/K",
+    "home": "England",
+    "away": "3rd Group I/K",
     "score": "Match 80",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
@@ -2256,7 +2299,7 @@
     "date": "July 2, 2026 (2026-07-02)",
     "time": "7:00 p.m. UTC−4",
     "home": "Runner-up Group K",
-    "away": "Runner-up Group L",
+    "away": "Croatia",
     "score": "Match 83",
     "venue": "BMO Field, Toronto",
     "homeGoals": [],
@@ -2296,7 +2339,7 @@
     "date": "July 3, 2026 (2026-07-03)",
     "time": "8:30 p.m. UTC−5",
     "home": "Winner Group K",
-    "away": "3rd Group E/I/L",
+    "away": "Ghana",
     "score": "Match 87",
     "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
