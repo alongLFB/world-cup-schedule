@@ -2294,10 +2294,19 @@
     "time": "12:00 p.m. UTC−7",
     "home": "South Africa",
     "away": "Canada",
-    "score": "Match 73",
+    "score": "0–1",
     "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [
+      {
+        "player": "Eustáquio",
+        "times": [
+          "90+2'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 29, 2026 (2026-06-29)",
@@ -2452,7 +2461,7 @@
   {
     "date": "July 4, 2026 (2026-07-04)",
     "time": "12:00 p.m. UTC−5",
-    "home": "Winner Match 73",
+    "home": "Canada",
     "away": "Winner Match 75",
     "score": "Match 90",
     "venue": "NRG Stadium, Houston",
