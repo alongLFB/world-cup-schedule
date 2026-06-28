@@ -1851,20 +1851,97 @@
     "time": "9:00 p.m. UTC−5",
     "home": "Algeria",
     "away": "Austria",
-    "score": "Match 69",
+    "score": "3–3",
     "venue": "Arrowhead Stadium, Kansas City",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Belghali",
+        "times": [
+          "45'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Mahrez",
+        "times": [
+          "60'",
+          "90+3'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Arnautović",
+        "times": [
+          "28'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Sabitzer",
+        "times": [
+          "55'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Kalajdžić",
+        "times": [
+          "90+6'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
     "time": "9:00 p.m. UTC−5",
     "home": "Jordan",
     "away": "Argentina",
-    "score": "Match 70",
+    "score": "1–3",
     "venue": "AT&T Stadium, Arlington",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Al-Taamari",
+        "times": [
+          "55'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Lo Celso",
+        "times": [
+          "19'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "La. Martínez",
+        "times": [
+          "31' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Messi",
+        "times": [
+          "80'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 17, 2026 (2026-06-17)",
@@ -2316,7 +2393,7 @@
     "date": "July 2, 2026 (2026-07-02)",
     "time": "12:00 p.m. UTC−7",
     "home": "Spain",
-    "away": "Runner-up Group J",
+    "away": "Austria",
     "score": "Match 84",
     "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
@@ -2336,7 +2413,7 @@
     "date": "July 2, 2026 (2026-07-02)",
     "time": "8:00 p.m. UTC−7",
     "home": "Switzerland",
-    "away": "3rd Group G/J",
+    "away": "Algeria",
     "score": "Match 85",
     "venue": "BC Place, Vancouver",
     "homeGoals": [],
