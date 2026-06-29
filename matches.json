@@ -2313,10 +2313,36 @@
     "time": "12:00 p.m. UTC−5",
     "home": "Brazil",
     "away": "Japan",
-    "score": "Match 76",
+    "score": "2–1",
     "venue": "NRG Stadium, Houston",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Casemiro",
+        "times": [
+          "56'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Martinelli",
+        "times": [
+          "90+5'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Sano",
+        "times": [
+          "29'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 29, 2026 (2026-06-29)",
@@ -2481,7 +2507,7 @@
   {
     "date": "July 5, 2026 (2026-07-05)",
     "time": "4:00 p.m. UTC−4",
-    "home": "Winner Match 76",
+    "home": "Brazil",
     "away": "Winner Match 78",
     "score": "Match 91",
     "venue": "MetLife Stadium, East Rutherford",
