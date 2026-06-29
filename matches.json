@@ -2349,10 +2349,28 @@
     "time": "4:30 p.m. UTC−4",
     "home": "Germany",
     "away": "Paraguay",
-    "score": "Match 74",
+    "score": "1–1 (a.e.t.)",
     "venue": "Gillette Stadium, Foxborough",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Havertz",
+        "times": [
+          "54'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Enciso",
+        "times": [
+          "42'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 29, 2026 (2026-06-29)",
@@ -2497,7 +2515,7 @@
   {
     "date": "July 4, 2026 (2026-07-04)",
     "time": "5:00 p.m. UTC−4",
-    "home": "Winner Match 74",
+    "home": "Paraguay",
     "away": "Winner Match 77",
     "score": "Match 89",
     "venue": "Lincoln Financial Field, Philadelphia",
