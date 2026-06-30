@@ -2405,10 +2405,36 @@
     "time": "12:00 p.m. UTC−5",
     "home": "Ivory Coast",
     "away": "Norway",
-    "score": "Match 78",
+    "score": "1–2",
     "venue": "AT&T Stadium, Arlington",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Diallo",
+        "times": [
+          "74'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Nusa",
+        "times": [
+          "39'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Haaland",
+        "times": [
+          "86'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 30, 2026 (2026-06-30)",
@@ -2544,7 +2570,7 @@
     "date": "July 5, 2026 (2026-07-05)",
     "time": "4:00 p.m. UTC−4",
     "home": "Brazil",
-    "away": "Winner Match 78",
+    "away": "Norway",
     "score": "Match 91",
     "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
