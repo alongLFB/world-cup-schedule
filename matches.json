@@ -2377,10 +2377,28 @@
     "time": "7:00 p.m. UTC−6",
     "home": "Netherlands",
     "away": "Morocco",
-    "score": "Match 75",
+    "score": "1–1 (a.e.t.)",
     "venue": "Estadio BBVA, Guadalupe",
-    "homeGoals": [],
-    "awayGoals": []
+    "homeGoals": [
+      {
+        "player": "Gakpo",
+        "times": [
+          "72'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Diop",
+        "times": [
+          "90+1'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ]
   },
   {
     "date": "June 30, 2026 (2026-06-30)",
@@ -2506,7 +2524,7 @@
     "date": "July 4, 2026 (2026-07-04)",
     "time": "12:00 p.m. UTC−5",
     "home": "Canada",
-    "away": "Winner Match 75",
+    "away": "Morocco",
     "score": "Match 90",
     "venue": "NRG Stadium, Houston",
     "homeGoals": [],
