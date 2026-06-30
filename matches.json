@@ -2441,9 +2441,27 @@
     "time": "5:00 p.m. UTC−4",
     "home": "France",
     "away": "Sweden",
-    "score": "Match 77",
+    "score": "3–0",
     "venue": "MetLife Stadium, East Rutherford",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Mbappé",
+        "times": [
+          "45'",
+          "74'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Barcola",
+        "times": [
+          "53'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": []
   },
   {
@@ -2560,7 +2578,7 @@
     "date": "July 4, 2026 (2026-07-04)",
     "time": "5:00 p.m. UTC−4",
     "home": "Paraguay",
-    "away": "Winner Match 77",
+    "away": "France",
     "score": "Match 89",
     "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [],
