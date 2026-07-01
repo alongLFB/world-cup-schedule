@@ -2825,10 +2825,29 @@
     "time": "12:00 p.m. UTC−4",
     "home": "England",
     "away": "DR Congo",
-    "score": "Match 80",
+    "score": "2–1",
     "venue": "Mercedes-Benz Stadium, Atlanta",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Kane",
+        "times": [
+          "75'",
+          "86'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Cipenga",
+        "times": [
+          "7'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -2980,7 +2999,7 @@
     "date": "July 5, 2026 (2026-07-05)",
     "time": "6:00 p.m. UTC−6",
     "home": "Mexico",
-    "away": "Winner Match 80",
+    "away": "England",
     "score": "Match 92",
     "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
