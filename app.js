@@ -852,11 +852,44 @@ function renderSchedule() {
                 if (m.penaltyScore) {
                     scoreBadgeInner += `<span class="pen-score" style="font-size:0.75rem; font-weight:bold; color:#e6c553; display:block; margin-top:2px;">(${m.penaltyScore} p)</span>`;
                 }
-                const scoreDisplay = isFinished ? `<div class="score-badge" style="text-align:center;">${scoreBadgeInner}</div>` : `<div class="vs">VS</div>`;
-                const statusHtml = isFinished ? `<span class="status-badge finished">${i18n[currentLang].finished}</span>` : `<span class="status-badge">${i18n[currentLang].upcoming}</span>`;
+                let hWin = false; let aWin = false;
+                if (isFinished && scoreText) {
+                    const parts = scoreText.split(/[–-]/);
+                    if (parts.length === 2) {
+                        const hS = parseInt(parts[0].trim());
+                        const aS = parseInt(parts[1].trim());
+                        if (hS > aS) hWin = true;
+                        else if (aS > hS) aWin = true;
+                        else if (m.penaltyScore) {
+                            const pParts = m.penaltyScore.split(/[–-]/);
+                            if (pParts.length === 2) {
+                                const hP = parseInt(pParts[0].trim());
+                                const aP = parseInt(pParts[1].trim());
+                                if (hP > aP) hWin = true;
+                                else if (aP > hP) aWin = true;
+                            }
+                        }
+                    }
+                }
 
-                const hTeam = getFlag(m.homeEn) + translateTeam(m.homeEn);
-                const aTeam = getFlag(m.awayEn) + translateTeam(m.awayEn);
+                const scoreDisplay = isFinished ? `<div class="score-badge" style="text-align:center;">${scoreBadgeInner}</div>` : `<div class="vs">VS</div>`;
+                
+                const now = Date.now();
+                const isLive = (!isFinished && now >= m.utcTimestamp && now <= m.utcTimestamp + 130 * 60 * 1000);
+                let statusHtml = '';
+                if (isLive) {
+                    statusHtml = `<span class="status-badge" style="background:#e53e3e; color:#fff; border-color:#e53e3e; font-weight:bold;">🔴 ${currentLang === 'zh' ? '进行中' : 'LIVE'}</span>`;
+                } else if (isFinished || now > m.utcTimestamp + 130 * 60 * 1000) {
+                    statusHtml = `<span class="status-badge finished">${i18n[currentLang].finished}</span>`;
+                } else {
+                    statusHtml = `<span class="status-badge">${i18n[currentLang].upcoming}</span>`;
+                }
+
+                let hTeam = getFlag(m.homeEn) + translateTeam(m.homeEn);
+                let aTeam = getFlag(m.awayEn) + translateTeam(m.awayEn);
+                
+                if (hWin) hTeam = `<strong style="color:var(--text);">${hTeam}</strong> <span title="Winner" style="color:#e6c553; font-size:1.1rem;">🏆</span>`;
+                if (aWin) aTeam = `<span title="Winner" style="color:#e6c553; font-size:1.1rem;">🏆</span> <strong style="color:var(--text);">${aTeam}</strong>`;
                 const venue = translateVenue(m.venueEn);
 
                 const groupA = groupMappings[m.homeEn];
