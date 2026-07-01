@@ -2857,10 +2857,45 @@
     "time": "1:00 p.m. UTC−7",
     "home": "Belgium",
     "away": "Senegal",
-    "score": "Match 82",
+    "score": "3–2 (a.e.t.)",
     "venue": "Lumen Field, Seattle",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Lukaku",
+        "times": [
+          "86'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Tielemans",
+        "times": [
+          "89'",
+          "120+5' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Diarra",
+        "times": [
+          "25'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "I. Sarr",
+        "times": [
+          "51'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3025,7 +3060,7 @@
     "date": "July 6, 2026 (2026-07-06)",
     "time": "5:00 p.m. UTC−7",
     "home": "Winner Match 81",
-    "away": "Winner Match 82",
+    "away": "Belgium",
     "score": "Match 94",
     "venue": "Lumen Field, Seattle",
     "homeGoals": [],
