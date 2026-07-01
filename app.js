@@ -307,16 +307,27 @@ function renderBracket() {
         const aName = translateTeam(m.awayEn);
         
         let hScore = '', aScore = '';
-        if (m.score && !m.score.includes('Match')) {
-            const parts = m.score.split('–');
+        let hWin = false; let aWin = false;
+        const isFinished = !!m.score && !m.score.toLowerCase().includes('match');
+        
+        if (isFinished) {
+            const parts = m.score.split(/[–-]/);
             if(parts.length === 2) {
                 hScore = `<span class="bracket-score">${parts[0].trim().replace(/\s*\(.*\)/, '')}</span>`;
                 aScore = `<span class="bracket-score">${parts[1].trim().replace(/\s*\(.*\)/, '')}</span>`;
-            } else if (m.score.includes('-')) {
-                const partsAlt = m.score.split('-');
-                if(partsAlt.length === 2) {
-                    hScore = `<span class="bracket-score">${partsAlt[0].trim().replace(/\s*\(.*\)/, '')}</span>`;
-                    aScore = `<span class="bracket-score">${partsAlt[1].trim().replace(/\s*\(.*\)/, '')}</span>`;
+                
+                const hS = parseInt(parts[0].trim());
+                const aS = parseInt(parts[1].trim());
+                if (hS > aS) hWin = true;
+                else if (aS > hS) aWin = true;
+                else if (m.penaltyScore) {
+                    const pParts = m.penaltyScore.split(/[–-]/);
+                    if (pParts.length === 2) {
+                        const hP = parseInt(pParts[0].trim());
+                        const aP = parseInt(pParts[1].trim());
+                        if (hP > aP) hWin = true;
+                        else if (aP > hP) aWin = true;
+                    }
                 }
             }
 
@@ -329,9 +340,14 @@ function renderBracket() {
             }
         }
         
-        let shortHName = hName.length > 12 ? hName.substring(0, 12) + '...' : hName;
-        let shortAName = aName.length > 12 ? aName.substring(0, 12) + '...' : aName;
-
+        const hFlag = getFlag(m.homeEn);
+        const aFlag = getFlag(m.awayEn);
+        let shortHName = (hFlag ? hFlag + ' ' : '') + (hName.length > 12 ? hName.substring(0, 12) + '...' : hName);
+        let shortAName = (aFlag ? aFlag + ' ' : '') + (aName.length > 12 ? aName.substring(0, 12) + '...' : aName);
+        
+        if (hWin) shortHName = `<strong style="color:var(--text);">${shortHName}</strong> <span title="Winner" style="color:#e6c553;">🏆</span>`;
+        if (aWin) shortAName = `<strong style="color:var(--text);">${shortAName}</strong> <span title="Winner" style="color:#e6c553;">🏆</span>`;
+        
         let displayDate = "";
         if(currentLang === 'zh') {
             displayDate = `${m.dateObj.getMonth()+1}月${m.dateObj.getDate()}日 - ${m.localTime}`;
@@ -738,10 +754,16 @@ function init() {
                 const originalText = btn.textContent;
                 btn.textContent = 'Generating...';
                 btn.style.display = 'none';
-                
-                html2canvas(document.getElementById('bracket-container'), {
+                const target = document.getElementById('bracket-container');
+                html2canvas(target, {
                     backgroundColor: '#1a1a1a',
-                    scale: 2
+                    scale: 2,
+                    scrollX: 0,
+                    scrollY: 0,
+                    width: target.scrollWidth,
+                    height: target.scrollHeight,
+                    windowWidth: target.scrollWidth,
+                    windowHeight: target.scrollHeight
                 }).then(canvas => {
                     btn.style.display = 'inline-block';
                     btn.textContent = originalText;
