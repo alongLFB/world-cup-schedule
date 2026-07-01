@@ -2466,12 +2466,29 @@
   },
   {
     "date": "June 30, 2026 (2026-06-30)",
-    "time": "8:00 p.m. UTC−6",
+    "time": "8:00 p.m. UTC−6[S]",
     "home": "Mexico",
     "away": "Ecuador",
-    "score": "Match 79",
+    "score": "2–0",
     "venue": "Estadio Azteca, Mexico City",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Quiñones",
+        "times": [
+          "22'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Jiménez",
+        "times": [
+          "31'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": []
   },
   {
@@ -2597,7 +2614,7 @@
   {
     "date": "July 5, 2026 (2026-07-05)",
     "time": "6:00 p.m. UTC−6",
-    "home": "Winner Match 79",
+    "home": "Mexico",
     "away": "Winner Match 80",
     "score": "Match 92",
     "venue": "Estadio Azteca, Mexico City",
