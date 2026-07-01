@@ -70,6 +70,41 @@ const fs = require('fs');
                     const locationElem = box.querySelector('.fright [itemprop="location"]');
                     const venue = locationElem ? locationElem.textContent.trim().replace(/\s+/g, ' ') : '';
 
+                    let penaltyScore = null;
+                    let homePenalties = [];
+                    let awayPenalties = [];
+
+                    const ths = box.querySelectorAll('th');
+                    let penHeader = null;
+                    ths.forEach(th => {
+                        if (th.textContent.includes('Penalties')) penHeader = th;
+                    });
+                    
+                    if (penHeader) {
+                        const penTr = penHeader.parentElement.nextElementSibling;
+                        if (penTr && penTr.classList.contains('fgoals')) {
+                            const scoreTh = penTr.querySelector('th');
+                            penaltyScore = scoreTh ? scoreTh.textContent.trim() : null;
+                            
+                            const parsePenalties = (td) => {
+                                const pens = [];
+                                if (!td) return pens;
+                                td.querySelectorAll('li').forEach(li => {
+                                    const playerNode = li.querySelector('a') || li.firstChild;
+                                    const playerName = playerNode ? playerNode.textContent.trim() : '';
+                                    const isScored = li.innerHTML.includes('check') || li.innerHTML.includes('scored');
+                                    if (playerName) {
+                                        pens.push({ player: playerName, scored: isScored });
+                                    }
+                                });
+                                return pens;
+                            };
+                            
+                            homePenalties = parsePenalties(penTr.querySelector('.fhgoal'));
+                            awayPenalties = parsePenalties(penTr.querySelector('.fagoal'));
+                        }
+                    }
+
                     matches.push({
                         date: dateElem.textContent.trim(),
                         time: timeElem.textContent.trim(),
@@ -78,7 +113,10 @@ const fs = require('fs');
                         score: score,
                         venue: venue,
                         homeGoals: extractGoals(homeGoalElem),
-                        awayGoals: extractGoals(awayGoalElem)
+                        awayGoals: extractGoals(awayGoalElem),
+                        penaltyScore,
+                        homePenalties,
+                        awayPenalties
                     });
                 }
             } catch (e) {}

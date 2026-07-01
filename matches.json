@@ -24,7 +24,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 11, 2026 (2026-06-11)",
@@ -51,7 +54,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 18, 2026 (2026-06-18)",
@@ -79,7 +85,10 @@
         "isPenalty": true,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 18, 2026 (2026-06-18)",
@@ -98,7 +107,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
@@ -133,7 +145,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
@@ -152,7 +167,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 12, 2026 (2026-06-12)",
@@ -180,7 +198,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 13, 2026 (2026-06-13)",
@@ -208,7 +229,10 @@
         "isPenalty": true,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 18, 2026 (2026-06-18)",
@@ -253,7 +277,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 18, 2026 (2026-06-18)",
@@ -298,7 +325,10 @@
         "isOwnGoal": true
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
@@ -334,7 +364,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
@@ -378,7 +411,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 13, 2026 (2026-06-13)",
@@ -406,7 +442,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 13, 2026 (2026-06-13)",
@@ -425,7 +464,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 19, 2026 (2026-06-19)",
@@ -444,7 +486,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 19, 2026 (2026-06-19)",
@@ -472,7 +517,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
@@ -500,7 +548,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 24, 2026 (2026-06-24)",
@@ -560,7 +611,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 12, 2026 (2026-06-12)",
@@ -605,7 +659,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 13, 2026 (2026-06-13)",
@@ -632,7 +689,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 19, 2026 (2026-06-19)",
@@ -659,7 +719,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 19, 2026 (2026-06-19)",
@@ -678,7 +741,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 25, 2026 (2026-06-25)",
@@ -730,7 +796,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 25, 2026 (2026-06-25)",
@@ -740,7 +809,10 @@
     "score": "0–0",
     "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 14, 2026 (2026-06-14)",
@@ -809,7 +881,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 14, 2026 (2026-06-14)",
@@ -828,7 +903,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 20, 2026 (2026-06-20)",
@@ -857,7 +935,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 20, 2026 (2026-06-20)",
@@ -867,7 +948,10 @@
     "score": "0–0",
     "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 25, 2026 (2026-06-25)",
@@ -887,7 +971,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 25, 2026 (2026-06-25)",
@@ -923,7 +1010,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 14, 2026 (2026-06-14)",
@@ -967,7 +1057,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 14, 2026 (2026-06-14)",
@@ -1020,7 +1113,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 20, 2026 (2026-06-20)",
@@ -1066,7 +1162,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 20, 2026 (2026-06-20)",
@@ -1102,7 +1201,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 25, 2026 (2026-06-25)",
@@ -1130,7 +1232,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 25, 2026 (2026-06-25)",
@@ -1174,7 +1279,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 15, 2026 (2026-06-15)",
@@ -1202,7 +1310,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 15, 2026 (2026-06-15)",
@@ -1239,7 +1350,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 21, 2026 (2026-06-21)",
@@ -1249,7 +1363,10 @@
     "score": "0–0",
     "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 21, 2026 (2026-06-21)",
@@ -1293,7 +1410,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 26, 2026 (2026-06-26)",
@@ -1321,7 +1441,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 26, 2026 (2026-06-26)",
@@ -1374,7 +1497,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 15, 2026 (2026-06-15)",
@@ -1384,7 +1510,10 @@
     "score": "0–0",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 15, 2026 (2026-06-15)",
@@ -1412,7 +1541,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 21, 2026 (2026-06-21)",
@@ -1448,7 +1580,10 @@
         "isOwnGoal": true
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 21, 2026 (2026-06-21)",
@@ -1492,7 +1627,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 26, 2026 (2026-06-26)",
@@ -1502,7 +1640,10 @@
     "score": "0–0",
     "venue": "NRG Stadium, Houston",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 26, 2026 (2026-06-26)",
@@ -1521,7 +1662,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 16, 2026 (2026-06-16)",
@@ -1558,7 +1702,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 16, 2026 (2026-06-16)",
@@ -1603,7 +1750,10 @@
         "isPenalty": false,
         "isOwnGoal": true
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 22, 2026 (2026-06-22)",
@@ -1631,7 +1781,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 22, 2026 (2026-06-22)",
@@ -1669,7 +1822,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 26, 2026 (2026-06-26)",
@@ -1679,7 +1835,10 @@
     "score": "1–4",
     "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 26, 2026 (2026-06-26)",
@@ -1723,7 +1882,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 16, 2026 (2026-06-16)",
@@ -1744,7 +1906,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 16, 2026 (2026-06-16)",
@@ -1788,7 +1953,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 22, 2026 (2026-06-22)",
@@ -1808,7 +1976,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 22, 2026 (2026-06-22)",
@@ -1844,7 +2015,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
@@ -1897,7 +2071,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
@@ -1941,7 +2118,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 17, 2026 (2026-06-17)",
@@ -1969,7 +2149,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 17, 2026 (2026-06-17)",
@@ -2013,7 +2196,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 23, 2026 (2026-06-23)",
@@ -2057,7 +2243,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 23, 2026 (2026-06-23)",
@@ -2076,7 +2265,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
@@ -2086,7 +2278,10 @@
     "score": "0–0",
     "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
@@ -2123,7 +2318,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 17, 2026 (2026-06-17)",
@@ -2176,7 +2374,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 17, 2026 (2026-06-17)",
@@ -2195,7 +2396,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 23, 2026 (2026-06-23)",
@@ -2205,7 +2409,10 @@
     "score": "0–0",
     "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 23, 2026 (2026-06-23)",
@@ -2224,7 +2431,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
@@ -2251,7 +2461,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 27, 2026 (2026-06-27)",
@@ -2287,7 +2500,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 28, 2026 (2026-06-28)",
@@ -2306,7 +2522,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 29, 2026 (2026-06-29)",
@@ -2342,7 +2561,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 29, 2026 (2026-06-29)",
@@ -2369,6 +2591,59 @@
         ],
         "isPenalty": false,
         "isOwnGoal": false
+      }
+    ],
+    "penaltyScore": "3–4",
+    "homePenalties": [
+      {
+        "player": "Havertz",
+        "scored": false
+      },
+      {
+        "player": "Kimmich",
+        "scored": true
+      },
+      {
+        "player": "Musiala",
+        "scored": true
+      },
+      {
+        "player": "Woltemade",
+        "scored": false
+      },
+      {
+        "player": "Amiri",
+        "scored": true
+      },
+      {
+        "player": "Tah",
+        "scored": false
+      }
+    ],
+    "awayPenalties": [
+      {
+        "player": "Maurício",
+        "scored": true
+      },
+      {
+        "player": "G. Gómez",
+        "scored": true
+      },
+      {
+        "player": "Galarza",
+        "scored": true
+      },
+      {
+        "player": "Sanabria",
+        "scored": false
+      },
+      {
+        "player": "Balbuena",
+        "scored": false
+      },
+      {
+        "player": "Canale",
+        "scored": true
       }
     ]
   },
@@ -2397,6 +2672,51 @@
         ],
         "isPenalty": false,
         "isOwnGoal": false
+      }
+    ],
+    "penaltyScore": "2–3",
+    "homePenalties": [
+      {
+        "player": "Koopmeiners",
+        "scored": true
+      },
+      {
+        "player": "Kluivert",
+        "scored": false
+      },
+      {
+        "player": "Weghorst",
+        "scored": true
+      },
+      {
+        "player": "Timber",
+        "scored": false
+      },
+      {
+        "player": "Summerville",
+        "scored": false
+      }
+    ],
+    "awayPenalties": [
+      {
+        "player": "El Aynaoui",
+        "scored": false
+      },
+      {
+        "player": "Rahimi",
+        "scored": true
+      },
+      {
+        "player": "Talbi",
+        "scored": true
+      },
+      {
+        "player": "Hakimi",
+        "scored": false
+      },
+      {
+        "player": "Saibari",
+        "scored": true
       }
     ]
   },
@@ -2434,7 +2754,10 @@
         "isPenalty": false,
         "isOwnGoal": false
       }
-    ]
+    ],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 30, 2026 (2026-06-30)",
@@ -2462,7 +2785,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "June 30, 2026 (2026-06-30)",
@@ -2489,7 +2815,10 @@
         "isOwnGoal": false
       }
     ],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 1, 2026 (2026-07-01)",
@@ -2499,7 +2828,10 @@
     "score": "Match 80",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 1, 2026 (2026-07-01)",
@@ -2509,7 +2841,10 @@
     "score": "Match 82",
     "venue": "Lumen Field, Seattle",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 1, 2026 (2026-07-01)",
@@ -2519,7 +2854,10 @@
     "score": "Match 81",
     "venue": "Levi's Stadium, Santa Clara",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 2, 2026 (2026-07-02)",
@@ -2529,7 +2867,10 @@
     "score": "Match 84",
     "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 2, 2026 (2026-07-02)",
@@ -2539,7 +2880,10 @@
     "score": "Match 83",
     "venue": "BMO Field, Toronto",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 2, 2026 (2026-07-02)",
@@ -2549,7 +2893,10 @@
     "score": "Match 85",
     "venue": "BC Place, Vancouver",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 3, 2026 (2026-07-03)",
@@ -2559,7 +2906,10 @@
     "score": "Match 88",
     "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 3, 2026 (2026-07-03)",
@@ -2569,7 +2919,10 @@
     "score": "Match 86",
     "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 3, 2026 (2026-07-03)",
@@ -2579,7 +2932,10 @@
     "score": "Match 87",
     "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 4, 2026 (2026-07-04)",
@@ -2589,7 +2945,10 @@
     "score": "Match 90",
     "venue": "NRG Stadium, Houston",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 4, 2026 (2026-07-04)",
@@ -2599,7 +2958,10 @@
     "score": "Match 89",
     "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 5, 2026 (2026-07-05)",
@@ -2609,7 +2971,10 @@
     "score": "Match 91",
     "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 5, 2026 (2026-07-05)",
@@ -2619,7 +2984,10 @@
     "score": "Match 92",
     "venue": "Estadio Azteca, Mexico City",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 6, 2026 (2026-07-06)",
@@ -2629,7 +2997,10 @@
     "score": "Match 93",
     "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 6, 2026 (2026-07-06)",
@@ -2639,7 +3010,10 @@
     "score": "Match 94",
     "venue": "Lumen Field, Seattle",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 7, 2026 (2026-07-07)",
@@ -2649,7 +3023,10 @@
     "score": "Match 95",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 7, 2026 (2026-07-07)",
@@ -2659,7 +3036,10 @@
     "score": "Match 96",
     "venue": "BC Place, Vancouver",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 9, 2026 (2026-07-09)",
@@ -2669,7 +3049,10 @@
     "score": "Match 97",
     "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 10, 2026 (2026-07-10)",
@@ -2679,7 +3062,10 @@
     "score": "Match 98",
     "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 11, 2026 (2026-07-11)",
@@ -2689,7 +3075,10 @@
     "score": "Match 99",
     "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 11, 2026 (2026-07-11)",
@@ -2699,7 +3088,10 @@
     "score": "Match 100",
     "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 14, 2026 (2026-07-14)",
@@ -2709,7 +3101,10 @@
     "score": "Match 101",
     "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 15, 2026 (2026-07-15)",
@@ -2719,7 +3114,10 @@
     "score": "Match 102",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 18, 2026 (2026-07-18)",
@@ -2729,7 +3127,10 @@
     "score": "Match 103",
     "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   },
   {
     "date": "July 19, 2026 (2026-07-19)",
@@ -2739,6 +3140,9 @@
     "score": "Match 104",
     "venue": "MetLife Stadium, East Rutherford",
     "homeGoals": [],
-    "awayGoals": []
+    "awayGoals": [],
+    "penaltyScore": null,
+    "homePenalties": [],
+    "awayPenalties": []
   }
 ]

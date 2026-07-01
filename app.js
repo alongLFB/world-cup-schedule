@@ -310,13 +310,21 @@ function renderBracket() {
         if (m.score && !m.score.includes('Match')) {
             const parts = m.score.split('–');
             if(parts.length === 2) {
-                hScore = `<span class="bracket-score">${parts[0].trim()}</span>`;
-                aScore = `<span class="bracket-score">${parts[1].trim()}</span>`;
+                hScore = `<span class="bracket-score">${parts[0].trim().replace(/\s*\(.*\)/, '')}</span>`;
+                aScore = `<span class="bracket-score">${parts[1].trim().replace(/\s*\(.*\)/, '')}</span>`;
             } else if (m.score.includes('-')) {
                 const partsAlt = m.score.split('-');
                 if(partsAlt.length === 2) {
-                    hScore = `<span class="bracket-score">${partsAlt[0].trim()}</span>`;
-                    aScore = `<span class="bracket-score">${partsAlt[1].trim()}</span>`;
+                    hScore = `<span class="bracket-score">${partsAlt[0].trim().replace(/\s*\(.*\)/, '')}</span>`;
+                    aScore = `<span class="bracket-score">${partsAlt[1].trim().replace(/\s*\(.*\)/, '')}</span>`;
+                }
+            }
+
+            if (m.penaltyScore) {
+                const pParts = m.penaltyScore.split(/[–-]/);
+                if (pParts.length === 2) {
+                    hScore += `<span class="bracket-pen" style="font-size:0.6rem; color:#e6c553; margin-left:2px;">(${pParts[0].trim()})</span>`;
+                    aScore += `<span class="bracket-pen" style="font-size:0.6rem; color:#e6c553; margin-left:2px;">(${pParts[1].trim()})</span>`;
                 }
             }
         }
@@ -552,6 +560,17 @@ rawMatches.forEach((m, idx) => {
         return getMin(a.time) - getMin(b.time);
     });
 
+    let penaltyEvents = [];
+    if (m.homePenalties || m.awayPenalties) {
+        const hPens = m.homePenalties || [];
+        const aPens = m.awayPenalties || [];
+        const maxLen = Math.max(hPens.length, aPens.length);
+        for(let i = 0; i < maxLen; i++) {
+            if (hPens[i]) penaltyEvents.push({ team: 'home', player: hPens[i].player, scored: hPens[i].scored, index: i+1 });
+            if (aPens[i]) penaltyEvents.push({ team: 'away', player: aPens[i].player, scored: aPens[i].scored, index: i+1 });
+        }
+    }
+
     matchesData.push({
         id: idx + 1,
         homeEn: m.home,
@@ -559,6 +578,8 @@ rawMatches.forEach((m, idx) => {
         score: m.score,
         venueEn: m.venue || '',
         events: events,
+        penaltyEvents: penaltyEvents,
+        penaltyScore: m.penaltyScore || '',
         localTime: localTimeData.time,
         idDate: localTimeData.idDate,
         utcTimestamp: localTimeData.utcTimestamp,
@@ -817,7 +838,21 @@ function renderSchedule() {
 
             group.matches.sort((a, b) => a.utcTimestamp - b.utcTimestamp).forEach(m => {
                 const isFinished = !!m.score && !m.score.toLowerCase().includes('match');
-                const scoreDisplay = isFinished ? `<div class="score-badge">${m.score}</div>` : `<div class="vs">VS</div>`;
+                let scoreText = m.score;
+                let extraTimeText = '';
+                if (scoreText && scoreText.includes('(a.e.t.)')) {
+                    scoreText = scoreText.replace(/\s*\(a\.e\.t\.\)/, '');
+                    extraTimeText = currentLang === 'zh' ? '(加时)' : '(a.e.t.)';
+                }
+
+                let scoreBadgeInner = `<span style="font-size:1.1rem; font-weight:800;">${scoreText}</span>`;
+                if (extraTimeText) {
+                    scoreBadgeInner += `<span class="aet-score" style="font-size:0.8rem; font-weight:bold; color:#fff; display:block; margin-top:2px;">${extraTimeText}</span>`;
+                }
+                if (m.penaltyScore) {
+                    scoreBadgeInner += `<span class="pen-score" style="font-size:0.75rem; font-weight:bold; color:#e6c553; display:block; margin-top:2px;">(${m.penaltyScore} p)</span>`;
+                }
+                const scoreDisplay = isFinished ? `<div class="score-badge" style="text-align:center;">${scoreBadgeInner}</div>` : `<div class="vs">VS</div>`;
                 const statusHtml = isFinished ? `<span class="status-badge finished">${i18n[currentLang].finished}</span>` : `<span class="status-badge">${i18n[currentLang].upcoming}</span>`;
 
                 const hTeam = getFlag(m.homeEn) + translateTeam(m.homeEn);
@@ -842,7 +877,7 @@ function renderSchedule() {
                 }
 
                 let detailsHtml = '';
-                if (m.events.length > 0) {
+                if (m.events.length > 0 || (m.penaltyEvents && m.penaltyEvents.length > 0)) {
                     let eventsList = '';
                     m.events.forEach(e => {
                         const icon = e.isOwnGoal ? '⚽ (OG)' : '⚽';
@@ -853,6 +888,21 @@ function renderSchedule() {
                             eventsList += `<div class="event-row"><div class="event-home"></div><div class="event-away"><span class="event-icon">${icon}</span> ${e.time} ${e.player}${extra}</div></div>`;
                         }
                     });
+
+                    if (m.penaltyEvents && m.penaltyEvents.length > 0) {
+                        eventsList += `<div class="penalty-header" style="text-align:center; padding:10px 0 5px; font-weight:bold; color:rgba(255,255,255,0.7); font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.1); margin-top:5px;">${currentLang === 'zh' ? '点球大战' : 'Penalty Shootout'} (${m.penaltyScore})</div>`;
+                        let pRoundCount = Math.max(...m.penaltyEvents.map(p => p.index));
+                        for(let i = 1; i <= pRoundCount; i++) {
+                            const hPen = m.penaltyEvents.find(p => p.index === i && p.team === 'home');
+                            const aPen = m.penaltyEvents.find(p => p.index === i && p.team === 'away');
+                            
+                            const hHtml = hPen ? `${hPen.player} <span class="event-icon">${hPen.scored ? '✅' : '❌'}</span>` : '';
+                            const aHtml = aPen ? `<span class="event-icon">${aPen.scored ? '✅' : '❌'}</span> ${aPen.player}` : '';
+
+                            eventsList += `<div class="event-row"><div class="event-home" style="${hPen && !hPen.scored ? 'opacity:0.5;' : ''}">${hHtml}</div><div class="event-away" style="${aPen && !aPen.scored ? 'opacity:0.5;' : ''}">${aHtml}</div></div>`;
+                        }
+                    }
+
                     detailsHtml = `
                         <button class="btn-details" onclick="toggleDetails('details-${m.id}')">${i18n[currentLang].toggleDetails}</button>
                         <div class="match-details" id="details-${m.id}">${eventsList}</div>
