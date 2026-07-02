@@ -2935,9 +2935,27 @@
     "time": "12:00 p.m. UTC−7",
     "home": "Spain",
     "away": "Austria",
-    "score": "Match 84",
+    "score": "3–0",
     "venue": "SoFi Stadium, Inglewood",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Oyarzabal",
+        "times": [
+          "36'",
+          "89'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Porro",
+        "times": [
+          "66'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": [],
     "penaltyScore": null,
     "homePenalties": [],
@@ -3064,7 +3082,7 @@
     "date": "July 6, 2026 (2026-07-06)",
     "time": "2:00 p.m. UTC−5",
     "home": "Winner Match 83",
-    "away": "Winner Match 84",
+    "away": "Spain",
     "score": "Match 93",
     "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
