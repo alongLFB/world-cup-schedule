@@ -2905,9 +2905,26 @@
     "time": "5:00 p.m. UTC−7",
     "home": "United States",
     "away": "Bosnia and Herzegovina",
-    "score": "Match 81",
+    "score": "2–0",
     "venue": "Levi's Stadium, Santa Clara",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Balogun",
+        "times": [
+          "45'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Tillman",
+        "times": [
+          "82'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": [],
     "penaltyScore": null,
     "homePenalties": [],
@@ -3059,7 +3076,7 @@
   {
     "date": "July 6, 2026 (2026-07-06)",
     "time": "5:00 p.m. UTC−7",
-    "home": "Winner Match 81",
+    "home": "United States",
     "away": "Belgium",
     "score": "Match 94",
     "venue": "Lumen Field, Seattle",
