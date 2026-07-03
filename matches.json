@@ -3035,13 +3035,65 @@
     "time": "1:00 p.m. UTC−5",
     "home": "Australia",
     "away": "Egypt",
-    "score": "1–1",
+    "score": "1–1 (a.e.t.)",
     "venue": "AT&T Stadium, Arlington",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Hany",
+        "times": [
+          "55' (o.g.)"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": true
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Ashour",
+        "times": [
+          "13'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": "2–4",
-    "homePenalties": [],
-    "awayPenalties": []
+    "homePenalties": [
+      {
+        "player": "Souttar",
+        "scored": false
+      },
+      {
+        "player": "Irvine",
+        "scored": true
+      },
+      {
+        "player": "Mabil",
+        "scored": true
+      },
+      {
+        "player": "Herrington",
+        "scored": false
+      }
+    ],
+    "awayPenalties": [
+      {
+        "player": "Saber",
+        "scored": true
+      },
+      {
+        "player": "Rabia",
+        "scored": true
+      },
+      {
+        "player": "Salah",
+        "scored": true
+      },
+      {
+        "player": "Abdelmaguid",
+        "scored": true
+      }
+    ]
   },
   {
     "date": "July 3, 2026 (2026-07-03)",
