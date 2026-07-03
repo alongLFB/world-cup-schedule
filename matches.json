@@ -2966,10 +2966,36 @@
     "time": "7:00 p.m. UTC−4",
     "home": "Portugal",
     "away": "Croatia",
-    "score": "Match 83",
+    "score": "2–1",
     "venue": "BMO Field, Toronto",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Ronaldo",
+        "times": [
+          "68' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Ramos",
+        "times": [
+          "90+4'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Perišić",
+        "times": [
+          "53'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3081,7 +3107,7 @@
   {
     "date": "July 6, 2026 (2026-07-06)",
     "time": "2:00 p.m. UTC−5",
-    "home": "Winner Match 83",
+    "home": "Portugal",
     "away": "Spain",
     "score": "Match 93",
     "venue": "AT&T Stadium, Arlington",
