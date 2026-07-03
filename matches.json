@@ -3005,9 +3005,26 @@
     "time": "8:00 p.m. UTC−7",
     "home": "Switzerland",
     "away": "Algeria",
-    "score": "Match 85",
+    "score": "2–0",
     "venue": "BC Place, Vancouver",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Embolo",
+        "times": [
+          "10'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Ndoye",
+        "times": [
+          "46'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": [],
     "penaltyScore": null,
     "homePenalties": [],
@@ -3146,7 +3163,7 @@
   {
     "date": "July 7, 2026 (2026-07-07)",
     "time": "1:00 p.m. UTC−7",
-    "home": "Winner Match 85",
+    "home": "Switzerland",
     "away": "Winner Match 87",
     "score": "Match 96",
     "venue": "BC Place, Vancouver",
