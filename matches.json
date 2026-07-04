@@ -3155,9 +3155,18 @@
     "time": "8:30 p.m. UTC−5",
     "home": "Colombia",
     "away": "Ghana",
-    "score": "Match 87",
+    "score": "1–0",
     "venue": "Arrowhead Stadium, Kansas City",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "J. Arias",
+        "times": [
+          "14'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": [],
     "penaltyScore": null,
     "homePenalties": [],
@@ -3258,7 +3267,7 @@
     "date": "July 7, 2026 (2026-07-07)",
     "time": "1:00 p.m. UTC−7",
     "home": "Switzerland",
-    "away": "Winner Match 87",
+    "away": "Colombia",
     "score": "Match 96",
     "venue": "BC Place, Vancouver",
     "homeGoals": [],
