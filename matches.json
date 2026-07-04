@@ -3100,10 +3100,52 @@
     "time": "6:00 p.m. UTC−4",
     "home": "Argentina",
     "away": "Cape Verde",
-    "score": "Match 86",
+    "score": "3–2 (a.e.t.)",
     "venue": "Hard Rock Stadium, Miami Gardens",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Messi",
+        "times": [
+          "29'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Li. Martínez",
+        "times": [
+          "92'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Diney",
+        "times": [
+          "111' (o.g.)"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": true
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "D. Duarte",
+        "times": [
+          "59'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Lopes Cabral",
+        "times": [
+          "103'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3202,7 +3244,7 @@
   {
     "date": "July 7, 2026 (2026-07-07)",
     "time": "12:00 p.m. UTC−4",
-    "home": "Winner Match 86",
+    "home": "Argentina",
     "away": "Egypt",
     "score": "Match 95",
     "venue": "Mercedes-Benz Stadium, Atlanta",
