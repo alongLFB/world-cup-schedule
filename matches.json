@@ -3177,10 +3177,28 @@
     "time": "12:00 p.m. UTC−5",
     "home": "Canada",
     "away": "Morocco",
-    "score": "Match 90",
+    "score": "0–3",
     "venue": "NRG Stadium, Houston",
     "homeGoals": [],
-    "awayGoals": [],
+    "awayGoals": [
+      {
+        "player": "Ounahi",
+        "times": [
+          "50'",
+          "82'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Rahimi",
+        "times": [
+          "90+8'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3280,7 +3298,7 @@
     "date": "July 9, 2026 (2026-07-09)",
     "time": "4:00 p.m. UTC−4",
     "home": "Winner Match 89",
-    "away": "Winner Match 90",
+    "away": "Morocco",
     "score": "Match 97",
     "venue": "Gillette Stadium, Foxborough",
     "homeGoals": [],
