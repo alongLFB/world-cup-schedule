@@ -3208,10 +3208,19 @@
     "time": "5:00 p.m. UTC−4",
     "home": "Paraguay",
     "away": "France",
-    "score": "Match 89",
+    "score": "0–1",
     "venue": "Lincoln Financial Field, Philadelphia",
     "homeGoals": [],
-    "awayGoals": [],
+    "awayGoals": [
+      {
+        "player": "Mbappé",
+        "times": [
+          "70' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3297,7 +3306,7 @@
   {
     "date": "July 9, 2026 (2026-07-09)",
     "time": "4:00 p.m. UTC−4",
-    "home": "Winner Match 89",
+    "home": "France",
     "away": "Morocco",
     "score": "Match 97",
     "venue": "Gillette Stadium, Foxborough",
