@@ -3230,10 +3230,29 @@
     "time": "4:00 p.m. UTC−4",
     "home": "Brazil",
     "away": "Norway",
-    "score": "Match 91",
+    "score": "1–2",
     "venue": "MetLife Stadium, East Rutherford",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Neymar",
+        "times": [
+          "90+10' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Haaland",
+        "times": [
+          "79'",
+          "90'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3332,7 +3351,7 @@
   {
     "date": "July 11, 2026 (2026-07-11)",
     "time": "5:00 p.m. UTC−4",
-    "home": "Winner Match 91",
+    "home": "Norway",
     "away": "Winner Match 92",
     "score": "Match 99",
     "venue": "Hard Rock Stadium, Miami Gardens",
