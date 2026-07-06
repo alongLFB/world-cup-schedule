@@ -3262,10 +3262,45 @@
     "time": "7:00 p.m. UTC−6[T]",
     "home": "Mexico",
     "away": "England",
-    "score": "Match 92",
+    "score": "2–3",
     "venue": "Estadio Azteca, Mexico City",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Quiñones",
+        "times": [
+          "42'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Jiménez",
+        "times": [
+          "69' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Bellingham",
+        "times": [
+          "36'",
+          "38'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Kane",
+        "times": [
+          "60' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3352,7 +3387,7 @@
     "date": "July 11, 2026 (2026-07-11)",
     "time": "5:00 p.m. UTC−4",
     "home": "Norway",
-    "away": "Winner Match 92",
+    "away": "England",
     "score": "Match 99",
     "venue": "Hard Rock Stadium, Miami Gardens",
     "homeGoals": [],
