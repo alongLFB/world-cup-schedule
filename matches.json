@@ -3332,10 +3332,45 @@
     "time": "5:00 p.m. UTC−7",
     "home": "United States",
     "away": "Belgium",
-    "score": "Match 94",
+    "score": "1–4",
     "venue": "Lumen Field, Seattle",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Tillman",
+        "times": [
+          "31'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "De Ketelaere",
+        "times": [
+          "9'",
+          "33'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Vanaken",
+        "times": [
+          "57'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Lukaku",
+        "times": [
+          "90+3'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3383,7 +3418,7 @@
     "date": "July 10, 2026 (2026-07-10)",
     "time": "12:00 p.m. UTC−7",
     "home": "Spain",
-    "away": "Winner Match 94",
+    "away": "Belgium",
     "score": "Match 98",
     "venue": "SoFi Stadium, Inglewood",
     "homeGoals": [],
