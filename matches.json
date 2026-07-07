@@ -3138,7 +3138,7 @@
         "isOwnGoal": false
       },
       {
-        "player": "Lopes Cabral",
+        "player": "S. Cabral",
         "times": [
           "103'"
         ],
@@ -3380,10 +3380,52 @@
     "time": "12:00 p.m. UTC−4",
     "home": "Argentina",
     "away": "Egypt",
-    "score": "Match 95",
+    "score": "3–2",
     "venue": "Mercedes-Benz Stadium, Atlanta",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Romero",
+        "times": [
+          "79'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Messi",
+        "times": [
+          "83'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Fernández",
+        "times": [
+          "90+2'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Ibrahim",
+        "times": [
+          "15'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Ziko",
+        "times": [
+          "67'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3443,7 +3485,7 @@
   {
     "date": "July 11, 2026 (2026-07-11)",
     "time": "8:00 p.m. UTC−5",
-    "home": "Winner Match 95",
+    "home": "Argentina",
     "away": "Winner Match 96",
     "score": "Match 100",
     "venue": "Arrowhead Stadium, Kansas City",
