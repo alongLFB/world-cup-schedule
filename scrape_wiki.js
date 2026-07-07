@@ -3,15 +3,33 @@ const fs = require('fs');
 
 (async () => {
     try {
-        const response = await fetch('https://en.wikipedia.org/wiki/2026_FIFA_World_Cup');
-        const html = await response.text();
-        const dom = new JSDOM(html);
-        const document = dom.window.document;
-        
-        const matchBoxes = document.querySelectorAll('.footballbox');
+        const urls = [
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_A',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_B',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_C',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_D',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_E',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_F',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_G',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_H',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_I',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_J',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_K',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_L',
+            'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup'
+        ];
+
         const matches = [];
-        
-        matchBoxes.forEach(box => {
+
+        for (const url of urls) {
+            console.log('Fetching', url);
+            const response = await fetch(url);
+            const html = await response.text();
+            const dom = new JSDOM(html);
+            const document = dom.window.document;
+            
+            const matchBoxes = document.querySelectorAll('.footballbox');
+            matchBoxes.forEach(box => {
             try {
                 const dateElem = box.querySelector('.fdate');
                 const timeElem = box.querySelector('.ftime');
@@ -121,6 +139,7 @@ const fs = require('fs');
                 }
             } catch (e) {}
         });
+        }
         
         fs.writeFileSync('matches.json', JSON.stringify(matches, null, 2));
         console.log('Total found:', matches.length);
