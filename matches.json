@@ -3435,13 +3435,55 @@
     "time": "1:00 p.m. UTC−7",
     "home": "Switzerland",
     "away": "Colombia",
-    "score": "Match 96",
+    "score": "0–0 (a.e.t.)",
     "venue": "BC Place, Vancouver",
     "homeGoals": [],
     "awayGoals": [],
-    "penaltyScore": null,
-    "homePenalties": [],
-    "awayPenalties": []
+    "penaltyScore": "4–3",
+    "homePenalties": [
+      {
+        "player": "Xhaka",
+        "scored": true
+      },
+      {
+        "player": "Amdouni",
+        "scored": true
+      },
+      {
+        "player": "Akanji",
+        "scored": false
+      },
+      {
+        "player": "Itten",
+        "scored": true
+      },
+      {
+        "player": "Vargas",
+        "scored": true
+      }
+    ],
+    "awayPenalties": [
+      {
+        "player": "Quintero",
+        "scored": true
+      },
+      {
+        "player": "Sánchez",
+        "scored": false
+      },
+      {
+        "player": "Campaz",
+        "scored": true
+      },
+      {
+        "player": "Hernández",
+        "scored": false
+      },
+      {
+        "player": "Díaz",
+        "scored": true
+      }
+    ]
   },
   {
     "date": "July 9, 2026 (2026-07-09)",
@@ -3486,7 +3528,7 @@
     "date": "July 11, 2026 (2026-07-11)",
     "time": "8:00 p.m. UTC−5",
     "home": "Argentina",
-    "away": "Winner Match 96",
+    "away": "Switzerland",
     "score": "Match 100",
     "venue": "Arrowhead Stadium, Kansas City",
     "homeGoals": [],
