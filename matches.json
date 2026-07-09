@@ -3490,9 +3490,26 @@
     "time": "4:00 p.m. UTC−4",
     "home": "France",
     "away": "Morocco",
-    "score": "Match 97",
+    "score": "2–0",
     "venue": "Gillette Stadium, Foxborough",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Mbappé",
+        "times": [
+          "60'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Dembélé",
+        "times": [
+          "66'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": [],
     "penaltyScore": null,
     "homePenalties": [],
@@ -3540,7 +3557,7 @@
   {
     "date": "July 14, 2026 (2026-07-14)",
     "time": "2:00 p.m. UTC−5",
-    "home": "Winner Match 97",
+    "home": "France",
     "away": "Winner Match 98",
     "score": "Match 101",
     "venue": "AT&T Stadium, Arlington",
