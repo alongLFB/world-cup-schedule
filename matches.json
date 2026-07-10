@@ -3520,10 +3520,36 @@
     "time": "12:00 p.m. UTC−7",
     "home": "Spain",
     "away": "Belgium",
-    "score": "Match 98",
+    "score": "2–1",
     "venue": "SoFi Stadium, Inglewood",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Fabián",
+        "times": [
+          "30'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Merino",
+        "times": [
+          "88'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "De Ketelaere",
+        "times": [
+          "41'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3558,7 +3584,7 @@
     "date": "July 14, 2026 (2026-07-14)",
     "time": "2:00 p.m. UTC−5",
     "home": "France",
-    "away": "Winner Match 98",
+    "away": "Spain",
     "score": "Match 101",
     "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
