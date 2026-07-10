@@ -512,19 +512,27 @@ function formatDate(dateObj) {
     }
 }
 
-function convertToLocal(dateStr, timeStr) {
+function convertToLocal(dateStr, timeStr, venueStr) {
     const dateMatch = dateStr.match(/\((\d{4}-\d{2}-\d{2})\)/);
     if (!dateMatch) return null;
     const isoDate = dateMatch[1];
 
-    const timeRegex = /(\d{1,2}):(\d{2})\s*(a\.m\.|p\.m\.)\s*UTC[−-](\d)/i;
+    const timeRegex = /(\d{1,2}):(\d{2})\s*(a\.m\.|p\.m\.)(?:\s*UTC[−-](\d))?/i;
     const timeMatch = timeStr.match(timeRegex);
     if (!timeMatch) return null;
 
     let hours = parseInt(timeMatch[1], 10);
     const mins = parseInt(timeMatch[2], 10);
     const ampm = timeMatch[3].toLowerCase();
-    const utcOffset = parseInt(timeMatch[4], 10);
+
+    let utcOffset = 4; // default Eastern Time
+    if (timeMatch[4]) {
+        utcOffset = parseInt(timeMatch[4], 10);
+    } else if (venueStr) {
+        if (venueStr.includes("Vancouver") || venueStr.includes("Seattle") || venueStr.includes("Santa Clara") || venueStr.includes("Inglewood")) utcOffset = 7;
+        else if (venueStr.includes("Zapopan") || venueStr.includes("Mexico City") || venueStr.includes("Guadalupe")) utcOffset = 6;
+        else if (venueStr.includes("Houston") || venueStr.includes("Kansas City") || venueStr.includes("Arlington")) utcOffset = 5;
+    }
 
     if (ampm === 'p.m.' && hours !== 12) hours += 12;
     if (ampm === 'a.m.' && hours === 12) hours = 0;
@@ -554,7 +562,7 @@ const teamsSet = new Set();
 
 rawMatches.forEach((m, idx) => {
     if (!m.date || !m.home || !m.away) return;
-    const localTimeData = convertToLocal(m.date, m.time);
+    const localTimeData = convertToLocal(m.date, m.time, m.venue);
     if (!localTimeData) return;
 
     teamsSet.add(m.home);

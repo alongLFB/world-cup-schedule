@@ -28,6 +28,10 @@ const fs = require('fs');
             const dom = new JSDOM(html);
             const document = dom.window.document;
             
+            // Try to extract global timezone offset
+            const tzMatch = document.body.textContent.match(/All times listed are local,\s*(UTC[−-]\d+)/i);
+            const globalTz = tzMatch ? tzMatch[1] : null;
+            
             const matchBoxes = document.querySelectorAll('.footballbox');
             matchBoxes.forEach(box => {
             try {
@@ -123,9 +127,14 @@ const fs = require('fs');
                         }
                     }
 
+                    let timeStr = timeElem.textContent.trim();
+                    if (globalTz && !timeStr.includes('UTC')) {
+                        timeStr += ' ' + globalTz;
+                    }
+
                     matches.push({
                         date: dateElem.textContent.trim(),
-                        time: timeElem.textContent.trim(),
+                        time: timeStr,
                         home: homeElem.textContent.trim(),
                         away: awayElem.textContent.trim(),
                         score: score,
