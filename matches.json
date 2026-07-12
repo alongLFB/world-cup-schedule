@@ -3591,10 +3591,44 @@
     "time": "8:00 p.m. UTC−5",
     "home": "Argentina",
     "away": "Switzerland",
-    "score": "Match 100",
+    "score": "3–1 (a.e.t.)",
     "venue": "Arrowhead Stadium, Kansas City",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Mac Allister",
+        "times": [
+          "10'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Alvarez",
+        "times": [
+          "112'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "La. Martínez",
+        "times": [
+          "120+1'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Ndoye",
+        "times": [
+          "67'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3616,7 +3650,7 @@
     "date": "July 15, 2026 (2026-07-15)",
     "time": "3:00 p.m. UTC−4",
     "home": "England",
-    "away": "Winner Match 100",
+    "away": "Argentina",
     "score": "Match 102",
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeGoals": [],
