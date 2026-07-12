@@ -3559,10 +3559,29 @@
     "time": "5:00 p.m. UTC−4",
     "home": "Norway",
     "away": "England",
-    "score": "Match 99",
+    "score": "1–2 (a.e.t.)",
     "venue": "Hard Rock Stadium, Miami Gardens",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Schjelderup",
+        "times": [
+          "36'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Bellingham",
+        "times": [
+          "45+2'",
+          "93'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3596,7 +3615,7 @@
   {
     "date": "July 15, 2026 (2026-07-15)",
     "time": "3:00 p.m. UTC−4",
-    "home": "Winner Match 99",
+    "home": "England",
     "away": "Winner Match 100",
     "score": "Match 102",
     "venue": "Mercedes-Benz Stadium, Atlanta",
