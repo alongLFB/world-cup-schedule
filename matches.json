@@ -3638,10 +3638,27 @@
     "time": "2:00 p.m. UTC−5",
     "home": "France",
     "away": "Spain",
-    "score": "Match 101",
+    "score": "0–2",
     "venue": "AT&T Stadium, Arlington",
     "homeGoals": [],
-    "awayGoals": [],
+    "awayGoals": [
+      {
+        "player": "Oyarzabal",
+        "times": [
+          "22' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Porro",
+        "times": [
+          "58'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
@@ -3662,7 +3679,7 @@
   {
     "date": "July 18, 2026 (2026-07-18)",
     "time": "5:00 p.m. UTC−4",
-    "home": "Loser Match 101",
+    "home": "France",
     "away": "Loser Match 102",
     "score": "Match 103",
     "venue": "Hard Rock Stadium, Miami Gardens",
@@ -3675,7 +3692,7 @@
   {
     "date": "July 19, 2026 (2026-07-19)",
     "time": "3:00 p.m. UTC−4",
-    "home": "Winner Match 101",
+    "home": "Spain",
     "away": "Winner Match 102",
     "score": "Match 104",
     "venue": "MetLife Stadium, East Rutherford",
