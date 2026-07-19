@@ -3707,10 +3707,71 @@
     "time": "5:00 p.m. UTC−4",
     "home": "France",
     "away": "England",
-    "score": "Match 103",
+    "score": "4–6",
     "venue": "Hard Rock Stadium, Miami Gardens",
-    "homeGoals": [],
-    "awayGoals": [],
+    "homeGoals": [
+      {
+        "player": "Mbappé",
+        "times": [
+          "48'",
+          "66'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Barcola",
+        "times": [
+          "54'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Dembélé",
+        "times": [
+          "90+6'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
+    "awayGoals": [
+      {
+        "player": "Rice",
+        "times": [
+          "3'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Konsa",
+        "times": [
+          "18'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Saka",
+        "times": [
+          "37'",
+          "45+1'",
+          "87' (pen.)"
+        ],
+        "isPenalty": true,
+        "isOwnGoal": false
+      },
+      {
+        "player": "Bellingham",
+        "times": [
+          "90+8'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "penaltyScore": null,
     "homePenalties": [],
     "awayPenalties": []
