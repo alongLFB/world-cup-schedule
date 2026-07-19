@@ -3781,9 +3781,18 @@
     "time": "3:00 p.m. UTC−4",
     "home": "Spain",
     "away": "Argentina",
-    "score": "Match 104",
+    "score": "1–0 (a.e.t.)",
     "venue": "MetLife Stadium, East Rutherford",
-    "homeGoals": [],
+    "homeGoals": [
+      {
+        "player": "Torres",
+        "times": [
+          "106'"
+        ],
+        "isPenalty": false,
+        "isOwnGoal": false
+      }
+    ],
     "awayGoals": [],
     "penaltyScore": null,
     "homePenalties": [],
