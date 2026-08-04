@@ -1,11 +1,7 @@
 name: Update Schedule Data
 
 on:
-  schedule:
-    # 美洲世界杯的比赛通常在 16:00 UTC 至次日 05:00 UTC 之间进行。
-    # 为避免抓取过于频繁，现改为在比赛活跃期间每 2 小时更新一次（即 UTC 18:00, 20:00, 22:00, 00:00, 02:00, 04:00, 06:00）
-    - cron: '0 18,20,22,0,2,4,6 * * *'
-  workflow_dispatch: # 允许你在 GitHub Actions 页面手动点击运行
+  workflow_dispatch: # 允许在 GitHub Actions 页面手动点击运行
 
 jobs:
   update-data:
